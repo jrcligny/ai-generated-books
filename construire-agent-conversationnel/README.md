@@ -1,0 +1,51 @@
+# De l'assistant à l'agent : anatomie d'un agent conversationnel
+
+Cette publication rassemble les dix-neuf chapitres du livre, répartis en cinq
+parties, une conclusion et le glossaire bilingue de fin d'ouvrage, à raison d'un
+document par chapitre. Chaque partie apporte une notion structurante et la
+matérialise dans l'évolution de l'agent de démonstration, le fil rouge fictif
+introduit au chapitre 3.
+
+## Partie I — Fondations
+
+- [Chapitre 1 — L'IA générative dans le paysage de l'IA](ch01.md)
+- [Chapitre 2 — Comment un *LLM* génère du texte](ch02.md)
+- [Chapitre 3 — Du modèle à l'assistant](ch03.md)
+- [Chapitre 4 — Les outils : quand le modèle demande à agir](ch04.md)
+
+## Partie II — De l'assistant à l'agent
+
+- [Chapitre 5 — Assistant ou agent : ce qui change vraiment](ch05.md)
+- [Chapitre 6 — La boucle agentique](ch06.md)
+- [Chapitre 7 — Le contexte, ressource rare](ch07.md)
+- [Chapitre 8 — La mémoire de travail](ch08.md)
+
+## Partie III — Capacité
+
+- [Chapitre 9 — Concevoir des outils pour un lecteur qui est un modèle](ch09.md)
+- [Chapitre 10 — Le droit d'agir : permissions et contrôle humain](ch10.md)
+- [Chapitre 11 — Un agent ou plusieurs ?](ch11.md)
+
+## Partie IV — Mémoire
+
+- [Chapitre 12 — Se souvenir](ch12.md)
+- [Chapitre 13 — Savoir](ch13.md)
+- [Chapitre 14 — Savoir faire](ch14.md)
+- [Chapitre 15 — Lire sans obéir](ch15.md)
+
+## Partie V — Le *harness*
+
+- [Chapitre 16 — De la consigne au contrôle](ch16.md)
+- [Chapitre 17 — Mesurer un système non déterministe : observer et évaluer](ch17.md)
+- [Chapitre 18 — Tenir en production](ch18.md)
+- [Chapitre 19 — Construire le *harness* avec une IA](ch19.md)
+
+## Conclusion
+
+- [Conclusion — Synthèse et ouverture](conclusion.md)
+
+## Annexe
+
+- [Glossaire français-anglais](glossaire.md)
+
+[Retour à la présentation](../README.md)
