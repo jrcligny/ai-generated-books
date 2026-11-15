@@ -6,6 +6,8 @@ document par chapitre. Chaque partie apporte une notion structurante et la
 matérialise dans l'évolution de l'agent de démonstration, le fil rouge fictif
 introduit au chapitre 3.
 
+Les ateliers se réalisent avec le dépôt compagnon présenté au chapitre 3 : il fournit les applications de test, une coquille d'agent et les tests de bout en bout de chaque atelier, mais aucun corrigé. Les modèles y sont hébergés dans Azure OpenAI et appelés par l'intermédiaire de son proxy ; le livre ne prescrit aucun modèle.
+
 ## Partie I — Fondations
 
 - [Chapitre 1 — L'IA générative dans le paysage de l'IA](ch01.md)
