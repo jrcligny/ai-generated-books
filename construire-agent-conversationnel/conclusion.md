@@ -10,6 +10,10 @@ Dans l'agent du fil rouge, la même phrase déclenche un tour entier. Le modèle
 
 ## L'anatomie en une page
 
+Le tableau C-1 rassemble ce que chaque partie du livre a donné à l'agent du fil rouge.
+
+*Tableau C-1 — L'anatomie de l'agent en une page*
+
 | Partie | Notion | Ce que l'agent en a reçu | Chapitres |
 |---|---|---|---|
 | I — Fondations | Le modèle produit des propositions ; le *harness* gère la conversation et l'exécution | *System prompt* court, historique tenu par le programme, outils décrits au modèle et exécutés par le *harness* | 1 à 4 |
@@ -30,7 +34,9 @@ La conception suppose que le modèle se trompera parfois, ou sera détourné par
 
 ## Établi, pratique courante, zone d'incertitude
 
-Le tableau classe les limites rencontrées au fil du livre, notamment au chapitre 18, selon trois niveaux de certitude.
+Le tableau C-2 classe les limites rencontrées au fil du livre, notamment au chapitre 18, selon trois niveaux de certitude.
+
+*Tableau C-2 — Les limites selon leur niveau de certitude*
 
 | Limite | Établi | Pratique courante | Zone d'incertitude |
 |---|---|---|---|
@@ -41,7 +47,7 @@ Le tableau classe les limites rencontrées au fil du livre, notamment au chapitr
 | Démonstration et usage | Une exécution réussie ne renseigne pas sur les cas non essayés | Jeu de parcours avec cas limites | La part des prototypes qui deviennent des capacités maintenues |
 | Confiance | La fluidité d'une réponse ne renseigne pas sur sa justesse | Sources affichées, limites dites, confirmation des écritures | Les moyens d'obtenir un recours approprié |
 
-> **Zone d'incertitude**
+> **Attention — Zone d'incertitude**
 >
 > Les capacités des modèles changeront probablement. Des travaux mesurent leur progression sur des tâches logicielles, et leurs auteurs discutent eux-mêmes la validité de ces résultats hors du cadre étudié (Kwa et al., 2025). Certaines précautions pourraient alors peser moins ; les protocoles, les *skills* et le mot *harness* lui-même évolueront sans doute. Les questions de droits, d'attribution des actions et de décision humaine sur ce qui est difficile à défaire paraissent tenir à la structure d'un agent plutôt qu'au niveau des modèles. Rien, dans les travaux cités, ne permet de dire quels contrôles deviendront superflus.
 
