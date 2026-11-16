@@ -1,6 +1,6 @@
 # De l'assistant à l'agent : anatomie d'un agent conversationnel
 
-Cette publication rassemble les dix-neuf chapitres du livre, répartis en cinq
+Cette publication rassemble les dix-sept chapitres du livre, répartis en cinq
 parties, une conclusion et le glossaire bilingue de fin d'ouvrage, à raison d'un
 document par chapitre. Chaque partie apporte une notion structurante et la
 matérialise dans l'évolution de l'agent de démonstration, le fil rouge fictif
@@ -19,16 +19,15 @@ Les ateliers se réalisent avec le dépôt compagnon présenté au chapitre 3 : 
 
 - [Chapitre 5 — Assistant ou agent : ce qui change vraiment](ch05.md)
 - [Chapitre 6 — La boucle agentique](ch06.md)
-- [Chapitre 7 — Le contexte, ressource rare](ch07.md)
-- [Chapitre 8 — La mémoire de travail](ch08.md)
+- [Chapitre 7 — Découvrir le contexte progressivement](ch07.md)
+- [Chapitre 8 — Compacter le contexte](ch08.md)
 
 ## Partie III — Capacité
 
 - [Chapitre 9 — Concevoir des outils pour un lecteur qui est un modèle](ch09.md)
 - [Chapitre 10 — Le droit d'agir : permissions et contrôle humain](ch10.md)
-- [Chapitre 11 — Un agent ou plusieurs ?](ch11.md)
 
-## Partie IV — Mémoire
+## Partie IV — Connaissances
 
 - [Chapitre 12 — Se souvenir](ch12.md)
 - [Chapitre 13 — Savoir](ch13.md)
@@ -37,7 +36,6 @@ Les ateliers se réalisent avec le dépôt compagnon présenté au chapitre 3 : 
 
 ## Partie V — Le *harness*
 
-- [Chapitre 16 — De la consigne au contrôle](ch16.md)
 - [Chapitre 17 — Mesurer un système non déterministe : observer et évaluer](ch17.md)
 - [Chapitre 18 — Tenir en production](ch18.md)
 - [Chapitre 19 — Construire le *harness* avec une IA](ch19.md)

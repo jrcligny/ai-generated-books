@@ -10,7 +10,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | agent | *agent* | Système dans lequel le modèle décide lui-même de l'étape suivante : quel outil appeler, avec quoi, s'il faut continuer et quand la tâche est terminée. Ce critère est une convention du livre. | chap. 1 et 5 |
 | agent conversationnel | *conversational agent* | Agent qui travaille dans un dialogue : une personne attend sa réponse, peut l'interrompre, préciser sa demande ou changer d'avis, et l'agent peut à son tour poser une question. | chap. 5 |
 | agent de programmation | *coding agent* | → voir *coding agent* | chap. 19 |
-| agent unique | *single agent* | Organisation dans laquelle un seul agent couvre plusieurs métiers, ses capacités étant décrites par un sommaire et chargées à la demande. | chap. 11 |
 | ajustement fin | *fine-tuning* | Entraînement complémentaire par lequel on adapte un modèle pré-entraîné à une tâche particulière. | chap. 1 |
 | appel d'outil | *tool calling*, *function calling* | Capacité d'un modèle, entraîné à cet usage, à décider quand appeler un outil, lequel, et avec quels arguments. | chap. 4 |
 | apprentissage automatique | *machine learning* | → voir *machine learning* | chap. 1 |
@@ -32,7 +31,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 |---|---|---|---|
 | cache | *cache* | Mécanisme qui conserve un résultat pour éviter de le recalculer ; sa clé comprend l'organisation et l'utilisateur chaque fois que le contenu dépend de leurs droits. | chap. 15 |
 | catalogue de *skills* | *skill catalog* | Ensemble des *skills* sortis du *system prompt* et versionnés ; le modèle en lit le sommaire et charge à la demande ceux dont l'utilisateur peut se servir. | chap. 14 |
-| chaîne | *pipeline* | Schéma d'orchestration dans lequel les agents se succèdent dans un ordre fixé par le concepteur. | chap. 11 |
 | chaîne de pensée | *chain of thought* | Pratique qui amène le modèle à écrire son raisonnement avant sa conclusion. | chap. 6 |
 | *chatbot* | *chatbot* | Programme de dialogue. Le mot ne dit rien de la technique employée : un *chatbot* peut suivre un arbre de décision écrit à la main, sans modèle de langage. | chap. 1 |
 | clé d'idempotence | *idempotency key* | Identifiant unique associé à une soumission et reconnu par le système cible, de sorte qu'une répétition soit ignorée. | chap. 18 |
@@ -40,7 +38,7 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | cloisonnement | *data isolation* | Séparation imposée par le programme pour que la mémoire, les caches et les données d'un utilisateur ou d'une organisation n'atteignent pas un autre utilisateur ou une autre organisation. | chap. 12 |
 | *coding agent* | *coding agent* | Agent dont la tâche consiste à modifier un projet logiciel ; ses outils lisent et modifient des fichiers, lancent des commandes et exécutent des vérifications. Équivalent français : agent de programmation. | chap. 19 |
 | combinaison dangereuse | — | Réunion, dans un même agent, de l'accès à des données privées, de l'exposition à un contenu non fiable et de la capacité à communiquer vers l'extérieur ; elle forme un chemin complet pour faire sortir une information du système. | chap. 15 |
-| compaction | *compaction* | Réduction de l'historique d'une conversation longue, par troncature, élagage des résultats d'outils ou résumé ; elle oblige à choisir les informations qui restent disponibles. Le fil rouge compacte la conversation par résumé, au-delà d'un seuil, en conservant à l'identique les messages de l'utilisateur. | chap. 7 |
+| compaction | *compaction* | Réduction de l'historique d'une conversation longue, par troncature, élagage des résultats d'outils ou résumé ; elle oblige à choisir les informations qui restent disponibles. Le fil rouge compacte la conversation par résumé, au-delà d'un seuil, en conservant à l'identique les messages de l'utilisateur et l'état de conversation. | chap. 8 |
 | compte de service | *service account* | Compte technique dont on dote un serveur pour interroger l'application ; pourvu de droits étendus, il oblige le serveur à vérifier lui-même ce que chaque utilisateur a le droit de voir. | chap. 10 |
 | condition d'arrêt | *stopping condition* | Situation qui met fin à la boucle : arrêt décidé par le modèle, imposé par le programme ou demandé par l'utilisateur. | chap. 6 |
 | consignes | *instructions* | Textes par lesquels le concepteur oriente le comportement du modèle, portés notamment par le *system prompt* ; le modèle a appris à leur accorder du poids, sans que leur respect soit assuré à chaque exécution. | chap. 3 |
@@ -49,14 +47,12 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | continuum d'autonomie | — | Échelle propre à ce livre, en cinq positions, qui décrit la part de décision confiée au modèle, depuis le modèle qui rédige jusqu'au modèle qui agit sur la durée. | chap. 5 |
 | contrat d'interface | *interface contract* | Ensemble minimal de comportements que l'agent du lecteur respecte pour que les tests du dépôt compagnon puissent le conduire : ouvrir une conversation, conduire un tour, garder le fil, laisser une trace. | chap. 3 |
 | convention de nommage | *naming convention* | Règle qui préfixe chaque outil par son domaine ; elle évite les collisions de noms lorsque des catalogues sont réunis et aide le modèle à situer l'outil. | chap. 9 |
-| coordinateur et exécutants | *orchestrator-workers* | Schéma d'orchestration dans lequel un agent coordinateur découpe la demande, délègue les sous-tâches et assemble les résultats. | chap. 11 |
 | cycle | — | Une exécution de la boucle agentique : le modèle observe l'état courant et décide, puis le programme agit. | chap. 6 |
 
 ## D
 
 | Terme français | Terme anglais | Définition | Chapitre |
 |---|---|---|---|
-| découverte des capacités à la demande | — | Fonctionnement dans lequel le programme établit ce qui est disponible pour l'utilisateur, et le modèle découvre au fil de la demande, en les chargeant, les capacités dont il a besoin. | chap. 11 |
 | *deep learning* | *deep learning* | Sous-ensemble du *machine learning* qui emploie des réseaux de neurones composés de nombreuses couches, capables d'apprendre eux-mêmes les représentations utiles à partir de données brutes. Équivalent français : apprentissage profond. | chap. 1 |
 | défenses en profondeur | *defense in depth* | Démarche de conception qui part de l'hypothèse que le modèle sera parfois détourné et cherche à borner ce qui en résulte : limiter, isoler, confirmer, tracer. | chap. 15 |
 | définition d'outil | *tool definition* | Nom, description et paramètres d'un outil, transmis au modèle à chaque appel ; le modèle ne voit rien d'autre de l'outil. | chap. 4 |
@@ -64,7 +60,7 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | dépôt compagnon | *companion repository* | Dépôt de code qui accompagne les ateliers : applications de test, proxy vers les modèles, coquille d'agent et tests de bout en bout par atelier ; il ne contient pas l'agent. | chap. 3 |
 | dérive d'objectif | *goal drift* | Forme d'échec de la boucle : au fil des étapes, le modèle s'éloigne de la demande initiale. | chap. 6 |
 | divulgation progressive | *progressive disclosure* | Principe qui consiste à rendre les informations accessibles au moment où elles deviennent utiles : un sommaire d'abord, puis le détail à la demande. | chap. 7 |
-| dossier de conception | *design document* | Document qui reprend, pour chaque atelier du livre, la décision posée, le choix retenu et le coût accepté ; il ne contient aucun programme. | chap. 16 |
+| dossier de conception | *design document* | Document qui reprend, pour chaque atelier du livre, la décision posée, le choix retenu et le coût accepté ; il ne contient aucun programme. | chap. 19 |
 
 ## E
 
@@ -72,7 +68,7 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 |---|---|---|---|
 | échantillonnage | *sampling* | Tirage au hasard du *token* suivant parmi les plus plausibles de la distribution calculée par le modèle. | chap. 2 |
 | échantillonnage par noyau | *nucleus sampling*, *top-p* | Réglage de décodage qui restreint le tirage au plus petit ensemble de *tokens* dont la probabilité cumulée atteint un seuil donné. | chap. 2 |
-| élagage des résultats d'outils | — | Réduction de l'historique qui conserve la trace des appels et remplace les anciens résultats volumineux par une mention abrégée. | chap. 7 |
+| élagage des résultats d'outils | — | Réduction de l'historique qui conserve la trace des appels et remplace les anciens résultats volumineux par une mention abrégée. | chap. 8 |
 | enchaînement prédéfini | *workflow* | → voir *workflow* | chap. 5 |
 | état de conversation | *conversation state* | Petit ensemble d'informations structurées que le programme conserve à côté de l'historique, met à jour à partir des résultats d'outils et replace à l'identique dans le contexte à chaque cycle. | chap. 8 |
 | état explicite | — | Petite structure, distincte de l'historique, que le programme tient à jour et insère dans le contexte composé ; moyen le plus direct de réaliser la mémoire de travail. | chap. 8 |
@@ -114,12 +110,11 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 |---|---|---|---|
 | IA générative | *generative AI* | Famille de modèles capables de produire de nouveaux contenus ; celle dont traite le livre repose entièrement sur le *deep learning*. | chap. 1 |
 | IA symbolique | *symbolic AI* | Approche de l'IA qui repose sur des connaissances écrites explicitement : des règles, des faits, des procédures de raisonnement. | chap. 1 |
-| ingénierie du contexte | *context engineering* | Travail d'assemblage, à chaque cycle, de ce que le modèle lit : quels outils exposer, quels résultats conserver, quelle part de l'historique résumer, quelles informations injecter. | chap. 7 |
+| ingénierie du contexte | *context engineering* | Travail d'assemblage, à chaque cycle, de ce que le modèle lit : ce qui y entre et sous quelle forme, puis ce qui en est retiré ou résumé lorsque la conversation s'allonge. | chap. 7, 8 |
 | injection de *prompt* | *prompt injection* | Fait d'introduire dans l'entrée du modèle un texte conçu pour détourner son comportement de ce que le concepteur et l'utilisateur attendaient. | chap. 15 |
 | injection de *prompt* indirecte | *indirect prompt injection* | Injection dans laquelle un tiers place le texte hostile dans un contenu que l'agent lira plus tard : un document, une page, un message, un champ de commentaire, la description d'un outil. | chap. 4 |
 | injection directe | *direct prompt injection* | Injection dans laquelle l'utilisateur écrit lui-même dans la conversation un message destiné à faire abandonner au modèle les consignes du concepteur. | chap. 15 |
 | intelligence artificielle | *artificial intelligence* | Au sens le plus large, ensemble des techniques qui font accomplir à une machine des tâches que l'on associe à l'intelligence humaine. | chap. 1 |
-| isolation du contexte | *context isolation* | Motif de délégation : les lectures volumineuses ont lieu dans le contexte d'un sous-agent, et l'agent principal n'en reçoit que le compte rendu. | chap. 11 |
 
 ## J
 
@@ -132,7 +127,7 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 
 | Terme français | Terme anglais | Définition | Chapitre |
 |---|---|---|---|
-| limite d'affichage | — | Borne sur le nombre de lignes qu'un outil renvoie au modèle ; elle protège la fenêtre de contexte, et le résultat signale qu'il est partiel et indique le total. | chap. 7 |
+| limite d'affichage | — | Borne sur le nombre de lignes qu'un outil renvoie au modèle ; elle protège la fenêtre de contexte, et le résultat signale qu'il est partiel, indique le total et le moyen d'obtenir la suite. | chap. 7 |
 | limite de budget | *budget limit* | Plafond de la consommation d'un tour, mesurée en *tokens* lus et produits ou dans l'unité de facturation du service. | chap. 10 |
 | limite de cycles | — | Nombre maximal de cycles qu'un tour peut compter ; imposée par le programme, elle sert de garde-fou. | chap. 6 |
 | limite de durée | *time limit* | Borne de temps appliquée au tour entier et à chaque appel d'outil, afin qu'un outil bloqué n'immobilise pas la boucle. | chap. 10 |
@@ -170,7 +165,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 
 | Terme français | Terme anglais | Définition | Chapitre |
 |---|---|---|---|
-| orchestration | *orchestration* | Manière dont le travail est réparti entre agents et dont leurs résultats sont réunis. | chap. 11 |
 | outil | *tool* | Opération que le programme exécute à la demande du modèle ; elle est décrite par un nom, une description et des paramètres, et renvoie un résultat sous forme de texte. | chap. 4 |
 | outil d'écriture | *write tool* | Outil qui modifie l'état d'un système : créer une demande, valider une facture, envoyer un message. | chap. 4 |
 | outil de lecture | *read tool* | Outil qui obtient une information sans rien modifier : consulter une commande, chercher un produit, lire un document. | chap. 4 |
@@ -199,10 +193,9 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | représentations vectorielles | *embeddings* | Vecteurs qu'un modèle dédié produit à partir de textes, de telle sorte que deux textes de sens voisin aient des vecteurs voisins. | chap. 4 et 13 |
 | résolution de noms | *name resolution* | Étape confiée à un outil : il reçoit un nom et le type d'objet recherché, effectue la comparaison approchée dans le programme et renvoie les candidats avec leur identifiant. | chap. 9 |
 | ressource | *resource* | Dans le protocole *MCP*, données qu'un serveur propose à la lecture pour enrichir le contexte ; leur emploi est décidé par l'hôte. | chap. 9 |
-| résumé | *summarization* | Réduction de l'historique dans laquelle un modèle rédige une version plus courte de la partie ancienne, que le programme substitue aux échanges concernés. | chap. 7 |
+| résumé | *summarization* | Réduction de l'historique dans laquelle un modèle rédige une version plus courte de la partie ancienne, que le programme substitue aux échanges concernés. | chap. 8 |
 | révélation progressive des outils | — | Pratique qui ne présente un outil au modèle que lorsque le *skill* qui en décrit l'usage est chargé. | chap. 14 |
 | rôle | *role* | Attribut d'un message, qui indique ce qu'il porte : consignes du concepteur (système), texte de la personne (utilisateur), réponse du modèle (assistant) ou résultat d'un outil (outil). | chap. 3 |
-| routage | *routing* | Schéma d'orchestration dans lequel une première étape classe la demande et la confie à un seul agent spécialisé. | chap. 11 |
 
 ## S
 
@@ -215,7 +208,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | serveur | *server* | Dans le protocole *MCP*, programme qui fournit des capacités : il annonce ce qu'il sait faire et exécute ce qu'on lui demande. | chap. 9 |
 | serveur d'outils | *tool server* | Programme distinct de celui de l'agent, joint par un protocole standard, dans lequel les outils s'exécutent. | chap. 9 |
 | *skill* | *skill* | Savoir-faire nommé que l'agent peut charger au cours d'une conversation ; il se compose d'une description, d'instructions et de ressources éventuelles. | chap. 14 |
-| sous-agent | *subagent* | Agent lancé par un autre agent pour accomplir une mission délimitée ; il démarre avec un contexte neuf, exécute sa boucle, puis rend un compte rendu. | chap. 11 |
 | stratégie de décodage | *decoding strategy* | Manière de tirer un *token* de la distribution de probabilité calculée par le modèle ; c'est un réglage de celui qui appelle le modèle. | chap. 2 |
 | *system prompt* | *system prompt* | Texte que le concepteur place en tête de chaque conversation pour orienter le comportement de l'assistant. Équivalent français : message système. | chap. 3 |
 
@@ -231,7 +223,7 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | Transformer | *Transformer* | Architecture de réseau de neurones, introduite pour la traduction automatique, qui s'appuie sur un mécanisme d'attention mettant en relation les éléments d'une séquence. | chap. 1 |
 | transmission en continu | *streaming* | Envoi de la réponse à l'interface à mesure qu'elle est produite. | chap. 3 |
 | traversée de répertoires | *path traversal* | Situation dans laquelle un chemin construit à partir d'une valeur que le serveur ne maîtrise pas sort du périmètre de fichiers prévu. | chap. 10 |
-| troncature | *truncation* | Réduction de l'historique qui retire les messages les plus anciens. Se dit aussi d'un résultat d'outil dont une partie seulement est renvoyée. | chap. 7 |
+| troncature | *truncation* | Réduction de l'historique qui retire les messages les plus anciens. Se dit aussi d'un résultat d'outil dont une partie seulement est renvoyée. | chap. 7, 8 |
 
 ## V
 
@@ -269,7 +261,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | *compounding errors* | accumulation d'erreurs |
 | *context* | contexte |
 | *context engineering* | ingénierie du contexte |
-| *context isolation* | isolation du contexte |
 | *context window* | fenêtre de contexte |
 | *conversation history* | historique |
 | *conversation loop* | boucle conversationnelle |
@@ -322,11 +313,8 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | *naming convention* | convention de nommage |
 | *non-determinism* | non-déterminisme |
 | *nucleus sampling* | échantillonnage par noyau |
-| *orchestration* | orchestration |
-| *orchestrator-workers* | coordinateur et exécutants |
 | *parameter validation* | validation des paramètres |
 | *path traversal* | traversée de répertoires |
-| *pipeline* | chaîne |
 | *preloading* | préchargement |
 | *progressive disclosure* | divulgation progressive |
 | *prompt* | *prompt* |
@@ -339,7 +327,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | *resource* | ressource |
 | *retrieval-augmented generation* | génération augmentée par récupération |
 | *role* | rôle |
-| *routing* | routage |
 | *sampling* | échantillonnage |
 | *sandbox* | *sandbox* |
 | *sandboxing* | *sandboxing* |
@@ -347,7 +334,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | *semantic search* | recherche sémantique |
 | *server* | serveur |
 | *service account* | compte de service |
-| *single agent* | agent unique |
 | *skill* | *skill* |
 | *skill catalog* | catalogue de *skills* |
 | *specialized tool* | outil spécialisé |
@@ -355,7 +341,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | *stateless* | sans état |
 | *stopping condition* | condition d'arrêt |
 | *streaming* | transmission en continu |
-| *subagent* | sous-agent |
 | *summarization* | résumé |
 | *symbolic AI* | IA symbolique |
 | *system prompt* | *system prompt* |

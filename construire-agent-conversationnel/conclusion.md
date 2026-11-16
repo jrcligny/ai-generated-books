@@ -17,16 +17,16 @@ Le tableau C-1 rassemble ce que chaque partie du livre a donné à l'agent du fi
 | Partie | Notion | Ce que l'agent en a reçu | Chapitres |
 |---|---|---|---|
 | I — Fondations | Le modèle produit des propositions ; le *harness* gère la conversation et l'exécution | *System prompt* court, historique tenu par le programme, outils décrits au modèle et exécutés par le *harness* | 1 à 4 |
-| II — De l'assistant à l'agent | Choix de l'étape suivante dans une boucle contrôlée, contexte limité, état de la tâche | Boucle bornée, visible et interruptible ; résultats bornés et déclarés ; mémoire de travail | 5 à 8 |
-| III — Capacité | Les capacités effectives tiennent aux opérations exposées, à leur contrat et à l'autorisation réelle | Outils servis par un protocole standard ; droits de l'utilisateur ; écritures en trois temps ; agent unique | 9 à 11 |
-| IV — Mémoire | Ce que le modèle utilise dépend de ce que le *harness* remet dans son contexte, avec provenance et confiance | Aucune mémoire entre conversations ; recherche documentaire sourcée ; *skills* versionnés ; contenus externes non fiables | 12 à 15 |
-| V — Le *harness* | Une consigne influence ; invariants, contrôles et validations rendent le système vérifiable | Règles à conséquence doublées d'un contrôle ; traces et parcours répétés ; repli et livraison indépendante | 16 à 19 |
+| II — De l'assistant à l'agent | Choix de l'étape suivante dans une boucle contrôlée, contexte limité, état de la tâche | Boucle bornée, visible et interruptible ; résultats bornés et déclarés, détail à la demande ; compaction de l'historique ; mémoire de travail | 5 à 8 |
+| III — Capacité | Les capacités effectives tiennent aux opérations exposées, à leur contrat et à l'autorisation réelle | Outils servis par un protocole standard ; droits de l'utilisateur ; écritures en trois temps | 9 et 10 |
+| IV — Connaissances | Ce que le modèle utilise dépend de ce que le *harness* remet dans son contexte, avec provenance et confiance | Aucune mémoire entre conversations ; recherche documentaire sourcée ; *skills* versionnés ; contenus externes non fiables | 12 à 15 |
+| V — Le *harness* | Une consigne influence ; des contrôles, des traces et des parcours répétés rendent le système vérifiable | Traces et parcours répétés ; repli et livraison indépendante ; contrôles spécifiés et relus | 17 à 19 |
 
 Ce découpage est une convention. Des synthèses académiques décrivent plutôt un agent par un modèle entouré de modules de mémoire, de planification et d'action (Wang et al., 2023a), ou par ses mémoires, son espace d'actions et sa procédure de décision (Sumers et al., 2023).
 
 ## Les principes qui traversent le livre
 
-La sortie du modèle est un texte sans effet par lui-même, que le *harness* lit avant de décider de ce qu'il en fait. Le chapitre 4 l'a posé pour les appels d'outils, le chapitre 16 l'a étendu aux règles : une consigne est suivie souvent, à un degré qu'il faut mesurer, un contrôle s'applique à chaque exécution.
+La sortie du modèle est un texte sans effet par lui-même, que le *harness* lit avant de décider de ce qu'il en fait. Le chapitre 4 l'a posé pour les appels d'outils, les ateliers suivants l'ont étendu aux droits, aux écritures et aux contenus lus : une consigne est suivie souvent, à un degré qu'il faut mesurer, un contrôle s'applique à chaque exécution.
 
 Ce que le modèle lit se compose et se pèse d'après ce qu'il apporte à la décision suivante, avec sa provenance et la confiance qu'on peut lui accorder. L'autonomie se décide par famille de demandes : le fil rouge laisse le modèle enchaîner les lectures et lui retire la décision d'écrire. Un argumentaire contre le développement d'agents pleinement autonomes soutient que les risques pour les personnes augmentent avec le contrôle cédé au système (Mitchell et al., 2025).
 
@@ -55,7 +55,7 @@ La conduite prudente consiste à consigner la raison de chaque précaution, puis
 
 ## Les questions ouvertes
 
-La sécurité reste sans réponse complète : dans les travaux cités au chapitre 15, les défenses examinées ont été contournées par des attaques adaptées à chacune (Nasr et al., 2025), et les schémas de conception qui agissent par l'architecture ont un coût en utilité (Beurer-Kellner et al., 2025). La gestion de ce que l'agent retient demeure empirique (chapitres 7 et 12). Évaluer sur le sens suppose une référence ou un juge, et un évaluateur produit par un modèle demande lui-même une validation humaine (Shankar et al., 2024). L'apport de plusieurs agents dépend de l'accord entre leur coordination et la structure de la tâche (Kim et al., 2025).
+La sécurité reste sans réponse complète : dans les travaux cités au chapitre 15, les défenses examinées ont été contournées par des attaques adaptées à chacune (Nasr et al., 2025), et les schémas de conception qui agissent par l'architecture ont un coût en utilité (Beurer-Kellner et al., 2025). La gestion de ce que l'agent retient demeure empirique (chapitres 8 et 12). Évaluer sur le sens suppose une référence ou un juge, et un évaluateur produit par un modèle demande lui-même une validation humaine (Shankar et al., 2024).
 
 D'autres questions touchent les personnes. La présentation de l'incertitude influe sur le recours à une aide automatique, dans une tâche éloignée de la gestion (Cao et al., 2024). Le maintien des compétences, chez les utilisateurs comme chez les équipes qui font écrire leur *harness* par un outil, s'appuie sur des constats faits sur l'automatisation industrielle (Bainbridge, 1983), dont la transposition est une hypothèse. La frontière entre ce que les fournisseurs de modèles intègrent et ce que l'équipe construit elle-même est enfin en mouvement.
 
@@ -86,7 +86,6 @@ Ces lectures ont toutes été citées dans le livre ; leurs résultats chiffrés
 - Greshake, K., Abdelnabi, S., Mishra, S., et al. (2023). *Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection*. arXiv:2302.12173.
 - Hou, X., Zhao, Y., Wang, S., et Wang, H. (2025). *Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions*. arXiv:2503.23278.
 - Kapoor, S., Stroebl, B., Siegel, Z. S., et al. (2024). *AI Agents That Matter*. arXiv:2407.01502.
-- Kim, Y., Gu, K., Park, C., et al. (2025). *Towards a Science of Scaling Agent Systems*. arXiv:2512.08296.
 - Kwa, T., West, B., Becker, J., et al. (2025). *Measuring AI Ability to Complete Long Software Tasks*. arXiv:2503.14499.
 - Mei, L., Yao, J., Ge, Y., et al. (2025). *A Survey of Context Engineering for Large Language Models*. arXiv:2507.13334.
 - Mitchell, M., Ghosh, A., Luccioni, A. S., et Pistilli, G. (2025). *Fully Autonomous AI Agents Should Not be Developed*. arXiv:2502.02649.
