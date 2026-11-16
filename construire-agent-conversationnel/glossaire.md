@@ -10,7 +10,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | agent | *agent* | Système dans lequel le modèle décide lui-même de l'étape suivante : quel outil appeler, avec quoi, s'il faut continuer et quand la tâche est terminée. Ce critère est une convention du livre. | chap. 1 et 5 |
 | agent conversationnel | *conversational agent* | Agent qui travaille dans un dialogue : une personne attend sa réponse, peut l'interrompre, préciser sa demande ou changer d'avis, et l'agent peut à son tour poser une question. | chap. 5 |
 | agent de programmation | *coding agent* | → voir *coding agent* | chap. 19 |
-| agent unique | *single agent* | Organisation dans laquelle un seul agent couvre plusieurs métiers, ses capacités étant décrites par un sommaire et chargées à la demande. | chap. 11 |
 | ajustement fin | *fine-tuning* | Entraînement complémentaire par lequel on adapte un modèle pré-entraîné à une tâche particulière. | chap. 1 |
 | appel d'outil | *tool calling*, *function calling* | Capacité d'un modèle, entraîné à cet usage, à décider quand appeler un outil, lequel, et avec quels arguments. | chap. 4 |
 | apprentissage automatique | *machine learning* | → voir *machine learning* | chap. 1 |
@@ -32,7 +31,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 |---|---|---|---|
 | cache | *cache* | Mécanisme qui conserve un résultat pour éviter de le recalculer ; sa clé comprend l'organisation et l'utilisateur chaque fois que le contenu dépend de leurs droits. | chap. 15 |
 | catalogue de *skills* | *skill catalog* | Ensemble des *skills* sortis du *system prompt* et versionnés ; le modèle en lit le sommaire et charge à la demande ceux dont l'utilisateur peut se servir. | chap. 14 |
-| chaîne | *pipeline* | Schéma d'orchestration dans lequel les agents se succèdent dans un ordre fixé par le concepteur. | chap. 11 |
 | chaîne de pensée | *chain of thought* | Pratique qui amène le modèle à écrire son raisonnement avant sa conclusion. | chap. 6 |
 | *chatbot* | *chatbot* | Programme de dialogue. Le mot ne dit rien de la technique employée : un *chatbot* peut suivre un arbre de décision écrit à la main, sans modèle de langage. | chap. 1 |
 | clé d'idempotence | *idempotency key* | Identifiant unique associé à une soumission et reconnu par le système cible, de sorte qu'une répétition soit ignorée. | chap. 18 |
@@ -49,14 +47,12 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | continuum d'autonomie | — | Échelle propre à ce livre, en cinq positions, qui décrit la part de décision confiée au modèle, depuis le modèle qui rédige jusqu'au modèle qui agit sur la durée. | chap. 5 |
 | contrat d'interface | *interface contract* | Ensemble minimal de comportements que l'agent du lecteur respecte pour que les tests du dépôt compagnon puissent le conduire : ouvrir une conversation, conduire un tour, garder le fil, laisser une trace. | chap. 3 |
 | convention de nommage | *naming convention* | Règle qui préfixe chaque outil par son domaine ; elle évite les collisions de noms lorsque des catalogues sont réunis et aide le modèle à situer l'outil. | chap. 9 |
-| coordinateur et exécutants | *orchestrator-workers* | Schéma d'orchestration dans lequel un agent coordinateur découpe la demande, délègue les sous-tâches et assemble les résultats. | chap. 11 |
 | cycle | — | Une exécution de la boucle agentique : le modèle observe l'état courant et décide, puis le programme agit. | chap. 6 |
 
 ## D
 
 | Terme français | Terme anglais | Définition | Chapitre |
 |---|---|---|---|
-| découverte des capacités à la demande | — | Fonctionnement dans lequel le programme établit ce qui est disponible pour l'utilisateur, et le modèle découvre au fil de la demande, en les chargeant, les capacités dont il a besoin. | chap. 11 |
 | *deep learning* | *deep learning* | Sous-ensemble du *machine learning* qui emploie des réseaux de neurones composés de nombreuses couches, capables d'apprendre eux-mêmes les représentations utiles à partir de données brutes. Équivalent français : apprentissage profond. | chap. 1 |
 | défenses en profondeur | *defense in depth* | Démarche de conception qui part de l'hypothèse que le modèle sera parfois détourné et cherche à borner ce qui en résulte : limiter, isoler, confirmer, tracer. | chap. 15 |
 | définition d'outil | *tool definition* | Nom, description et paramètres d'un outil, transmis au modèle à chaque appel ; le modèle ne voit rien d'autre de l'outil. | chap. 4 |
@@ -64,7 +60,7 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | dépôt compagnon | *companion repository* | Dépôt de code qui accompagne les ateliers : applications de test, proxy vers les modèles, coquille d'agent et tests de bout en bout par atelier ; il ne contient pas l'agent. | chap. 3 |
 | dérive d'objectif | *goal drift* | Forme d'échec de la boucle : au fil des étapes, le modèle s'éloigne de la demande initiale. | chap. 6 |
 | divulgation progressive | *progressive disclosure* | Principe qui consiste à rendre les informations accessibles au moment où elles deviennent utiles : un sommaire d'abord, puis le détail à la demande. | chap. 7 |
-| dossier de conception | *design document* | Document qui reprend, pour chaque atelier du livre, la décision posée, le choix retenu et le coût accepté ; il ne contient aucun programme. | chap. 16 |
+| dossier de conception | *design document* | Document qui reprend, pour chaque atelier du livre, la décision posée, le choix retenu et le coût accepté ; il ne contient aucun programme. | chap. 19 |
 
 ## E
 
@@ -119,7 +115,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | injection de *prompt* indirecte | *indirect prompt injection* | Injection dans laquelle un tiers place le texte hostile dans un contenu que l'agent lira plus tard : un document, une page, un message, un champ de commentaire, la description d'un outil. | chap. 4 |
 | injection directe | *direct prompt injection* | Injection dans laquelle l'utilisateur écrit lui-même dans la conversation un message destiné à faire abandonner au modèle les consignes du concepteur. | chap. 15 |
 | intelligence artificielle | *artificial intelligence* | Au sens le plus large, ensemble des techniques qui font accomplir à une machine des tâches que l'on associe à l'intelligence humaine. | chap. 1 |
-| isolation du contexte | *context isolation* | Motif de délégation : les lectures volumineuses ont lieu dans le contexte d'un sous-agent, et l'agent principal n'en reçoit que le compte rendu. | chap. 11 |
 
 ## J
 
@@ -170,7 +165,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 
 | Terme français | Terme anglais | Définition | Chapitre |
 |---|---|---|---|
-| orchestration | *orchestration* | Manière dont le travail est réparti entre agents et dont leurs résultats sont réunis. | chap. 11 |
 | outil | *tool* | Opération que le programme exécute à la demande du modèle ; elle est décrite par un nom, une description et des paramètres, et renvoie un résultat sous forme de texte. | chap. 4 |
 | outil d'écriture | *write tool* | Outil qui modifie l'état d'un système : créer une demande, valider une facture, envoyer un message. | chap. 4 |
 | outil de lecture | *read tool* | Outil qui obtient une information sans rien modifier : consulter une commande, chercher un produit, lire un document. | chap. 4 |
@@ -202,7 +196,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | résumé | *summarization* | Réduction de l'historique dans laquelle un modèle rédige une version plus courte de la partie ancienne, que le programme substitue aux échanges concernés. | chap. 8 |
 | révélation progressive des outils | — | Pratique qui ne présente un outil au modèle que lorsque le *skill* qui en décrit l'usage est chargé. | chap. 14 |
 | rôle | *role* | Attribut d'un message, qui indique ce qu'il porte : consignes du concepteur (système), texte de la personne (utilisateur), réponse du modèle (assistant) ou résultat d'un outil (outil). | chap. 3 |
-| routage | *routing* | Schéma d'orchestration dans lequel une première étape classe la demande et la confie à un seul agent spécialisé. | chap. 11 |
 
 ## S
 
@@ -215,7 +208,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | serveur | *server* | Dans le protocole *MCP*, programme qui fournit des capacités : il annonce ce qu'il sait faire et exécute ce qu'on lui demande. | chap. 9 |
 | serveur d'outils | *tool server* | Programme distinct de celui de l'agent, joint par un protocole standard, dans lequel les outils s'exécutent. | chap. 9 |
 | *skill* | *skill* | Savoir-faire nommé que l'agent peut charger au cours d'une conversation ; il se compose d'une description, d'instructions et de ressources éventuelles. | chap. 14 |
-| sous-agent | *subagent* | Agent lancé par un autre agent pour accomplir une mission délimitée ; il démarre avec un contexte neuf, exécute sa boucle, puis rend un compte rendu. | chap. 11 |
 | stratégie de décodage | *decoding strategy* | Manière de tirer un *token* de la distribution de probabilité calculée par le modèle ; c'est un réglage de celui qui appelle le modèle. | chap. 2 |
 | *system prompt* | *system prompt* | Texte que le concepteur place en tête de chaque conversation pour orienter le comportement de l'assistant. Équivalent français : message système. | chap. 3 |
 
@@ -269,7 +261,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | *compounding errors* | accumulation d'erreurs |
 | *context* | contexte |
 | *context engineering* | ingénierie du contexte |
-| *context isolation* | isolation du contexte |
 | *context window* | fenêtre de contexte |
 | *conversation history* | historique |
 | *conversation loop* | boucle conversationnelle |
@@ -322,11 +313,8 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | *naming convention* | convention de nommage |
 | *non-determinism* | non-déterminisme |
 | *nucleus sampling* | échantillonnage par noyau |
-| *orchestration* | orchestration |
-| *orchestrator-workers* | coordinateur et exécutants |
 | *parameter validation* | validation des paramètres |
 | *path traversal* | traversée de répertoires |
-| *pipeline* | chaîne |
 | *preloading* | préchargement |
 | *progressive disclosure* | divulgation progressive |
 | *prompt* | *prompt* |
@@ -339,7 +327,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | *resource* | ressource |
 | *retrieval-augmented generation* | génération augmentée par récupération |
 | *role* | rôle |
-| *routing* | routage |
 | *sampling* | échantillonnage |
 | *sandbox* | *sandbox* |
 | *sandboxing* | *sandboxing* |
@@ -347,7 +334,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | *semantic search* | recherche sémantique |
 | *server* | serveur |
 | *service account* | compte de service |
-| *single agent* | agent unique |
 | *skill* | *skill* |
 | *skill catalog* | catalogue de *skills* |
 | *specialized tool* | outil spécialisé |
@@ -355,7 +341,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | *stateless* | sans état |
 | *stopping condition* | condition d'arrêt |
 | *streaming* | transmission en continu |
-| *subagent* | sous-agent |
 | *summarization* | résumé |
 | *symbolic AI* | IA symbolique |
 | *system prompt* | *system prompt* |
