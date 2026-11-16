@@ -19,8 +19,8 @@ Les ateliers se réalisent avec le dépôt compagnon présenté au chapitre 3 : 
 
 - [Chapitre 5 — Assistant ou agent : ce qui change vraiment](ch05.md)
 - [Chapitre 6 — La boucle agentique](ch06.md)
-- [Chapitre 7 — Le contexte, ressource rare](ch07.md)
-- [Chapitre 8 — La mémoire de travail](ch08.md)
+- [Chapitre 7 — Découvrir le contexte progressivement](ch07.md)
+- [Chapitre 8 — Compacter le contexte](ch08.md)
 
 ## Partie III — Capacité
 
