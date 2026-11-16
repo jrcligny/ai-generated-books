@@ -40,13 +40,14 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | cloisonnement | *data isolation* | Séparation imposée par le programme pour que la mémoire, les caches et les données d'un utilisateur ou d'une organisation n'atteignent pas un autre utilisateur ou une autre organisation. | chap. 12 |
 | *coding agent* | *coding agent* | Agent dont la tâche consiste à modifier un projet logiciel ; ses outils lisent et modifient des fichiers, lancent des commandes et exécutent des vérifications. Équivalent français : agent de programmation. | chap. 19 |
 | combinaison dangereuse | — | Réunion, dans un même agent, de l'accès à des données privées, de l'exposition à un contenu non fiable et de la capacité à communiquer vers l'extérieur ; elle forme un chemin complet pour faire sortir une information du système. | chap. 15 |
-| compaction | *compaction* | Réduction de l'historique d'une conversation longue, par troncature, élagage des résultats d'outils ou résumé ; elle oblige à choisir les informations qui restent disponibles. | chap. 7 |
+| compaction | *compaction* | Réduction de l'historique d'une conversation longue, par troncature, élagage des résultats d'outils ou résumé ; elle oblige à choisir les informations qui restent disponibles. Le fil rouge compacte la conversation par résumé, au-delà d'un seuil, en conservant à l'identique les messages de l'utilisateur. | chap. 7 |
 | compte de service | *service account* | Compte technique dont on dote un serveur pour interroger l'application ; pourvu de droits étendus, il oblige le serveur à vérifier lui-même ce que chaque utilisateur a le droit de voir. | chap. 10 |
 | condition d'arrêt | *stopping condition* | Situation qui met fin à la boucle : arrêt décidé par le modèle, imposé par le programme ou demandé par l'utilisateur. | chap. 6 |
 | consignes | *instructions* | Textes par lesquels le concepteur oriente le comportement du modèle, portés notamment par le *system prompt* ; le modèle a appris à leur accorder du poids, sans que leur respect soit assuré à chaque exécution. | chap. 3 |
 | contenu non fiable | *untrusted content* | Tout texte qu'un tiers a pu écrire ou modifier et que l'agent est amené à lire : document, page, message, champ de commentaire, description d'outil. | chap. 15 |
 | contexte | *context* | Ce que l'on place dans la fenêtre de contexte ; pour produire un *token*, le modèle s'appuie sur ce contenu et sur ses paramètres. | chap. 2 |
 | continuum d'autonomie | — | Échelle propre à ce livre, en cinq positions, qui décrit la part de décision confiée au modèle, depuis le modèle qui rédige jusqu'au modèle qui agit sur la durée. | chap. 5 |
+| contrat d'interface | *interface contract* | Ensemble minimal de comportements que l'agent du lecteur respecte pour que les tests du dépôt compagnon puissent le conduire : ouvrir une conversation, conduire un tour, garder le fil, laisser une trace. | chap. 3 |
 | convention de nommage | *naming convention* | Règle qui préfixe chaque outil par son domaine ; elle évite les collisions de noms lorsque des catalogues sont réunis et aide le modèle à situer l'outil. | chap. 9 |
 | coordinateur et exécutants | *orchestrator-workers* | Schéma d'orchestration dans lequel un agent coordinateur découpe la demande, délègue les sous-tâches et assemble les résultats. | chap. 11 |
 | cycle | — | Une exécution de la boucle agentique : le modèle observe l'état courant et décide, puis le programme agit. | chap. 6 |
@@ -60,6 +61,7 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | défenses en profondeur | *defense in depth* | Démarche de conception qui part de l'hypothèse que le modèle sera parfois détourné et cherche à borner ce qui en résulte : limiter, isoler, confirmer, tracer. | chap. 15 |
 | définition d'outil | *tool definition* | Nom, description et paramètres d'un outil, transmis au modèle à chaque appel ; le modèle ne voit rien d'autre de l'outil. | chap. 4 |
 | demande d'appel d'outil | *tool call* | Sortie du modèle qui indique le nom d'un outil et les valeurs de ses paramètres ; elle n'a aucun effet par elle-même, et c'est le programme qui décide de l'exécuter. | chap. 4 |
+| dépôt compagnon | *companion repository* | Dépôt de code qui accompagne les ateliers : applications de test, proxy vers les modèles, coquille d'agent et tests de bout en bout par atelier ; il ne contient pas l'agent. | chap. 3 |
 | dérive d'objectif | *goal drift* | Forme d'échec de la boucle : au fil des étapes, le modèle s'éloigne de la demande initiale. | chap. 6 |
 | divulgation progressive | *progressive disclosure* | Principe qui consiste à rendre les informations accessibles au moment où elles deviennent utiles : un sommaire d'abord, puis le détail à la demande. | chap. 7 |
 | dossier de conception | *design document* | Document qui reprend, pour chaque atelier du livre, la décision posée, le choix retenu et le coût accepté ; il ne contient aucun programme. | chap. 16 |
@@ -263,6 +265,7 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | *client* | client |
 | *coding agent* | *coding agent* |
 | *compaction* | compaction |
+| *companion repository* | dépôt compagnon |
 | *compounding errors* | accumulation d'erreurs |
 | *context* | contexte |
 | *context engineering* | ingénierie du contexte |
@@ -300,6 +303,7 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | *in-context learning* | apprentissage en contexte |
 | *indirect prompt injection* | injection de *prompt* indirecte |
 | *instructions* | consignes |
+| *interface contract* | contrat d'interface |
 | *intrinsic hallucination* | hallucination intrinsèque |
 | *language model* | modèle de langage |
 | *large language model* | grand modèle de langage |
