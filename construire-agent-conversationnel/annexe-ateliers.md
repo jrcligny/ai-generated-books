@@ -32,7 +32,7 @@ Cette **trace minimale** vous servira dès les chapitres 6 et 8, pour observer l
 
 ## Le critère de réussite
 
-Chaque atelier se termine par un critère de réussite vérifiable. Les tests de bout en bout du dépôt compagnon le mettent à l'épreuve, et ils sont rangés dans un dossier par atelier ; l'atelier du chapitre 11, qui réunit quatre décisions, est découpé en quatre ateliers, de 11a à 11d. Le tableau A-1 indique le dossier de chaque atelier. Tant que vous n'avez pas réalisé un atelier, ses tests échouent : c'est attendu, et non un défaut d'installation. Vous pouvez lancer les tests d'un atelier seul, ou avec ceux des ateliers précédents pour vérifier que rien n'a régressé.
+Chaque atelier se termine par un critère de réussite vérifiable. Les tests de bout en bout du dépôt compagnon le mettent à l'épreuve, et ils sont rangés dans un dossier par atelier ; l'atelier du chapitre 11, qui réunit quatre décisions, est découpé en quatre ateliers, 10a à 10d. Le tableau A-1 indique le dossier de chaque atelier. Tant que vous n'avez pas réalisé un atelier, ses tests échouent : c'est attendu, et non un défaut d'installation. Vous pouvez lancer les tests d'un atelier seul, ou avec ceux des ateliers précédents pour vérifier que rien n'a régressé.
 
 *Tableau A-1 — Les ateliers et leurs dossiers de tests*
 
