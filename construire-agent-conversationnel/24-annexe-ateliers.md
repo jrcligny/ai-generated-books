@@ -37,17 +37,17 @@ python start.py
 
 La commande `python start.py` démarre les applications de test, le proxy et l'interface de conversation, accessible à l'adresse *http://127.0.0.1:8080*. Par défaut, le fichier *.env* règle le proxy sur un modèle simulé, qui suffit pour commencer l'atelier du chapitre 3. À partir de l'atelier du chapitre 4, l'agent doit choisir lui-même ses outils, ce que le modèle simulé ne fait pas : passez alors en mode réel en renseignant dans *.env* l'accès à un modèle hébergé dans Azure OpenAI. Le guide *GETTING_STARTED.md* du dépôt indique les variables à définir.
 
-Chaque atelier se manipule avec la commande `workshop` du dépôt, désignée par le numéro de son dossier (tableau A-1). L'exemple A-2 en montre les trois usages.
+Chaque atelier se manipule avec la commande `workshop` du dépôt, désigné par le numéro de son chapitre, qui est aussi celui de son dossier (tableau A-1). L'exemple A-2 en montre les trois usages.
 
 *Exemple A-2 — Afficher un atelier et lancer ses tests*
 
 ```powershell
-# Afficher le guide de l'atelier du chapitre 9 (dossier 07)
-uv run --project tooling/cli workshop start 07
+# Afficher le guide de l'atelier du chapitre 9
+uv run --project tooling/cli workshop start 09
 # Lancer les tests de bout en bout de cet atelier
-uv run --project tooling/cli workshop check 07
-# Lancer aussi les tests des dossiers de numéro inférieur
-uv run --project tooling/cli workshop check 07 --non-regression
+uv run --project tooling/cli workshop check 09
+# Lancer aussi les tests des ateliers des chapitres précédents
+uv run --project tooling/cli workshop check 09 --non-regression
 ```
 
 ## Le contrat d'interface
@@ -65,11 +65,15 @@ Cette **trace minimale** vous servira dès le chapitre 5, puis au chapitre 9, po
 
 ## Les tests de bout en bout et le critère de réussite
 
-Chaque atelier se termine par un critère de réussite vérifiable. Les tests de bout en bout du dépôt compagnon le mettent à l'épreuve, et ils sont rangés dans un dossier par atelier ; l'atelier du chapitre 5 est découpé en deux ateliers, 5a et 5b, celui du chapitre 6 en deux ateliers, 6a et 6b, et celui du chapitre 7, qui réunit trois décisions, en trois ateliers, de 7a à 7c. Le chapitre 8 n'a pas d'atelier : l'état de conversation qu'il décrit est construit dans celui du chapitre 10. Le tableau A-1 indique le dossier de chaque atelier, dans l'ordre de lecture du livre.
+Chaque atelier se termine par un critère de réussite vérifiable. Les tests de bout en bout du dépôt compagnon le mettent à l'épreuve, et ils sont rangés dans un dossier par atelier, qui porte le numéro du chapitre. Le chapitre 8 n'a pas d'atelier : l'état de conversation qu'il décrit est construit dans celui du chapitre 10. Le tableau A-1 indique le dossier de chaque atelier.
 
-Les numéros des dossiers ne suivent pas toujours ceux des chapitres. Ils datent d'un plan antérieur du livre, et le dépôt compagnon les a conservés. Seuls les dossiers 03, 04 et 05 portent le numéro de leur chapitre ; les numéros 11 et 16 ne sont pas attribués. Désignez donc toujours un atelier par le numéro de son dossier, lu dans le tableau A-1.
+Les ateliers des chapitres 5, 6 et 7 réunissent plusieurs décisions, que vous réalisez en étapes successives sur un même scénario. Chaque étape a ses propres tests, et l'option `--etape` les lance seuls, par exemple `workshop check 07 --etape identite` ; sans cette option, la commande vérifie le critère de réussite entier.
 
-Tant que vous n'avez pas réalisé un atelier, ses tests échouent : c'est attendu, et non un défaut d'installation. Vous pouvez lancer les tests d'un atelier seul, ou vérifier que rien n'a régressé en relançant ceux des ateliers déjà réalisés. L'option `--non-regression` suit l'ordre des numéros de dossiers, et non celui des chapitres : jusqu'au chapitre 10, elle lance aussi des ateliers que vous n'avez pas encore abordés, dont les tests échouent normalement. Jusque-là, relancez plutôt un par un les dossiers des ateliers réalisés. Il en va de même pour l'atelier 6b : son dossier, *10c-groupings*, suit ceux des ateliers 7a et 7b, et sa vérification de non-régression les rejoue avant qu'ils soient réalisés.
+Tant que vous n'avez pas réalisé un atelier, ses tests échouent : c'est attendu, et non un défaut d'installation. Vous pouvez lancer les tests d'un atelier seul, ou vérifier avec l'option `--non-regression` que rien n'a régressé dans les ateliers des chapitres précédents.
+
+Les guides de plusieurs ateliers vous demandent aussi d'écrire le parcours d'évaluation du cas limite qu'ils introduisent, dans le dossier *my-agent/routes/* du dépôt compagnon. L'atelier du chapitre 15 consolide ces parcours en un jeu complet.
+
+Un atelier facultatif, hors du parcours, construit l'option écartée au chapitre 11 : une mémoire de préférences que l'utilisateur peut consulter, corriger et effacer. Son dossier, *workshops/bonus-preference-memory/*, n'est pas lancé par l'option `--non-regression`.
 
 *Tableau A-1 — Les ateliers et leurs dossiers de tests*
 
@@ -77,20 +81,18 @@ Tant que vous n'avez pas réalisé un atelier, ses tests échouent : c'est atten
 |---|---|---|
 | 3 | Le *system prompt* | *workshops/03-system-prompt/tests/* |
 | 4 | Le premier outil | *workshops/04-first-tool/tests/* |
-| 5a | Les outils de lecture | *workshops/05-read-tools/tests/* |
-| 5b | La boucle agentique | *workshops/06-agent-loop/tests/* |
-| 6a | Le serveur d'outils MCP | *workshops/09-mcp/tests/* |
-| 6b | Les regroupements | *workshops/10c-groupings/tests/* |
-| 7a à 7c | L'identité, les écritures, le confinement | *workshops/10a-identity/tests/*, *workshops/10b-writes/tests/*, *workshops/10d-sandboxing/tests/* |
-| 9 | La divulgation progressive | *workshops/07-progressive-disclosure/tests/* |
-| 10 | L'état de conversation et la compaction | *workshops/08-context-compaction/tests/* |
-| 11 | La mémoire persistante | *workshops/12-long-term-memory/tests/* |
-| 12 | La recherche documentaire | *workshops/13-document-search/tests/* |
-| 13 | Les *skills* | *workshops/14-skills/tests/* |
-| 14 | Lire sans obéir | *workshops/15-read-without-obeying/tests/* |
-| 15 | Les traces et l'évaluation | *workshops/17-evaluation/tests/* |
-| 16 | Les pannes | *workshops/18-failures/tests/* |
-| 17 | La spécification d'un contrôle | *workshops/19-specification/tests/* |
+| 5 | Les outils de lecture et la boucle agentique | *workshops/05-agent-loop/tests/* |
+| 6 | Le serveur d'outils MCP et les regroupements | *workshops/06-mcp-server/tests/* |
+| 7 | L'identité, les écritures et le confinement | *workshops/07-acting-rights/tests/* |
+| 9 | La divulgation progressive | *workshops/09-progressive-disclosure/tests/* |
+| 10 | L'état de conversation et la compaction | *workshops/10-context-compaction/tests/* |
+| 11 | La mémoire persistante | *workshops/11-no-memory/tests/* |
+| 12 | La recherche documentaire | *workshops/12-document-search/tests/* |
+| 13 | Les *skills* | *workshops/13-skills/tests/* |
+| 14 | Lire sans obéir | *workshops/14-read-without-obeying/tests/* |
+| 15 | Les traces et l'évaluation | *workshops/15-evaluation/tests/* |
+| 16 | Les pannes | *workshops/16-failures/tests/* |
+| 17 | La spécification d'un contrôle | *workshops/17-specification/tests/* |
 
 Ce qui se vérifie par programme l'est : l'état de l'application simulée, le contenu de la trace, les droits appliqués. Lorsqu'un critère porte sur la qualité d'une réponse, comme un refus justifié ou une limite annoncée, un modèle juge l'apprécie selon une grille écrite. L'agent ne répondant pas deux fois de la même manière, ces appréciations portent sur plusieurs exécutions. Le chapitre 15 explique pourquoi cette combinaison s'impose.
 
