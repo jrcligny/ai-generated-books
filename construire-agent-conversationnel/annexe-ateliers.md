@@ -46,7 +46,7 @@ Chaque atelier se termine par un critère de réussite vérifiable. Les tests de
 | 8 | La découverte progressive | *workshops/07-progressive-disclosure/tests/* |
 | 9 | La compaction | *workshops/08-context-compaction/tests/* |
 | 10 | Le serveur d'outils *MCP* | *workshops/09-mcp/tests/* |
-| 11a à 11d | L'identité, les écritures, les regroupements, le confinement | *workshops/10a-identity/tests/*, *workshops/10b-writes/tests/*, *workshops/10c-groupings/tests/*, *workshops/10d-sandboxing/tests/* |
+| 11 | L'identité, les écritures, les regroupements, le confinement | *workshops/10a-identity/tests/*, *workshops/10b-writes/tests/*, *workshops/10c-groupings/tests/*, *workshops/10d-sandboxing/tests/* |
 | 12 | La mémoire persistante | *workshops/12-long-term-memory/tests/* |
 | 13 | La recherche documentaire | *workshops/13-document-search/tests/* |
 | 14 | Les *skills* | *workshops/14-skills/tests/* |
