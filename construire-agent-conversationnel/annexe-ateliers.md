@@ -9,10 +9,10 @@ Cette annexe décrit ce dont vous avez besoin pour réaliser les ateliers du liv
 Dans le livre, l'expression **dépôt compagnon** désigne le dépôt de code qui accompagne les ateliers. Il ne contient pas l'agent ; il fournit tout ce qui l'entoure :
 
 - une application de gestion simulée, qui expose les commandes, les achats et les factures du fil rouge, avec leurs rôles, leurs droits et deux organisations distinctes ;
-- une application de recherche documentaire, dont la documentation est rangée dans de simples fichiers texte, utilisée à partir du chapitre 13 ;
+- une application de recherche documentaire, dont la documentation est rangée dans de simples fichiers texte, utilisée à partir du chapitre 12 ;
 - un proxy par lequel passent tous les appels aux modèles, qui garde la clé d'accès hors de votre agent et permet de travailler avec un modèle simulé avant de disposer d'un modèle réel ;
 - une coquille d'agent, qui offre l'interface de conversation, l'accès au modèle par le proxy et l'écriture des traces, mais ni la boucle ni le *system prompt* ;
-- un serveur d'outils *MCP* vide, que vous compléterez au chapitre 10 ;
+- un serveur d'outils *MCP* vide, que vous compléterez au chapitre 6 ;
 - un dossier de tests de bout en bout par atelier.
 
 Le livre ne prescrit aucun modèle : ceux que vous utiliserez sont accessibles par le proxy.
@@ -28,11 +28,11 @@ Pour que les tests puissent conduire n'importe quel agent, le vôtre respecte un
 
 D'autres événements, comme les étapes en cours, une demande de confirmation, les sources ou une mention ajoutée sous la réponse, font partie du contrat ; ils restent inutilisés jusqu'à l'atelier qui en a besoin. La coquille fournit l'ossature de ce contrat, et vous écrivez ce qui détermine le comportement de l'agent.
 
-Cette **trace minimale** vous servira dès les chapitres 6 et 8, pour observer les trajectoires de l'agent et mesurer son contexte. Le chapitre 16 la transforme en trace de bout en bout, aux données sensibles masquées.
+Cette **trace minimale** vous servira dès le chapitre 5, puis au chapitre 9, pour observer les trajectoires de l'agent et mesurer son contexte. Le chapitre 15 la transforme en trace de bout en bout, aux données sensibles masquées.
 
 ## Le critère de réussite
 
-Chaque atelier se termine par un critère de réussite vérifiable. Les tests de bout en bout du dépôt compagnon le mettent à l'épreuve, et ils sont rangés dans un dossier par atelier ; l'atelier du chapitre 11, qui réunit quatre décisions, est découpé en quatre ateliers, 10a à 10d. Le tableau A-1 indique le dossier de chaque atelier. Tant que vous n'avez pas réalisé un atelier, ses tests échouent : c'est attendu, et non un défaut d'installation. Vous pouvez lancer les tests d'un atelier seul, ou avec ceux des ateliers précédents pour vérifier que rien n'a régressé.
+Chaque atelier se termine par un critère de réussite vérifiable. Les tests de bout en bout du dépôt compagnon le mettent à l'épreuve, et ils sont rangés dans un dossier par atelier ; l'atelier du chapitre 5 est découpé en deux ateliers, 5a et 5b, et celui du chapitre 7, qui réunit quatre décisions, en quatre ateliers, de 7a à 7d. Le tableau A-1 indique le dossier de chaque atelier, dans l'ordre des chapitres ; les numéros des dossiers ne suivent pas toujours ceux des chapitres. Tant que vous n'avez pas réalisé un atelier, ses tests échouent : c'est attendu, et non un défaut d'installation. Vous pouvez lancer les tests d'un atelier seul, ou avec ceux des ateliers précédents pour vérifier que rien n'a régressé.
 
 *Tableau A-1 — Les ateliers et leurs dossiers de tests*
 
@@ -40,22 +40,22 @@ Chaque atelier se termine par un critère de réussite vérifiable. Les tests de
 |---|---|---|
 | 3 | Le *system prompt* | *workshops/03-system-prompt/tests/* |
 | 4 | Le premier outil | *workshops/04-first-tool/tests/* |
-| 5 | Les outils de lecture | *workshops/05-read-tools/tests/* |
-| 6 | La boucle agentique | *workshops/06-agent-loop/tests/* |
-| 7 | L'état de conversation | *workshops/08-context-compaction/tests/* |
-| 8 | La découverte progressive | *workshops/07-progressive-disclosure/tests/* |
-| 9 | La compaction | *workshops/08-context-compaction/tests/* |
-| 10 | Le serveur d'outils *MCP* | *workshops/09-mcp/tests/* |
-| 11 | L'identité, les écritures, les regroupements, le confinement | *workshops/10a-identity/tests/*, *workshops/10b-writes/tests/*, *workshops/10c-groupings/tests/*, *workshops/10d-sandboxing/tests/* |
-| 12 | La mémoire persistante | *workshops/12-long-term-memory/tests/* |
-| 13 | La recherche documentaire | *workshops/13-document-search/tests/* |
-| 14 | Les *skills* | *workshops/14-skills/tests/* |
-| 15 | Lire sans obéir | *workshops/15-read-without-obeying/tests/* |
-| 16 | Les traces et l'évaluation | *workshops/17-evaluation/tests/* |
-| 17 | Les pannes | *workshops/18-failures/tests/* |
-| 18 | La spécification d'un contrôle | *workshops/19-specification/tests/* |
+| 5a | Les outils de lecture | *workshops/05-read-tools/tests/* |
+| 5b | La boucle agentique | *workshops/06-agent-loop/tests/* |
+| 6 | Le serveur d'outils *MCP* | *workshops/09-mcp/tests/* |
+| 7a à 7d | L'identité, les écritures, les regroupements, le confinement | *workshops/10a-identity/tests/*, *workshops/10b-writes/tests/*, *workshops/10c-groupings/tests/*, *workshops/10d-sandboxing/tests/* |
+| 8 | L'état de conversation | *workshops/08-context-compaction/tests/* |
+| 9 | La découverte progressive | *workshops/07-progressive-disclosure/tests/* |
+| 10 | La compaction | *workshops/08-context-compaction/tests/* |
+| 11 | La mémoire persistante | *workshops/12-long-term-memory/tests/* |
+| 12 | La recherche documentaire | *workshops/13-document-search/tests/* |
+| 13 | Les *skills* | *workshops/14-skills/tests/* |
+| 14 | Lire sans obéir | *workshops/15-read-without-obeying/tests/* |
+| 15 | Les traces et l'évaluation | *workshops/17-evaluation/tests/* |
+| 16 | Les pannes | *workshops/18-failures/tests/* |
+| 17 | La spécification d'un contrôle | *workshops/19-specification/tests/* |
 
-Ce qui se vérifie par programme l'est : l'état de l'application simulée, le contenu de la trace, les droits appliqués. Lorsqu'un critère porte sur la qualité d'une réponse, comme un refus justifié ou une limite annoncée, un modèle juge l'apprécie selon une grille écrite. L'agent ne répondant pas deux fois de la même manière, ces appréciations portent sur plusieurs exécutions. Le chapitre 16 explique pourquoi cette combinaison s'impose.
+Ce qui se vérifie par programme l'est : l'état de l'application simulée, le contenu de la trace, les droits appliqués. Lorsqu'un critère porte sur la qualité d'une réponse, comme un refus justifié ou une limite annoncée, un modèle juge l'apprécie selon une grille écrite. L'agent ne répondant pas deux fois de la même manière, ces appréciations portent sur plusieurs exécutions. Le chapitre 15 explique pourquoi cette combinaison s'impose.
 
 > **Point clé**
 >
