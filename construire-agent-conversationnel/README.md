@@ -1,6 +1,6 @@
 # De l'assistant à l'agent : anatomie d'un agent conversationnel
 
-Cette publication rassemble les dix-huit chapitres du livre, répartis en cinq
+Cette publication rassemble les dix-sept chapitres du livre, répartis en cinq
 parties, une conclusion, une annexe consacrée aux ateliers et le glossaire bilingue de fin d'ouvrage, à raison d'un
 document par chapitre. Chaque partie apporte une notion structurante et la
 matérialise dans l'évolution de l'agent de démonstration, le fil rouge fictif
@@ -17,29 +17,28 @@ Les ateliers se réalisent avec le dépôt compagnon présenté à l'annexe A : 
 
 ## Partie II — De l'assistant à l'agent
 
-- [Chapitre 5 — Assistant ou agent : ce qui change vraiment](ch05.md)
-- [Chapitre 6 — La boucle agentique](ch06.md)
-- [Chapitre 7 — Concevoir des outils pour un lecteur qui est un modèle](ch07.md)
-- [Chapitre 8 — Le droit d'agir : permissions et contrôle humain](ch08.md)
+- [Chapitre 5 — De l'assistant à l'agent : la boucle agentique](ch05.md)
+- [Chapitre 6 — Concevoir des outils pour un lecteur qui est un modèle](ch06.md)
+- [Chapitre 7 — Le droit d'agir : permissions et contrôle humain](ch07.md)
 
 ## Partie III — Garder le contexte utile
 
-- [Chapitre 9 — Garder le fil : l'état de la conversation](ch09.md)
-- [Chapitre 10 — Découvrir le contexte progressivement](ch10.md)
-- [Chapitre 11 — Compacter le contexte](ch11.md)
+- [Chapitre 8 — Garder le fil : l'état de la conversation](ch08.md)
+- [Chapitre 9 — Découvrir le contexte progressivement](ch09.md)
+- [Chapitre 10 — Compacter le contexte](ch10.md)
 
 ## Partie IV — Ce que l'agent lit
 
-- [Chapitre 12 — Se souvenir : les souvenirs entre conversations](ch12.md)
-- [Chapitre 13 — Savoir : répondre à partir de documents](ch13.md)
-- [Chapitre 14 — Savoir faire : des procédures chargées à la demande](ch14.md)
-- [Chapitre 15 — Lire sans obéir : l'injection de *prompt* et ses conséquences](ch15.md)
+- [Chapitre 11 — Se souvenir : les souvenirs entre conversations](ch11.md)
+- [Chapitre 12 — Savoir : répondre à partir de documents](ch12.md)
+- [Chapitre 13 — Savoir faire : des procédures chargées à la demande](ch13.md)
+- [Chapitre 14 — Lire sans obéir : l'injection de *prompt* et ses conséquences](ch14.md)
 
 ## Partie V — Éprouver et maintenir
 
-- [Chapitre 16 — Mesurer un système non déterministe : observer et évaluer](ch16.md)
-- [Chapitre 17 — Tenir quand une dépendance fait défaut](ch17.md)
-- [Chapitre 18 — Construire le *harness* avec une IA](ch18.md)
+- [Chapitre 15 — Mesurer un système non déterministe : observer et évaluer](ch15.md)
+- [Chapitre 16 — Tenir quand une dépendance fait défaut](ch16.md)
+- [Chapitre 17 — Construire le *harness* avec une IA](ch17.md)
 
 ## Conclusion
 
