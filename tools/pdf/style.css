@@ -1,0 +1,62 @@
+/* Mise en page inspirée du format O'Reilly « Animal » (7 × 9,19 in) */
+@page { size: 7in 9.1875in; margin: 0.7in 0.8in 0.75in 0.8in; }
+html { font-family: "Minion Pro", "Cambria", "Georgia", serif; font-size: 9.5pt; line-height: 1.32; color: #111; }
+body { margin: 0; }
+h1, h2, h3, h4 { font-family: "Myriad Pro", "Segoe UI", "Calibri", sans-serif; line-height: 1.15; break-after: avoid; font-weight: 600; }
+h1 { font-size: 20pt; margin: 0 0 1.4em; }
+h2 { font-size: 13pt; margin: 1.3em 0 0.4em; }
+h3 { font-size: 11pt; margin: 1.1em 0 0.3em; }
+h4 { font-size: 10pt; margin: 0.9em 0 0.25em; }
+p { margin: 0 0 0.5em; text-align: justify; hyphens: auto; orphans: 2; widows: 2; }
+ul, ol { margin: 0 0 0.5em; padding-left: 1.4em; }
+li { margin: 0.1em 0; }
+li > p { margin: 0 0 0.2em; }
+a { color: inherit; text-decoration: none; }
+a[href^="http"] { font-style: italic; color: #1a4f8b; }
+em > a, a > em { font-style: italic; }
+
+/* Saut de page avant chaque partie, chapitre et section de premier niveau */
+section.level1 { break-before: page; }
+h1 .label { display: block; font-size: 11pt; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: #8a1c1c; margin-bottom: 0.5em; }
+h1 .sep { display: none; }
+section.chap > h1 { text-align: right; border-bottom: 1.5pt solid #111; padding: 0.6in 0 0.3em; }
+section.part > h1 { font-size: 24pt; text-align: right; margin-top: 1.6in; border-bottom: 2.5pt solid #111; padding-bottom: 0.3em; }
+
+.title-page { height: 7.6in; display: flex; flex-direction: column; justify-content: center; text-align: right; font-family: "Myriad Pro", "Segoe UI", sans-serif; border-top: 4pt solid #8a1c1c; }
+.title-page .t1 { font-size: 30pt; font-weight: 700; margin-bottom: 0.3em; }
+.title-page .t2 { font-size: 15pt; color: #444; }
+.title-page .t3 { font-size: 9pt; color: #666; margin-top: 3em; }
+
+nav#toc { break-before: page; }
+nav#toc h1 { font-size: 18pt; border-bottom: 1.5pt solid #111; padding-bottom: 0.3em; }
+nav#toc ul { list-style: none; padding: 0; margin: 0; }
+nav#toc li { display: flex; align-items: baseline; margin: 0.15em 0; font-size: 9pt; }
+nav#toc li .lbl { flex: 0 1 auto; }
+nav#toc li .dots { flex: 1 1 auto; border-bottom: 1px dotted #888; margin: 0 0.4em; min-width: 2em; }
+nav#toc li .pg { flex: 0 0 auto; }
+nav#toc li.part { font-weight: 600; margin-top: 0.7em; font-family: "Segoe UI", sans-serif; }
+nav#toc li.chap { padding-left: 1.2em; }
+
+/* Code : chasse fixe, sans fond, 81 caractères par ligne */
+pre, code { font-family: "Ubuntu Mono", "Consolas", "Cascadia Mono", monospace; }
+code { font-size: 0.92em; }
+pre { font-size: 8pt; line-height: 1.25; margin: 0.6em 0 0.8em; padding: 0.35em 0 0.35em 0.6em; border-left: 1pt solid #999; white-space: pre-wrap; word-break: break-word; break-inside: avoid; }
+pre code { font-size: 1em; }
+
+table { border-collapse: collapse; width: 100%; margin: 0.6em 0 0.8em; font-size: 8.3pt; line-height: 1.25; }
+thead { display: table-header-group; }
+tr { break-inside: avoid; }
+th, td { border-bottom: 0.5pt solid #bbb; padding: 0.22em 0.4em; vertical-align: top; text-align: left; }
+thead th { border-top: 1pt solid #111; border-bottom: 1pt solid #111; font-family: "Segoe UI", sans-serif; font-weight: 600; }
+tbody tr:last-child td { border-bottom: 1pt solid #111; }
+
+/* Encadrés (note, point clé, « pour aller plus loin ») */
+blockquote { break-inside: avoid; margin: 0.7em 0.3em; padding: 0.35em 0.8em; border: 0.5pt solid #999; border-left: 2.5pt solid #8a1c1c; font-size: 9pt; }
+blockquote p:last-child { margin-bottom: 0; }
+blockquote > p:first-child > strong:only-child { font-family: "Segoe UI", sans-serif; font-size: 8.5pt; text-transform: uppercase; letter-spacing: 0.06em; }
+
+.mermaid { text-align: center; margin: 0.6em 0; break-inside: avoid; }
+/* Illustrations : taille calculée par le script de calibrage (largeur du texte, 3,4 in de haut au plus) */
+.mermaid svg { display: block; margin: 0 auto; max-width: 100%; }
+.keep { break-inside: avoid; }
+.mermaid p, .mermaid div, .mermaid span { text-align: center !important; hyphens: none; }
