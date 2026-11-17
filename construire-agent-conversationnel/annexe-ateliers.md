@@ -32,7 +32,7 @@ Cette **trace minimale** vous servira dès le chapitre 5, puis au chapitre 9, po
 
 ## Le critère de réussite
 
-Chaque atelier se termine par un critère de réussite vérifiable. Les tests de bout en bout du dépôt compagnon le mettent à l'épreuve, et ils sont rangés dans un dossier par atelier ; l'atelier du chapitre 5 est découpé en deux ateliers, 5a et 5b, et celui du chapitre 7, qui réunit quatre décisions, en quatre ateliers, de 7a à 7d. Le tableau A-1 indique le dossier de chaque atelier, dans l'ordre des chapitres ; les numéros des dossiers ne suivent pas toujours ceux des chapitres. Tant que vous n'avez pas réalisé un atelier, ses tests échouent : c'est attendu, et non un défaut d'installation. Vous pouvez lancer les tests d'un atelier seul, ou avec ceux des ateliers précédents pour vérifier que rien n'a régressé.
+Chaque atelier se termine par un critère de réussite vérifiable. Les tests de bout en bout du dépôt compagnon le mettent à l'épreuve, et ils sont rangés dans un dossier par atelier ; l'atelier du chapitre 5 est découpé en deux ateliers, 5a et 5b, et celui du chapitre 7, qui réunit quatre décisions, en quatre ateliers, de 7a à 7d. Le tableau A-1 indique le dossier de chaque atelier, dans l'ordre des chapitres ; les numéros des dossiers ne suivent pas toujours ceux des chapitres. Le chapitre 8 n'a pas d'atelier : l'état de conversation qu'il décrit est construit dans celui du chapitre 10. Tant que vous n'avez pas réalisé un atelier, ses tests échouent : c'est attendu, et non un défaut d'installation. Vous pouvez lancer les tests d'un atelier seul, ou avec ceux des ateliers précédents pour vérifier que rien n'a régressé.
 
 *Tableau A-1 — Les ateliers et leurs dossiers de tests*
 
@@ -44,9 +44,8 @@ Chaque atelier se termine par un critère de réussite vérifiable. Les tests de
 | 5b | La boucle agentique | *workshops/06-agent-loop/tests/* |
 | 6 | Le serveur d'outils *MCP* | *workshops/09-mcp/tests/* |
 | 7a à 7d | L'identité, les écritures, les regroupements, le confinement | *workshops/10a-identity/tests/*, *workshops/10b-writes/tests/*, *workshops/10c-groupings/tests/*, *workshops/10d-sandboxing/tests/* |
-| 8 | L'état de conversation | *workshops/08-context-compaction/tests/* |
 | 9 | La découverte progressive | *workshops/07-progressive-disclosure/tests/* |
-| 10 | La compaction | *workshops/08-context-compaction/tests/* |
+| 10 | L'état de conversation et la compaction | *workshops/08-context-compaction/tests/* |
 | 11 | La mémoire persistante | *workshops/12-long-term-memory/tests/* |
 | 12 | La recherche documentaire | *workshops/13-document-search/tests/* |
 | 13 | Les *skills* | *workshops/14-skills/tests/* |
