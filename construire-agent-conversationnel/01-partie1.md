@@ -1,4 +1,4 @@
-# Partie I — Fondations : du modèle à l'assistant outillé
+# Partie I — Comprendre le modèle et construire un assistant outillé
 
 Avant de construire un agent, il faut savoir ce que fait le modèle autour duquel il est bâti, et ce qu'il ne fait pas. Cette partie part du modèle de langage et s'arrête au moment où un assistant obtient son premier outil.
 

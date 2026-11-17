@@ -1,4 +1,4 @@
-# Partie IV — Ce que l'agent lit
+# Partie IV — Enrichir le contexte : souvenirs, documents, procédures et contenus tiers
 
 Les parties précédentes ont placé dans le contexte les consignes, les résultats d'outils et l'état de conversation. Cette partie examine ce que le *harness* peut y remettre en plus : des souvenirs, des passages de documents, des procédures, et des contenus rédigés par des tiers.
 

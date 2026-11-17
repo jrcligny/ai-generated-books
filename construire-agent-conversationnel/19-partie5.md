@@ -1,4 +1,4 @@
-# Partie V — Éprouver et maintenir
+# Partie V — Évaluer l'agent et le maintenir en service
 
 Le *harness*, nommé au chapitre 3, s'est construit partie après partie. Certaines règles ont été confiées au programme ; d'autres ne vivent que dans les consignes, sans que l'on sache dans quelle proportion le modèle les respecte. Cette dernière partie éprouve l'agent et le maintient en service.
 

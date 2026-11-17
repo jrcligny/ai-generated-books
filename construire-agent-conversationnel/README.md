@@ -6,46 +6,46 @@ Les ateliers se réalisent avec le dépôt compagnon, [jrcligny/workshops-build-
 
 - [Préface](00-preface.md)
 
-## Partie I — Fondations : du modèle à l'assistant outillé
+## Partie I — Comprendre le modèle et construire un assistant outillé
 
 - [Ouverture de la partie I](01-partie1.md)
-- [Chapitre 1 — L'IA générative dans le paysage de l'IA](02-ch01.md)
-- [Chapitre 2 — Comment un LLM génère du texte](03-ch02.md)
-- [Chapitre 3 — Du modèle à l'assistant : rôles, consignes et harness](04-ch03.md)
-- [Chapitre 4 — Les outils : quand le modèle demande à agir](05-ch04.md)
+- [Chapitre 1 — Situer l'IA générative et fixer le vocabulaire de l'agent](02-ch01.md)
+- [Chapitre 2 — Comment un LLM génère du texte, et ce que cela impose à la conception](03-ch02.md)
+- [Chapitre 3 — Construire un assistant autour du modèle : rôles, consignes et harness](04-ch03.md)
+- [Chapitre 4 — Donner un outil à l'assistant : le modèle demande, le harness exécute](05-ch04.md)
 
-## Partie II — Agir : la boucle, les outils et le droit d'agir
+## Partie II — Faire agir l'agent : boucle, outils et droits
 
 - [Ouverture de la partie II](06-partie2.md)
-- [Chapitre 5 — La boucle agentique : quand le modèle décide de l'étape suivante](07-ch05.md)
-- [Chapitre 6 — Des outils écrits pour un modèle : contrat, erreurs et protocole MCP](08-ch06.md)
-- [Chapitre 7 — Le droit d'agir : identité, validation humaine et confinement](09-ch07.md)
+- [Chapitre 5 — Passer de l'assistant à l'agent : la boucle agentique](07-ch05.md)
+- [Chapitre 6 — Concevoir des outils qu'un modèle sait utiliser : contrat, erreurs et protocole MCP](08-ch06.md)
+- [Chapitre 7 — Encadrer les actions de l'agent : droits, validation humaine et confinement](09-ch07.md)
 
-## Partie III — Garder le contexte utile
+## Partie III — Maîtriser le contexte d'une longue conversation
 
 - [Ouverture de la partie III](10-partie3.md)
-- [Chapitre 8 — Garder le fil : mémoire de travail et état de conversation](11-ch08.md)
-- [Chapitre 9 — Doser : la divulgation progressive du contexte](12-ch09.md)
-- [Chapitre 10 — Alléger : la compaction du contexte](13-ch10.md)
+- [Chapitre 8 — Conserver ce que la conversation a établi : mémoire de travail et état de conversation](11-ch08.md)
+- [Chapitre 9 — Ne charger dans le contexte que ce qui sert : la divulgation progressive](12-ch09.md)
+- [Chapitre 10 — Réduire le contexte d'une longue conversation : la compaction](13-ch10.md)
 
-## Partie IV — Ce que l'agent lit
+## Partie IV — Enrichir le contexte : souvenirs, documents, procédures et contenus tiers
 
 - [Ouverture de la partie IV](14-partie4.md)
-- [Chapitre 11 — Se souvenir : la mémoire d'une conversation à l'autre](15-ch11.md)
-- [Chapitre 12 — Savoir : répondre à partir de documents](16-ch12.md)
-- [Chapitre 13 — Savoir faire : des procédures chargées à la demande](17-ch13.md)
-- [Chapitre 14 — Lire sans obéir : se défendre contre l'injection de prompt](18-ch14.md)
+- [Chapitre 11 — Retrouver l'utilisateur d'une conversation à l'autre : la mémoire persistante](15-ch11.md)
+- [Chapitre 12 — Répondre à partir de documents : la génération augmentée par récupération](16-ch12.md)
+- [Chapitre 13 — Charger des procédures à la demande : les skills](17-ch13.md)
+- [Chapitre 14 — Protéger l'agent contre l'injection de prompt](18-ch14.md)
 
-## Partie V — Éprouver et maintenir
+## Partie V — Évaluer l'agent et le maintenir en service
 
 - [Ouverture de la partie V](19-partie5.md)
-- [Chapitre 15 — Mesurer un système non déterministe : observer et évaluer](20-ch15.md)
-- [Chapitre 16 — Tenir quand une dépendance fait défaut](21-ch16.md)
+- [Chapitre 15 — Observer et évaluer un agent non déterministe](20-ch15.md)
+- [Chapitre 16 — Résister aux pannes et aux changements des dépendances](21-ch16.md)
 - [Chapitre 17 — Construire le harness avec un agent de programmation](22-ch17.md)
 
 ## Conclusion
 
-- [Conclusion — Ce qui tient quand les modèles changent](23-conclusion.md)
+- [Conclusion — Les principes qui restent valables quand les modèles changent](23-conclusion.md)
 
 ## Annexe et glossaire
 
