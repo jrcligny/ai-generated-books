@@ -1,38 +1,75 @@
 # Annexe A — Réaliser les ateliers
 
-Cette annexe décrit ce dont vous avez besoin pour réaliser les ateliers du livre : le dépôt compagnon et ce qu'il fournit, le contrat d'interface que respecte votre agent, la trace minimale que laisse chaque tour, et la manière dont les tests de bout en bout vérifient le critère de réussite de chaque atelier.
+Cette annexe décrit ce dont vous avez besoin pour réaliser les ateliers du livre : le dépôt compagnon et ce qu'il fournit, son installation, le contrat d'interface que respecte votre agent, la trace minimale que laisse chaque tour, et la manière dont les tests de bout en bout vérifient le critère de réussite de chaque atelier.
 
 ## Les ateliers et le dépôt compagnon
 
 À partir du chapitre 3, chaque chapitre comporte un atelier qui fait évoluer l'agent du fil rouge. Le texte de l'atelier expose la décision prise pour cet agent et ce qu'elle coûte. À vous ensuite de la réaliser : vous construisez votre propre agent, atelier après atelier, en appliquant le choix retenu. Aucun corrigé n'est fourni.
 
-Dans le livre, l'expression **dépôt compagnon** désigne le dépôt de code qui accompagne les ateliers. Il ne contient pas l'agent ; il fournit tout ce qui l'entoure :
+Dans le livre, l'expression **dépôt compagnon** désigne le dépôt de code qui accompagne les ateliers, publié à l'adresse *https://github.com/jrcligny/workshops-build-conversational-agent*. Il ne contient pas l'agent ; il fournit tout ce qui l'entoure :
 
 - une application de gestion simulée, qui expose les commandes, les achats et les factures du fil rouge, avec leurs rôles, leurs droits et deux organisations distinctes ;
 - une application de recherche documentaire, dont la documentation est rangée dans de simples fichiers texte, utilisée à partir du chapitre 12 ;
 - un proxy par lequel passent tous les appels aux modèles, qui garde la clé d'accès hors de votre agent et permet de travailler avec un modèle simulé avant de disposer d'un modèle réel ;
 - une coquille d'agent, qui offre l'interface de conversation, l'accès au modèle par le proxy et l'écriture des traces, mais ni la boucle ni le *system prompt* ;
-- un serveur d'outils *MCP* vide, que vous compléterez au chapitre 6 ;
-- un dossier de tests de bout en bout par atelier.
+- un serveur d'outils MCP vide, que vous compléterez au chapitre 6 ;
+- un dossier de tests de bout en bout par atelier, accompagné d'un guide en français.
 
 Le livre ne prescrit aucun modèle : ceux que vous utiliserez sont accessibles par le proxy.
 
+## Installer le dépôt et lancer les tests
+
+Le dépôt compagnon cible d'abord Windows, et fonctionne aussi sous Linux et macOS. Il demande Python 3.13, de préférence installé depuis *python.org* ou par l'outil uv, et le gestionnaire de projets Python uv. Le fichier *docs/installation.md* du dépôt détaille l'installation pour chaque système et le diagnostic des erreurs les plus fréquentes.
+
+Les commandes se lancent depuis la racine du dépôt. Sous Windows, dans PowerShell, la préparation tient en quelques lignes, présentées dans l'exemple A-1.
+
+*Exemple A-1 — Installer le dépôt compagnon*
+
+```powershell
+git clone https://github.com/jrcligny/workshops-build-conversational-agent.git
+cd workshops-build-conversational-agent
+uv python install 3.13
+uv sync --project tooling/cli --locked --python 3.13
+uv sync --project tooling/cli --group tests --locked --python 3.13
+Copy-Item .env.example .env
+python start.py
+```
+
+La commande `python start.py` démarre les applications de test, le proxy et l'interface de conversation, accessible à l'adresse *http://127.0.0.1:8080*. Par défaut, le fichier *.env* règle le proxy sur un modèle simulé, qui suffit pour commencer l'atelier du chapitre 3. À partir de l'atelier du chapitre 4, l'agent doit choisir lui-même ses outils, ce que le modèle simulé ne fait pas : passez alors en mode réel en renseignant dans *.env* l'accès à un modèle hébergé dans Azure OpenAI. Le guide *GETTING_STARTED.md* du dépôt indique les variables à définir.
+
+Chaque atelier se manipule avec la commande `workshop` du dépôt, désignée par le numéro de son dossier (tableau A-1). L'exemple A-2 en montre les trois usages.
+
+*Exemple A-2 — Afficher un atelier et lancer ses tests*
+
+```powershell
+# Afficher le guide de l'atelier du chapitre 9 (dossier 07)
+uv run --project tooling/cli workshop start 07
+# Lancer les tests de bout en bout de cet atelier
+uv run --project tooling/cli workshop check 07
+# Lancer aussi les tests des dossiers de numéro inférieur
+uv run --project tooling/cli workshop check 07 --non-regression
+```
+
 ## Le contrat d'interface
 
-Pour que les tests puissent conduire n'importe quel agent, le vôtre respecte un contrat d'interface minimal, identique pour tous les ateliers.
+Pour que les tests puissent conduire n'importe quel agent, le vôtre respecte un contrat d'interface minimal, identique pour tous les ateliers. Le chapitre 3 l'introduit ; en voici les quatre obligations.
 
-- **Ouvrir une conversation.** L'agent accepte la création d'une conversation pour un utilisateur donné, avec son rôle et son organisation, et lui attribue un identifiant.
-- **Conduire un tour.** Pour chaque message reçu dans une conversation, l'agent transmet sa réponse en continu, sous la forme d'une suite d'événements : des fragments de texte, puis un événement de fin qui indique si le tour a abouti. Un événement d'erreur signale un échec.
-- **Garder le fil.** Les messages suivants réutilisent l'identifiant de la conversation, et l'agent rejoue l'historique dans l'entrée du modèle.
-- **Laisser une trace.** Chaque tour produit un enregistrement : les identifiants de la conversation et du tour, l'horodatage, l'entrée remise au modèle (consignes, historique, nouveau message), le modèle appelé, le nombre de *tokens*, la durée et la raison de l'arrêt, le texte produit et les outils appelés. Aucun secret n'y figure.
+- **Ouvrir une conversation** : l'agent accepte la création d'une conversation pour un utilisateur donné, avec son rôle et son organisation, et lui attribue un identifiant.
+- **Conduire un tour** : pour chaque message reçu dans une conversation, l'agent transmet sa réponse en continu, sous la forme d'une suite d'événements, faite de fragments de texte puis d'un événement de fin qui indique si le tour a abouti. Un événement d'erreur signale un échec.
+- **Garder le fil** : les messages suivants réutilisent l'identifiant de la conversation, et l'agent rejoue l'historique dans l'entrée du modèle.
+- **Laisser une trace** : chaque tour produit un enregistrement qui contient les identifiants de la conversation et du tour, l'horodatage, l'entrée remise au modèle (consignes, historique, nouveau message), le modèle appelé, le nombre de *tokens*, la durée et la raison de l'arrêt, le texte produit et les outils appelés. Aucun secret n'y figure.
 
 D'autres événements, comme les étapes en cours, une demande de confirmation, les sources ou une mention ajoutée sous la réponse, font partie du contrat ; ils restent inutilisés jusqu'à l'atelier qui en a besoin. La coquille fournit l'ossature de ce contrat, et vous écrivez ce qui détermine le comportement de l'agent.
 
 Cette **trace minimale** vous servira dès le chapitre 5, puis au chapitre 9, pour observer les trajectoires de l'agent et mesurer son contexte. Le chapitre 15 la transforme en trace de bout en bout, aux données sensibles masquées.
 
-## Le critère de réussite
+## Les tests de bout en bout et le critère de réussite
 
-Chaque atelier se termine par un critère de réussite vérifiable. Les tests de bout en bout du dépôt compagnon le mettent à l'épreuve, et ils sont rangés dans un dossier par atelier ; l'atelier du chapitre 5 est découpé en deux ateliers, 5a et 5b, et celui du chapitre 7, qui réunit quatre décisions, en quatre ateliers, de 7a à 7d. Le tableau A-1 indique le dossier de chaque atelier, dans l'ordre des chapitres ; les numéros des dossiers ne suivent pas toujours ceux des chapitres. Le chapitre 8 n'a pas d'atelier : l'état de conversation qu'il décrit est construit dans celui du chapitre 10. Tant que vous n'avez pas réalisé un atelier, ses tests échouent : c'est attendu, et non un défaut d'installation. Vous pouvez lancer les tests d'un atelier seul, ou avec ceux des ateliers précédents pour vérifier que rien n'a régressé.
+Chaque atelier se termine par un critère de réussite vérifiable. Les tests de bout en bout du dépôt compagnon le mettent à l'épreuve, et ils sont rangés dans un dossier par atelier ; l'atelier du chapitre 5 est découpé en deux ateliers, 5a et 5b, celui du chapitre 6 en deux ateliers, 6a et 6b, et celui du chapitre 7, qui réunit trois décisions, en trois ateliers, de 7a à 7c. Le chapitre 8 n'a pas d'atelier : l'état de conversation qu'il décrit est construit dans celui du chapitre 10. Le tableau A-1 indique le dossier de chaque atelier, dans l'ordre de lecture du livre.
+
+Les numéros des dossiers ne suivent pas toujours ceux des chapitres. Ils datent d'un plan antérieur du livre, et le dépôt compagnon les a conservés. Seuls les dossiers 03, 04 et 05 portent le numéro de leur chapitre ; les numéros 11 et 16 ne sont pas attribués. Désignez donc toujours un atelier par le numéro de son dossier, lu dans le tableau A-1.
+
+Tant que vous n'avez pas réalisé un atelier, ses tests échouent : c'est attendu, et non un défaut d'installation. Vous pouvez lancer les tests d'un atelier seul, ou vérifier que rien n'a régressé en relançant ceux des ateliers déjà réalisés. L'option `--non-regression` suit l'ordre des numéros de dossiers, et non celui des chapitres : jusqu'au chapitre 10, elle lance aussi des ateliers que vous n'avez pas encore abordés, dont les tests échouent normalement. Jusque-là, relancez plutôt un par un les dossiers des ateliers réalisés. Il en va de même pour l'atelier 6b : son dossier, *10c-groupings*, suit ceux des ateliers 7a et 7b, et sa vérification de non-régression les rejoue avant qu'ils soient réalisés.
 
 *Tableau A-1 — Les ateliers et leurs dossiers de tests*
 
@@ -42,9 +79,10 @@ Chaque atelier se termine par un critère de réussite vérifiable. Les tests de
 | 4 | Le premier outil | *workshops/04-first-tool/tests/* |
 | 5a | Les outils de lecture | *workshops/05-read-tools/tests/* |
 | 5b | La boucle agentique | *workshops/06-agent-loop/tests/* |
-| 6 | Le serveur d'outils *MCP* | *workshops/09-mcp/tests/* |
-| 7a à 7d | L'identité, les écritures, les regroupements, le confinement | *workshops/10a-identity/tests/*, *workshops/10b-writes/tests/*, *workshops/10c-groupings/tests/*, *workshops/10d-sandboxing/tests/* |
-| 9 | La découverte progressive | *workshops/07-progressive-disclosure/tests/* |
+| 6a | Le serveur d'outils MCP | *workshops/09-mcp/tests/* |
+| 6b | Les regroupements | *workshops/10c-groupings/tests/* |
+| 7a à 7c | L'identité, les écritures, le confinement | *workshops/10a-identity/tests/*, *workshops/10b-writes/tests/*, *workshops/10d-sandboxing/tests/* |
+| 9 | La divulgation progressive | *workshops/07-progressive-disclosure/tests/* |
 | 10 | L'état de conversation et la compaction | *workshops/08-context-compaction/tests/* |
 | 11 | La mémoire persistante | *workshops/12-long-term-memory/tests/* |
 | 12 | La recherche documentaire | *workshops/13-document-search/tests/* |
