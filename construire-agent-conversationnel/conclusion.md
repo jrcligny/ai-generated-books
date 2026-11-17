@@ -17,10 +17,10 @@ Le tableau C-1 rassemble ce que chaque partie du livre a donné à l'agent du fi
 | Partie | Notion | Ce que l'agent en a reçu | Chapitres |
 |---|---|---|---|
 | I — Fondations | Le modèle produit des propositions ; le *harness* gère la conversation et l'exécution | *System prompt* court, historique tenu par le programme, outils décrits au modèle et exécutés par le *harness* | 1 à 4 |
-| II — De l'assistant à l'agent | Choix de l'étape suivante dans une boucle contrôlée, contexte limité, état de la tâche | Boucle bornée, visible et interruptible ; résultats bornés et déclarés, détail à la demande ; compaction de l'historique ; mémoire de travail | 5 à 8 |
-| III — Capacité | Les capacités effectives tiennent aux opérations exposées, à leur contrat et à l'autorisation réelle | Outils servis par un protocole standard ; droits de l'utilisateur ; écritures en trois temps | 9 et 10 |
-| IV — Connaissances | Ce que le modèle utilise dépend de ce que le *harness* remet dans son contexte, avec provenance et confiance | Aucune mémoire entre conversations ; recherche documentaire sourcée ; *skills* versionnés ; contenus externes non fiables | 12 à 15 |
-| V — Le *harness* | Une consigne influence ; des contrôles, des traces et des parcours répétés rendent le système vérifiable | Traces et parcours répétés ; repli et livraison indépendante ; contrôles spécifiés et relus | 17 à 19 |
+| II — De l'assistant à l'agent | Choix de l'étape suivante dans une boucle contrôlée, contexte limité, état de la tâche | Boucle bornée, visible et interruptible ; mémoire de travail tenue par le programme ; résultats bornés et déclarés, détail à la demande ; compaction de l'historique | 5 à 9 |
+| III — Capacité | Les capacités effectives tiennent aux opérations exposées, à leur contrat et à l'autorisation réelle | Outils servis par un protocole standard ; droits de l'utilisateur ; écritures en trois temps | 10 et 11 |
+| IV — Ce que l'agent lit | Ce que le modèle utilise dépend de ce que le *harness* remet dans son contexte, avec provenance et confiance | Aucune mémoire entre conversations ; recherche documentaire sourcée ; *skills* versionnés ; contenus externes non fiables | 12 à 15 |
+| V — Éprouver et maintenir | Un agent s'observe, s'évalue sur des parcours répétés et se maintient quand ce dont il dépend fait défaut ou change | Traces et parcours répétés ; repli, soumissions jamais rejouées, versions tracées ; contrôles spécifiés et relus | 16 à 18 |
 
 Ce découpage est une convention. Des synthèses académiques décrivent plutôt un agent par un modèle entouré de modules de mémoire, de planification et d'action (Wang et al., 2023a), ou par ses mémoires, son espace d'actions et sa procédure de décision (Sumers et al., 2023).
 
@@ -34,14 +34,14 @@ La conception suppose que le modèle se trompera parfois, ou sera détourné par
 
 ## Établi, pratique courante, zone d'incertitude
 
-Le tableau C-2 classe les limites rencontrées au fil du livre, notamment au chapitre 18, selon trois niveaux de certitude.
+Le tableau C-2 classe les limites rencontrées au fil du livre selon trois niveaux de certitude.
 
 *Tableau C-2 — Les limites selon leur niveau de certitude*
 
 | Limite | Établi | Pratique courante | Zone d'incertitude |
 |---|---|---|---|
 | Fiabilité | Une même demande peut suivre des trajectoires différentes | Contrôles du *harness*, autonomie bornée, parcours répétés | La constance atteignable pour un cas d'usage |
-| Tâches longues | Une erreur précoce se propage aux cycles suivants | Tours courts, étapes fixées par un *skill*, résultats partiels annoncés | Le rythme des progrès hors des tâches mesurées |
+| Tâches longues | Une erreur précoce se propage aux cycles suivants | Étapes fixées par un *skill*, résultats partiels annoncés | Le rythme des progrès hors des tâches mesurées |
 | Coût et latence | Le coût croît avec les cycles et la longueur du contexte | Limites de cycles, de durée et de budget ; étapes visibles | Le délai acceptable pour une demande donnée |
 | Dépendances | Un service de modèle peut changer sans action du concepteur | Parcours revérifiés, modèle de repli | La durée de vie d'un comportement ou d'un protocole |
 | Démonstration et usage | Une exécution réussie ne renseigne pas sur les cas non essayés | Jeu de parcours avec cas limites | La part des prototypes qui deviennent des capacités maintenues |
@@ -55,9 +55,9 @@ La conduite prudente consiste à consigner la raison de chaque précaution, puis
 
 ## Les questions ouvertes
 
-La sécurité reste sans réponse complète : dans les travaux cités au chapitre 15, les défenses examinées ont été contournées par des attaques adaptées à chacune (Nasr et al., 2025), et les schémas de conception qui agissent par l'architecture ont un coût en utilité (Beurer-Kellner et al., 2025). La gestion de ce que l'agent retient demeure empirique (chapitres 8 et 12). Évaluer sur le sens suppose une référence ou un juge, et un évaluateur produit par un modèle demande lui-même une validation humaine (Shankar et al., 2024).
+La sécurité reste sans réponse complète : dans les travaux cités au chapitre 15, les défenses examinées ont été contournées par des attaques adaptées à chacune (Nasr et al., 2025), et les schémas de conception qui agissent par l'architecture ont un coût en utilité (Beurer-Kellner et al., 2025). La gestion de ce que l'agent retient demeure empirique (chapitres 7 et 12). Évaluer sur le sens suppose une référence ou un juge, et un évaluateur produit par un modèle demande lui-même une validation humaine (Shankar et al., 2024).
 
-D'autres questions touchent les personnes. La présentation de l'incertitude influe sur le recours à une aide automatique, dans une tâche éloignée de la gestion (Cao et al., 2024). Le maintien des compétences, chez les utilisateurs comme chez les équipes qui font écrire leur *harness* par un outil, s'appuie sur des constats faits sur l'automatisation industrielle (Bainbridge, 1983), dont la transposition est une hypothèse. La frontière entre ce que les fournisseurs de modèles intègrent et ce que l'équipe construit elle-même est enfin en mouvement.
+D'autres questions touchent les personnes. La présentation de l'incertitude influe sur le recours à une aide automatique, dans une tâche éloignée de la gestion (Cao et al., 2024). Le maintien des compétences, chez les utilisateurs comme chez les équipes qui font écrire leur *harness* par un outil, s'appuie sur des constats faits sur l'automatisation industrielle (Bainbridge, 1983), dont la transposition est une hypothèse. La frontière entre ce que les fournisseurs de modèles intègrent et ce que l'équipe construit elle-même est en mouvement. L'empreinte énergétique d'un agent, enfin, reste mal connue : la consommation dépend de la tâche et du modèle, et les architectures génératives polyvalentes se sont révélées bien plus coûteuses que des modèles spécialisés dans une comparaison systématique (Luccioni et al., 2023), mais la conversion en énergie des appels et des *tokens* d'un agent particulier n'est pas mesurable avec précision depuis l'extérieur du service de modèle.
 
 ## Pour aller plus loin
 
@@ -87,6 +87,7 @@ Ces lectures ont toutes été citées dans le livre ; leurs résultats chiffrés
 - Hou, X., Zhao, Y., Wang, S., et Wang, H. (2025). *Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions*. arXiv:2503.23278.
 - Kapoor, S., Stroebl, B., Siegel, Z. S., et al. (2024). *AI Agents That Matter*. arXiv:2407.01502.
 - Kwa, T., West, B., Becker, J., et al. (2025). *Measuring AI Ability to Complete Long Software Tasks*. arXiv:2503.14499.
+- Luccioni, A. S., Jernite, Y., et Strubell, E. (2023). *Power Hungry Processing: Watts Driving the Cost of AI Deployment?*. arXiv:2311.16863.
 - Mei, L., Yao, J., Ge, Y., et al. (2025). *A Survey of Context Engineering for Large Language Models*. arXiv:2507.13334.
 - Mitchell, M., Ghosh, A., Luccioni, A. S., et Pistilli, G. (2025). *Fully Autonomous AI Agents Should Not be Developed*. arXiv:2502.02649.
 - Nasr, M., Carlini, N., Sitawarin, C., et al. (2025). *The Attacker Moves Second: Stronger Adaptive Attacks Bypass Defenses Against Llm Jailbreaks and Prompt Injections*. arXiv:2510.09023.
