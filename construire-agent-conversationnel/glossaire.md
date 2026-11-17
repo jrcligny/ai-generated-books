@@ -38,7 +38,7 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | cloisonnement | *data isolation* | Séparation imposée par le programme pour que la mémoire, les caches et les données d'un utilisateur ou d'une organisation n'atteignent pas un autre utilisateur ou une autre organisation. | chap. 12 |
 | *coding agent* | *coding agent* | Agent dont la tâche consiste à modifier un projet logiciel ; ses outils lisent et modifient des fichiers, lancent des commandes et exécutent des vérifications. Équivalent français : agent de programmation. | chap. 18 |
 | combinaison dangereuse | — | Réunion, dans un même agent, de l'accès à des données privées, de l'exposition à un contenu non fiable et de la capacité à communiquer vers l'extérieur ; elle forme un chemin complet pour faire sortir une information du système. | chap. 15 |
-| compaction | *compaction* | Réduction de l'historique d'une conversation longue, par troncature, élagage des résultats d'outils ou résumé ; elle oblige à choisir les informations qui restent disponibles. Le fil rouge compacte la conversation par résumé, au-delà d'un seuil, en conservant à l'identique les messages de l'utilisateur et l'état de conversation. | chap. 9 |
+| compaction | *compaction* | Réduction de ce que le programme rejoue au modèle lorsqu'une conversation s'allonge, par troncature, masquage des observations ou résumé ; l'historique complet reste conservé par le programme. Le fil rouge combine, au-delà d'un seuil, le masquage des anciens résultats d'outils et un résumé glissant à rubriques fixes, rédigé par un appel au modèle séparé ; l'état de conversation la traverse à l'identique. | chap. 9 |
 | compte de service | *service account* | Compte technique dont on dote un serveur pour interroger l'application ; pourvu de droits étendus, il oblige le serveur à vérifier lui-même ce que chaque utilisateur a le droit de voir. | chap. 11 |
 | condition d'arrêt | *stopping condition* | Situation qui met fin à la boucle : arrêt décidé par le modèle, imposé par le programme ou demandé par l'utilisateur. | chap. 6 |
 | consignes | *instructions* | Textes par lesquels le concepteur oriente le comportement du modèle, portés notamment par le *system prompt* ; le modèle a appris à leur accorder du poids, sans que leur respect soit assuré à chaque exécution. | chap. 3 |
@@ -69,7 +69,6 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 |---|---|---|---|
 | échantillonnage | *sampling* | Tirage au hasard du *token* suivant parmi les plus plausibles de la distribution calculée par le modèle. | chap. 2 |
 | échantillonnage par noyau | *nucleus sampling*, *top-p* | Réglage de décodage qui restreint le tirage au plus petit ensemble de *tokens* dont la probabilité cumulée atteint un seuil donné. | chap. 2 |
-| élagage des résultats d'outils | — | Réduction de l'historique qui conserve la trace des appels et remplace les anciens résultats volumineux par une mention abrégée. | chap. 9 |
 | enchaînement prédéfini | *workflow* | → voir *workflow* | chap. 5 |
 | état de conversation | *conversation state* | Petit ensemble d'informations structurées que le programme conserve à côté de l'historique, met à jour à partir des résultats d'outils et replace à l'identique dans le contexte à chaque cycle ; moyen le plus direct de réaliser la mémoire de travail. | chap. 7 |
 | excès de zèle | — | Forme d'échec de la boucle : le modèle fait davantage que ce qui était demandé ; ce travers devient un risque dès qu'il existe des outils d'écriture. | chap. 6 |
@@ -141,6 +140,7 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | Terme français | Terme anglais | Définition | Chapitre |
 |---|---|---|---|
 | *machine learning* | *machine learning* | Ensemble de techniques dans lesquelles un algorithme ajuste les paramètres d'un modèle à partir d'exemples, afin de reproduire la relation observée dans ces exemples. Équivalent français : apprentissage automatique. | chap. 1 |
+| masquage des observations | *observation masking* | Stratégie de compaction qui remplace les anciens résultats d'outils par un marqueur, en conservant les demandes d'appel. | chap. 9 |
 | *MCP* | *MCP* | → voir *Model Context Protocol* | chap. 10 |
 | mémoire de travail | *working memory* | Dans ce livre, sous-ensemble des informations dont l'agent a besoin pour mener la tâche en cours, que le *harness* place délibérément à sa portée à chaque cycle, quelle que soit la place qui reste dans la fenêtre de contexte. | chap. 7 |
 | mémoire persistante | *persistent memory*, souvent *long-term memory* | Informations enregistrées hors de la fenêtre de contexte, pendant une conversation ou après elle, et relues lors d'une conversation ultérieure. | chap. 12 |
@@ -201,6 +201,9 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | résolution de noms | *name resolution* | Étape confiée à un outil : il reçoit un nom et le type d'objet recherché, effectue la comparaison approchée dans le programme et renvoie les candidats avec leur identifiant. | chap. 10 |
 | ressource | *resource* | Dans le protocole *MCP*, données qu'un serveur propose à la lecture pour enrichir le contexte ; leur emploi est décidé par l'hôte. | chap. 10 |
 | résumé | *summarization* | Réduction de l'historique dans laquelle un modèle rédige une version plus courte de la partie ancienne, que le programme substitue aux échanges concernés. | chap. 9 |
+| résumé glissant | *rolling summary* | Stratégie de compaction qui garde mot pour mot les derniers tours et remplace ce qui précède par un résumé, mis à jour à chaque compaction à partir du résumé précédent. | chap. 9 |
+| résumé hiérarchique | *hierarchical summary* | Stratégie de compaction qui résume par blocs, puis résume les résumés obtenus. | chap. 9 |
+| résumé structuré ancré | *anchored structured summary* | Résumé dont les rubriques sont fixées à l'avance et complétées d'une compaction à l'autre plutôt que réécrites. | chap. 9 |
 | révélation progressive des outils | — | Pratique qui ne présente un outil au modèle que lorsque le *skill* qui en décrit l'usage est chargé. | chap. 14 |
 | rôle | *role* | Attribut d'un message, qui indique ce qu'il porte : consignes du concepteur (système), texte de la personne (utilisateur), réponse du modèle (assistant) ou résultat d'un outil (outil). | chap. 3 |
 
@@ -253,6 +256,7 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | *agent* | agent |
 | *agentic loop* | boucle agentique |
 | *allowlist* | liste d'autorisation |
+| *anchored structured summary* | résumé structuré ancré |
 | *approval fatigue* | fatigue d'approbation |
 | *artificial intelligence* | intelligence artificielle |
 | *assistant* | assistant |
@@ -297,6 +301,7 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | *guardrail* | garde-fou |
 | *hallucination* | hallucination |
 | *harness* | *harness* |
+| *hierarchical summary* | résumé hiérarchique |
 | *host* | hôte |
 | *human-in-the-loop* | validation humaine |
 | *hybrid search* | recherche hybride |
@@ -325,6 +330,7 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | *naming convention* | convention de nommage |
 | *non-determinism* | non-déterminisme |
 | *nucleus sampling* | échantillonnage par noyau |
+| *observation masking* | masquage des observations |
 | *parameter validation* | validation des paramètres |
 | *path traversal* | traversée de répertoires |
 | *persistent memory* | mémoire persistante |
@@ -342,6 +348,7 @@ Chaque entrée donne le terme tel que le livre l'emploie, son équivalent anglai
 | *resource* | ressource |
 | *retrieval-augmented generation* | génération augmentée par récupération |
 | *role* | rôle |
+| *rolling summary* | résumé glissant |
 | *sampling* | échantillonnage |
 | *sandbox* | *sandbox* |
 | *sandboxing* | *sandboxing* |
