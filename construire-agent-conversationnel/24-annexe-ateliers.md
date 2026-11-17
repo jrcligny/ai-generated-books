@@ -89,7 +89,7 @@ Un atelier facultatif, hors du parcours, construit l'option écartée au chapitr
 | 11 | La mémoire persistante | *workshops/11-no-memory/tests/* |
 | 12 | La recherche documentaire | *workshops/12-document-search/tests/* |
 | 13 | Les *skills* | *workshops/13-skills/tests/* |
-| 14 | Lire sans obéir | *workshops/14-read-without-obeying/tests/* |
+| 14 | La défense contre l'injection de prompt | *workshops/14-read-without-obeying/tests/* |
 | 15 | Les traces et l'évaluation | *workshops/15-evaluation/tests/* |
 | 16 | Les pannes | *workshops/16-failures/tests/* |
 | 17 | La spécification d'un contrôle | *workshops/17-specification/tests/* |

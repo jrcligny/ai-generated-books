@@ -1,8 +1,8 @@
-# Conclusion — Ce qui tient quand les modèles changent
+# Conclusion — Les principes qui restent valables quand les modèles changent
 
 Dans cette conclusion, vous verrez l'anatomie de l'agent du fil rouge rassemblée en une page, selon les cinq notions qui ont structuré les parties du livre. Vous retrouverez les principes qui ont guidé ses choix, vous distinguerez ce qui est établi de ce qui relève de la pratique courante ou reste incertain, puis vous parcourrez les questions ouvertes et quelques pistes de lecture, avant un exercice de synthèse sur l'ensemble du livre.
 
-## Une question courte, relue une dernière fois
+## Une question suivie à travers toute l'anatomie de l'agent
 
 Une comptable écrit à l'agent : « Pourquoi la facture de ce fournisseur est-elle bloquée ? », en donnant sa référence. Le modèle du chapitre 2, laissé seul devant cette phrase, la prolongerait par un texte plausible, sans savoir de quelle facture il s'agit.
 
@@ -16,11 +16,11 @@ Le tableau C-1 rassemble ce que chaque partie du livre a donné à l'agent du fi
 
 | Partie | Notion | Ce que l'agent en a reçu | Chapitres |
 |---|---|---|---|
-| I — Fondations : du modèle à l'assistant outillé | Le modèle produit des propositions ; le *harness* gère la conversation et l'exécution | *System prompt* court, historique tenu par le programme, outils décrits au modèle et exécutés par le *harness* | 1 à 4 |
-| II — Agir : la boucle, les outils et le droit d'agir | Choix de l'étape suivante dans une boucle contrôlée ; les capacités effectives tiennent aux opérations exposées, à leur contrat et à l'autorisation réelle | Boucle bornée, visible et interruptible ; outils servis par un protocole standard ; droits de l'utilisateur ; écritures en trois temps | 5 à 7 |
-| III — Garder le contexte utile | Contexte limité, état de la tâche : ce que le modèle doit garder sous les yeux n'y figure que si le programme l'y place | Mémoire de travail tenue par le programme ; résultats bornés et déclarés, détail à la demande ; compaction par masquage des anciens résultats d'outils et résumé glissant à rubriques fixes | 8 à 10 |
-| IV — Ce que l'agent lit | Ce que le modèle utilise dépend de ce que le *harness* remet dans son contexte, avec provenance et confiance | Aucune mémoire entre conversations ; recherche documentaire sourcée ; *skills* versionnés ; contenus externes non fiables | 11 à 14 |
-| V — Éprouver et maintenir | Un agent s'observe, s'évalue sur des parcours répétés et se maintient quand ce dont il dépend fait défaut ou change | Traces portant les versions en service, parcours répétés ; repli, soumissions jamais rejouées ; contrôles spécifiés et relus | 15 à 17 |
+| I — Comprendre le modèle et construire un assistant outillé | Le modèle produit des propositions ; le *harness* gère la conversation et l'exécution | *System prompt* court, historique tenu par le programme, outils décrits au modèle et exécutés par le *harness* | 1 à 4 |
+| II — Faire agir l'agent : boucle, outils et droits | Choix de l'étape suivante dans une boucle contrôlée ; les capacités effectives tiennent aux opérations exposées, à leur contrat et à l'autorisation réelle | Boucle bornée, visible et interruptible ; outils servis par un protocole standard ; droits de l'utilisateur ; écritures en trois temps | 5 à 7 |
+| III — Maîtriser le contexte d'une longue conversation | Contexte limité, état de la tâche : ce que le modèle doit garder sous les yeux n'y figure que si le programme l'y place | Mémoire de travail tenue par le programme ; résultats bornés et déclarés, détail à la demande ; compaction par masquage des anciens résultats d'outils et résumé glissant à rubriques fixes | 8 à 10 |
+| IV — Enrichir le contexte : souvenirs, documents, procédures et contenus tiers | Ce que le modèle utilise dépend de ce que le *harness* remet dans son contexte, avec provenance et confiance | Aucune mémoire entre conversations ; recherche documentaire sourcée ; *skills* versionnés ; contenus externes non fiables | 11 à 14 |
+| V — Évaluer l'agent et le maintenir en service | Un agent s'observe, s'évalue sur des parcours répétés et se maintient quand ce dont il dépend fait défaut ou change | Traces portant les versions en service, parcours répétés ; repli, soumissions jamais rejouées ; contrôles spécifiés et relus | 15 à 17 |
 
 Ce découpage est une convention. Des synthèses académiques décrivent plutôt un agent par un modèle entouré de modules de mémoire, de planification et d'action (Wang et al., 2023), ou par ses mémoires, son espace d'actions et sa procédure de décision (Sumers et al., 2023).
 

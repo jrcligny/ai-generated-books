@@ -1,6 +1,6 @@
 # Préface
 
-Un grand modèle de langage rédige. Un assistant répond à ce qu'on lui demande. Un agent décide de ce qu'il fait ensuite, appelle des outils et finit par agir sur une application. Ce livre décrit ce qui sépare ces trois systèmes, et surtout ce qu'il faut construire autour du modèle pour que le troisième reste utile, sûr et vérifiable.
+Un LLM rédige. Un assistant répond à ce qu'on lui demande. Un agent décide de ce qu'il fait ensuite, appelle des outils et finit par agir sur une application. Ce livre décrit ce qui sépare ces trois systèmes, et surtout ce qu'il faut construire autour du modèle pour que le troisième reste utile, sûr et vérifiable.
 
 Il suit un seul exemple du début à la fin : l'assistant d'une application de gestion des commandes, des achats et des factures, qui devient peu à peu un agent. Chaque chapitre part d'une difficulté rencontrée par cet agent, en tire une notion, puis montre la décision de conception qu'elle impose.
 
@@ -14,11 +14,11 @@ Aucune connaissance préalable de l'apprentissage automatique n'est nécessaire 
 
 Le livre compte dix-sept chapitres, répartis en cinq parties. Chaque partie s'ouvre sur une courte présentation de la question qu'elle traite.
 
-- La **partie I**, « Fondations : du modèle à l'assistant outillé » (chapitres 1 à 4), situe l'IA générative, explique comment un modèle produit du texte, puis construit un assistant et lui donne un premier outil.
-- La **partie II**, « Agir : la boucle, les outils et le droit d'agir » (chapitres 5 à 7), fait de l'assistant un agent : la boucle qui enchaîne les décisions, des outils conçus pour un lecteur qui est un modèle, et les règles qui encadrent les actions.
-- La **partie III**, « Garder le contexte utile » (chapitres 8 à 10), traite ce que l'agent tient à part, ce qu'il laisse entrer dans le contexte et ce qu'il en retire quand la conversation dure.
-- La **partie IV**, « Ce que l'agent lit » (chapitres 11 à 14), examine ce que l'agent peut remettre dans le contexte : souvenirs, documents, procédures, et contenus écrits par des tiers.
-- La **partie V**, « Éprouver et maintenir » (chapitres 15 à 17), montre comment observer et évaluer l'agent, le faire tenir quand une dépendance fait défaut, et confier une partie de sa construction à un agent de programmation.
+- La **partie I**, « Comprendre le modèle et construire un assistant outillé » (chapitres 1 à 4), situe l'IA générative, explique comment un modèle produit du texte, puis construit un assistant et lui donne un premier outil.
+- La **partie II**, « Faire agir l'agent : boucle, outils et droits » (chapitres 5 à 7), fait de l'assistant un agent : la boucle qui enchaîne les décisions, des outils que le modèle sait utiliser correctement, et les règles qui encadrent les actions.
+- La **partie III**, « Maîtriser le contexte d'une longue conversation » (chapitres 8 à 10), traite ce que l'agent tient à part, ce qu'il laisse entrer dans le contexte et ce qu'il en retire quand la conversation dure.
+- La **partie IV**, « Enrichir le contexte : souvenirs, documents, procédures et contenus tiers » (chapitres 11 à 14), examine ce que l'agent peut remettre dans le contexte : souvenirs, documents, procédures, et contenus écrits par des tiers.
+- La **partie V**, « Évaluer l'agent et le maintenir en service » (chapitres 15 à 17), montre comment observer et évaluer l'agent, le faire tenir quand une dépendance fait défaut, et confier une partie de sa construction à un agent de programmation.
 
 La conclusion rassemble les principes qui restent valables quand les modèles changent. L'annexe A explique comment réaliser les ateliers, et le glossaire donne l'équivalent anglais de chaque terme.
 
