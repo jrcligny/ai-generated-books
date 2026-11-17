@@ -31,7 +31,7 @@ Les ateliers se réalisent avec le dépôt compagnon, [jrcligny/workshops-build-
 ## Partie IV — Enrichir le contexte : souvenirs, documents, procédures et contenus tiers
 
 - [Ouverture de la partie IV](14-partie4.md)
-- [Chapitre 11 — Conserver des informations d'une conversation à l'autre : la mémoire persistante](15-ch11.md)
+- [Chapitre 11 — Mémoriser d'une conversation à l'autre : la mémoire persistante](15-ch11.md)
 - [Chapitre 12 — Répondre à partir de documents : la génération augmentée par récupération](16-ch12.md)
 - [Chapitre 13 — Charger des procédures à la demande : les skills](17-ch13.md)
 - [Chapitre 14 — Protéger l'agent contre l'injection de prompt](18-ch14.md)
