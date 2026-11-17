@@ -22,7 +22,7 @@ Le tableau C-1 rassemble ce que chaque partie du livre a donné à l'agent du fi
 | IV — Ce que l'agent lit | Ce que le modèle utilise dépend de ce que le *harness* remet dans son contexte, avec provenance et confiance | Aucune mémoire entre conversations ; recherche documentaire sourcée ; *skills* versionnés ; contenus externes non fiables | 11 à 14 |
 | V — Éprouver et maintenir | Un agent s'observe, s'évalue sur des parcours répétés et se maintient quand ce dont il dépend fait défaut ou change | Traces portant les versions en service, parcours répétés ; repli, soumissions jamais rejouées ; contrôles spécifiés et relus | 15 à 17 |
 
-Ce découpage est une convention. Des synthèses académiques décrivent plutôt un agent par un modèle entouré de modules de mémoire, de planification et d'action (Wang et al., 2023a), ou par ses mémoires, son espace d'actions et sa procédure de décision (Sumers et al., 2023).
+Ce découpage est une convention. Des synthèses académiques décrivent plutôt un agent par un modèle entouré de modules de mémoire, de planification et d'action (Wang et al., 2023), ou par ses mémoires, son espace d'actions et sa procédure de décision (Sumers et al., 2023).
 
 ## Les principes qui traversent le livre
 
@@ -30,7 +30,7 @@ La sortie du modèle est un texte sans effet par lui-même, que le *harness* lit
 
 Ce que le modèle lit se compose et se pèse d'après ce qu'il apporte à la décision suivante, avec sa provenance et la confiance qu'on peut lui accorder. L'autonomie se décide par famille de demandes : le fil rouge laisse le modèle enchaîner les lectures et lui retire la décision d'écrire. Un argumentaire contre le développement d'agents pleinement autonomes soutient que les risques pour les personnes augmentent avec le contrôle cédé au système (Mitchell et al., 2025).
 
-La conception suppose que le modèle se trompera parfois, ou sera détourné par un contenu lu, et borne ce qui peut s'ensuivre par l'architecture. Le comportement se mesure sur des parcours répétés, rejoués à chaque changement, y compris lorsque le service de modèle évolue sans action du concepteur (Chen et al., 2023a). Enfin, chaque composant a été ajouté en réponse à une difficulté constatée ; une étude de systèmes en production rapporte que les agents qu'elle décrit reposent sur des approches simples et contrôlables (Pan et al., 2025).
+La conception suppose que le modèle se trompera parfois, ou sera détourné par un contenu lu, et borne ce qui peut s'ensuivre par l'architecture. Le comportement se mesure sur des parcours répétés, rejoués à chaque changement, y compris lorsque le service de modèle évolue sans action du concepteur (Chen et al., 2023). Enfin, chaque composant a été ajouté en réponse à une difficulté constatée ; une étude de systèmes en production rapporte que les agents qu'elle décrit reposent sur des approches simples et contrôlables (Pan et al., 2025).
 
 ## Ce qui est établi, ce qui se pratique, ce qui reste incertain
 
@@ -75,7 +75,7 @@ Cinq idées résument le livre.
 
 Ces lectures sont citées dans les chapitres ou dans cette conclusion ; leurs résultats chiffrés vieillissent.
 
-- **Décrire un agent.** Wang et al. (2023a), Sumers et al. (2023) et l'article qui fait alterner raisonnement et action (Yao et al., 2022).
+- **Décrire un agent.** Wang et al. (2023), Sumers et al. (2023) et l'article qui fait alterner raisonnement et action (Yao et al., 2022).
 - **Contexte, outils et protocole.** Une synthèse sur l'ingénierie du contexte (Mei et al., 2025) et un état des lieux du *Model Context Protocol* (MCP) et de ses menaces (Hou et al., 2025).
 - **Sécurité.** L'étude d'applications compromises par injection de *prompt* indirecte (Greshake et al., 2023), Beurer-Kellner et al. (2025) et Nasr et al. (2025).
 - **Évaluation et production.** Un banc d'essai de service client avec outils et règles (Yao et al., 2024), une analyse des pratiques d'évaluation (Kapoor et al., 2024), Pan et al. (2025) et une étude par entretiens sur l'intégration d'assistants à des produits (Parnin et al., 2023).
@@ -89,22 +89,22 @@ Un atelier de maintenance souhaite un agent conversationnel intégré à son app
 
 Les travaux cités dans cette conclusion sont les suivants.
 
-- Bainbridge, L. (1983). *Ironies of Automation*. Automatica, 19(6), 775-779.
-- Beurer-Kellner, L., Buesser, B., Creţu, A.-M., et al. (2025). *Design Patterns for Securing LLM Agents against Prompt Injections*. arXiv:2506.08837.
-- Cao, S., Liu, A., et Huang, C.-M. (2024). *Designing for Appropriate Reliance: The Roles of AI Uncertainty Presentation, Initial User Decision, and User Demographics in AI-Assisted Decision-Making*. arXiv:2401.05612.
-- Chen, L., Zaharia, M., et Zou, J. (2023a). *How is ChatGPT's behavior changing over time?* arXiv:2307.09009.
-- Greshake, K., Abdelnabi, S., Mishra, S., et al. (2023). *Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection*. arXiv:2302.12173.
-- Hou, X., Zhao, Y., Wang, S., et Wang, H. (2025). *Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions*. arXiv:2503.23278.
-- Kapoor, S., Stroebl, B., Siegel, Z. S., et al. (2024). *AI Agents That Matter*. arXiv:2407.01502.
-- Kwa, T., West, B., Becker, J., et al. (2025). *Measuring AI Ability to Complete Long Software Tasks*. arXiv:2503.14499.
-- Luccioni, A. S., Jernite, Y., et Strubell, E. (2023). *Power Hungry Processing: Watts Driving the Cost of AI Deployment?* arXiv:2311.16863.
-- Mei, L., Yao, J., Ge, Y., et al. (2025). *A Survey of Context Engineering for Large Language Models*. arXiv:2507.13334.
-- Mitchell, M., Ghosh, A., Luccioni, A. S., et Pistilli, G. (2025). *Fully Autonomous AI Agents Should Not be Developed*. arXiv:2502.02649.
-- Nasr, M., Carlini, N., Sitawarin, C., et al. (2025). *The Attacker Moves Second: Stronger Adaptive Attacks Bypass Defenses Against LLM Jailbreaks and Prompt Injections*. arXiv:2510.09023.
-- Pan, M. Z., Arabzadeh, N., Cogo, R., et al. (2025). *Measuring Agents in Production*. arXiv:2512.04123.
-- Parnin, C., Soares, G., Pandita, R., et al. (2023). *Building Your Own Product Copilot: Challenges, Opportunities, and Needs*. arXiv:2312.14231.
-- Shankar, S., Zamfirescu-Pereira, J. D., Hartmann, B., et al. (2024). *Who Validates the Validators? Aligning LLM-Assisted Evaluation of LLM Outputs with Human Preferences*. arXiv:2404.12272.
-- Sumers, T. R., Yao, S., Narasimhan, K., et Griffiths, T. L. (2023). *Cognitive Architectures for Language Agents*. arXiv:2309.02427.
-- Wang, L., Ma, C., Feng, X., et al. (2023a). *A Survey on Large Language Model based Autonomous Agents*. arXiv:2308.11432.
-- Yao, S., Zhao, J., Yu, D., et al. (2022). *ReAct: Synergizing Reasoning and Acting in Language Models*. arXiv:2210.03629.
-- Yao, S., Shinn, N., Razavi, P., et Narasimhan, K. (2024). *τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains*. arXiv:2406.12045.
+- Bainbridge, L. (1983). *Ironies of Automation*. Automatica, 19(6), 775-779. https://doi.org/10.1016/0005-1098(83)90046-8.
+- Beurer-Kellner, L., Buesser, B., Creţu, A.-M., et al. (2025). *Design Patterns for Securing LLM Agents against Prompt Injections*. arXiv:2506.08837. https://doi.org/10.48550/arXiv.2506.08837.
+- Cao, S., Liu, A., et Huang, C.-M. (2024). *Designing for Appropriate Reliance: The Roles of AI Uncertainty Presentation, Initial User Decision, and User Demographics in AI-Assisted Decision-Making*. arXiv:2401.05612. https://doi.org/10.48550/arXiv.2401.05612.
+- Chen, L., Zaharia, M., et Zou, J. (2023). *How is ChatGPT's behavior changing over time?* arXiv:2307.09009. https://doi.org/10.48550/arXiv.2307.09009.
+- Greshake, K., Abdelnabi, S., Mishra, S., et al. (2023). *Not what you've signed up for: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection*. arXiv:2302.12173. https://doi.org/10.48550/arXiv.2302.12173.
+- Hou, X., Zhao, Y., Wang, S., et Wang, H. (2025). *Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions*. arXiv:2503.23278. https://doi.org/10.48550/arXiv.2503.23278.
+- Kapoor, S., Stroebl, B., Siegel, Z. S., et al. (2024). *AI Agents That Matter*. arXiv:2407.01502. https://doi.org/10.48550/arXiv.2407.01502.
+- Kwa, T., West, B., Becker, J., et al. (2025). *Measuring AI Ability to Complete Long Software Tasks*. arXiv:2503.14499. https://doi.org/10.48550/arXiv.2503.14499.
+- Luccioni, A. S., Jernite, Y., et Strubell, E. (2023). *Power Hungry Processing: Watts Driving the Cost of AI Deployment?* arXiv:2311.16863. https://doi.org/10.48550/arXiv.2311.16863.
+- Mei, L., Yao, J., Ge, Y., et al. (2025). *A Survey of Context Engineering for Large Language Models*. arXiv:2507.13334. https://doi.org/10.48550/arXiv.2507.13334.
+- Mitchell, M., Ghosh, A., Luccioni, A. S., et Pistilli, G. (2025). *Fully Autonomous AI Agents Should Not be Developed*. arXiv:2502.02649. https://doi.org/10.48550/arXiv.2502.02649.
+- Nasr, M., Carlini, N., Sitawarin, C., et al. (2025). *The Attacker Moves Second: Stronger Adaptive Attacks Bypass Defenses Against LLM Jailbreaks and Prompt Injections*. arXiv:2510.09023. https://doi.org/10.48550/arXiv.2510.09023.
+- Pan, M. Z., Arabzadeh, N., Cogo, R., et al. (2025). *Measuring Agents in Production*. arXiv:2512.04123. https://doi.org/10.48550/arXiv.2512.04123.
+- Parnin, C., Soares, G., Pandita, R., et al. (2023). *Building Your Own Product Copilot: Challenges, Opportunities, and Needs*. arXiv:2312.14231. https://doi.org/10.48550/arXiv.2312.14231.
+- Shankar, S., Zamfirescu-Pereira, J. D., Hartmann, B., et al. (2024). *Who Validates the Validators? Aligning LLM-Assisted Evaluation of LLM Outputs with Human Preferences*. arXiv:2404.12272. https://doi.org/10.48550/arXiv.2404.12272.
+- Sumers, T. R., Yao, S., Narasimhan, K., et Griffiths, T. L. (2023). *Cognitive Architectures for Language Agents*. arXiv:2309.02427. https://doi.org/10.48550/arXiv.2309.02427.
+- Wang, L., Ma, C., Feng, X., et al. (2023). *A Survey on Large Language Model based Autonomous Agents*. arXiv:2308.11432. https://doi.org/10.48550/arXiv.2308.11432.
+- Yao, S., Zhao, J., Yu, D., et al. (2022). *ReAct: Synergizing Reasoning and Acting in Language Models*. arXiv:2210.03629. https://doi.org/10.48550/arXiv.2210.03629.
+- Yao, S., Shinn, N., Razavi, P., et Narasimhan, K. (2024). *τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains*. arXiv:2406.12045. https://doi.org/10.48550/arXiv.2406.12045.
