@@ -19,14 +19,14 @@ Les ateliers se réalisent avec le dépôt compagnon présenté à l'annexe A : 
 
 - [Chapitre 5 — Assistant ou agent : ce qui change vraiment](ch05.md)
 - [Chapitre 6 — La boucle agentique](ch06.md)
-- [Chapitre 7 — Garder le fil : l'état de la conversation](ch07.md)
-- [Chapitre 8 — Découvrir le contexte progressivement](ch08.md)
-- [Chapitre 9 — Compacter le contexte](ch09.md)
+- [Chapitre 7 — Concevoir des outils pour un lecteur qui est un modèle](ch07.md)
+- [Chapitre 8 — Le droit d'agir : permissions et contrôle humain](ch08.md)
 
-## Partie III — Capacité
+## Partie III — Garder le contexte utile
 
-- [Chapitre 10 — Concevoir des outils pour un lecteur qui est un modèle](ch10.md)
-- [Chapitre 11 — Le droit d'agir : permissions et contrôle humain](ch11.md)
+- [Chapitre 9 — Garder le fil : l'état de la conversation](ch09.md)
+- [Chapitre 10 — Découvrir le contexte progressivement](ch10.md)
+- [Chapitre 11 — Compacter le contexte](ch11.md)
 
 ## Partie IV — Ce que l'agent lit
 
