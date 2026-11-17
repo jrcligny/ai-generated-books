@@ -1,0 +1,7 @@
+# Partie III — Garder le contexte utile
+
+Le modèle est sans état : ce dont il paraît se souvenir figure dans son contexte, parce que le *harness* l'y a placé. Les consignes rédigées par le concepteur n'y représentent qu'une petite partie de ce que le modèle lit. Le reste est assemblé à chaque cycle par le programme : les descriptions d'outils, les résultats obtenus et la forme sous laquelle ils sont transmis, la part de l'historique conservée, les informations ajoutées en cours de route. Ce travail d'assemblage porte le nom d'ingénierie du contexte, que le chapitre 9 définit.
+
+Dans une conversation qui dure, ce travail pose trois questions. Que faut-il tenir à part, pour que ce que la tâche a établi reste valable d'un cycle à l'autre ? Que faut-il laisser entrer dans le contexte, à quel moment, sous quelle forme et en quelle quantité ? Et que faut-il en retirer quand il est chargé : que résumer, que garder à l'identique ? Le chapitre 8 traite la première question, avec la mémoire de travail et l'état de conversation. Le chapitre 9 traite la deuxième, avec la divulgation progressive. Le chapitre 10 traite la troisième, avec la compaction, et son atelier construit à la fois l'état de conversation et la compaction qui doit le préserver.
+
+Les trois chapitres reposent sur la même idée : le contexte se conçoit comme un budget. Chaque élément qui y entre doit justifier sa place par ce qu'il apporte à la décision suivante.
