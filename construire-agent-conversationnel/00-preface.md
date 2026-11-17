@@ -1,6 +1,6 @@
 # Préface
 
-Un grand modèle de langage rédige. Un assistant répond à ce qu'on lui demande. Un agent décide de ce qu'il fait ensuite, appelle des outils et finit par agir sur une application. Ce livre décrit ce qui sépare ces trois systèmes, et surtout ce qu'il faut construire autour du modèle pour que le troisième reste utile, sûr et vérifiable.
+Un LLM rédige. Un assistant répond à ce qu'on lui demande. Un agent décide de ce qu'il fait ensuite, appelle des outils et finit par agir sur une application. Ce livre décrit ce qui sépare ces trois systèmes, et surtout ce qu'il faut construire autour du modèle pour que le troisième reste utile, sûr et vérifiable.
 
 Il suit un seul exemple du début à la fin : l'assistant d'une application de gestion des commandes, des achats et des factures, qui devient peu à peu un agent. Chaque chapitre part d'une difficulté rencontrée par cet agent, en tire une notion, puis montre la décision de conception qu'elle impose.
 

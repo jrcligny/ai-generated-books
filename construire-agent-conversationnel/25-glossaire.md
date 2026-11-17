@@ -71,7 +71,7 @@ Le tableau G-1 classe les entrées par ordre alphabétique.
 | garde-fou | *guardrail* | Contrôle qui encadre ce que l'agent peut faire, comme la confirmation par l'utilisateur, la limitation des droits ou les limites imposées à la boucle. | chap. 4 |
 | génération augmentée par récupération | *retrieval-augmented generation*, RAG | Principe qui combine ce que le modèle a appris dans ses paramètres avec une mémoire externe interrogée au moment de répondre : on y recherche les passages les plus proches de la question et on les fournit au modèle avec celle-ci. | chap. 4 et 12 |
 | génération autorégressive | *autoregressive generation* | Mode de génération dans lequel chaque *token* produit devient une entrée pour les suivants. | chap. 2 |
-| grand modèle de langage | *large language model*, LLM | Modèle de fondation dont la matière est le texte. Le livre emploie couramment le sigle LLM. | chap. 1 |
+| grand modèle de langage | *large language model* | → voir LLM | chap. 1 |
 | hallucination | *hallucination* | Suite plausible produite par le modèle, mais infidèle à la réalité ou aux sources fournies. | chap. 2 |
 | hallucination extrinsèque | *extrinsic hallucination* | Hallucination dans laquelle le texte produit avance quelque chose que la source fournie ne permet ni de confirmer ni d'infirmer. | chap. 2 |
 | hallucination intrinsèque | *intrinsic hallucination* | Hallucination dans laquelle le texte produit contredit la source fournie au modèle. | chap. 2 |
@@ -97,7 +97,7 @@ Le tableau G-1 classe les entrées par ordre alphabétique.
 | limite de débit | *rate limit* | Nombre maximal de requêtes ou de *tokens* qu'un service accepte par unité de temps. | chap. 16 |
 | limite de durée | *time limit* | Borne de temps appliquée au tour entier et à chaque appel d'outil, afin qu'un outil bloqué n'immobilise pas la boucle. | chap. 7 |
 | liste d'autorisation | *allowlist* | Liste qui énumère les destinations réseau permises ; toute autre destination est refusée. | chap. 7 |
-| LLM | LLM | → voir grand modèle de langage | chap. 1 |
+| LLM | *large language model* | Grand modèle de langage : modèle de fondation dont la matière est le texte, entraîné sur de très grands volumes de texte à en prédire la suite. Le livre emploie le sigle, invariable. | chap. 1 |
 | *machine learning* | *machine learning* | Ensemble de techniques dans lesquelles un algorithme ajuste les paramètres d'un modèle à partir d'exemples, afin de reproduire la relation observée dans ces exemples. Équivalent français : apprentissage automatique. | chap. 1 |
 | masquage des observations | *observation masking* | Stratégie de compaction qui remplace les anciens résultats d'outils par un marqueur, en conservant les demandes d'appel. | chap. 10 |
 | MCP | MCP | → voir *Model Context Protocol* | chap. 6 |
@@ -258,10 +258,9 @@ Le tableau G-2 permet la recherche inverse, du terme anglais au terme employé d
 | *intrinsic hallucination* | hallucination intrinsèque |
 | *JavaScript Object Notation* | JSON |
 | *language model* | modèle de langage |
-| *large language model* | grand modèle de langage |
+| *large language model* | LLM |
 | *least privilege* | moindre privilège (principe du) |
 | *lexical search* | recherche lexicale |
-| LLM | grand modèle de langage |
 | *LLM-as-a-judge* | modèle juge |
 | *load balancer* | répartiteur de charge |
 | *log* | journal |

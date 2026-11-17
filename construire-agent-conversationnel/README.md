@@ -10,7 +10,7 @@ Les ateliers se réalisent avec le dépôt compagnon, [jrcligny/workshops-build-
 
 - [Ouverture de la partie I](01-partie1.md)
 - [Chapitre 1 — L'IA générative dans le paysage de l'IA](02-ch01.md)
-- [Chapitre 2 — Comment un grand modèle de langage génère du texte](03-ch02.md)
+- [Chapitre 2 — Comment un LLM génère du texte](03-ch02.md)
 - [Chapitre 3 — Du modèle à l'assistant : rôles, consignes et harness](04-ch03.md)
 - [Chapitre 4 — Les outils : quand le modèle demande à agir](05-ch04.md)
 
