@@ -1,20 +1,31 @@
 # Fondamentaux du Machine Learning
 
-Statut : plan proposé pour validation. Le manuscrit n'est pas rédigé : aucun chapitre, aucune préface, aucune annexe n'a encore de fichier.
-
 Livre autonome, en français, pour un ingénieur logiciel expérimenté qui veut construire des modèles : préparer des données, entraîner, mesurer, régler et mettre en service. Les exemples de code sont synthétiques ou tirés des jeux classiques de scikit-learn. Chaque chapitre dit en quoi la notion sert à cette construction.
 
-Le découpage, l'ordre retenu et les objectifs sont dans le [plan](PLAN.md). Les conventions de style, tirées du guide O'Reilly et adaptées au français, sont dans [STYLE.md](STYLE.md). Le plan est un document de travail : il ne fera pas partie du livre publié.
+La partie I est rédigée. Le découpage de la suite, l'ordre retenu et les objectifs sont dans le [plan](PLAN.md). Les conventions de style, tirées du guide O'Reilly et adaptées au français, sont dans [STYLE.md](STYLE.md). Ces deux fichiers sont des documents de travail : ils ne font pas partie du livre publié.
 
-Les chapitres seront ajoutés après validation du plan, un document Markdown par pièce, préfixé dans l'ordre de lecture, comme dans l'autre livre du dépôt. La table ci-dessous fixe les noms prévus. Tant que le plan n'est pas validé, ces fichiers n'existent pas.
+- [Préface](00-preface.md)
+
+## Partie I. Ajuster un modèle
+
+- [Ouverture de la partie I](01-partie1.md)
+- [Chapitre 1. Cadrer un problème avant d'entraîner quoi que ce soit](02-ch01.md)
+- [Chapitre 2. La régression linéaire : une somme pondérée](03-ch02.md)
+- [Chapitre 3. La fonction de coût et la descente de gradient](04-ch03.md)
+
+## Annexe et glossaire
+
+Les solutions couvrent les exercices de la partie I. Le glossaire aussi. Les chapitres suivants y seront ajoutés.
+
+- [Annexe A. Solutions des exercices](22-annexe-a-solutions.md)
+- [Glossaire français-anglais](23-glossaire.md)
+
+## À venir
+
+Les fichiers ci-dessous ne sont pas encore rédigés. Les noms suivent l'ordre de lecture.
 
 | Fichier prévu | Pièce |
 |---|---|
-| `00-preface.md` | Préface |
-| `01-partie1.md` | Partie I. Ajuster un modèle |
-| `02-ch01.md` | Chapitre 1. Cadrer un problème avant d'entraîner quoi que ce soit |
-| `03-ch02.md` | Chapitre 2. La régression linéaire : une somme pondérée |
-| `04-ch03.md` | Chapitre 3. La fonction de coût et la descente de gradient |
 | `05-partie2.md` | Partie II. Préparer, diagnostiquer, contraindre |
 | `06-ch04.md` | Chapitre 4. Préparer les données et construire les variables |
 | `07-ch05.md` | Chapitre 5. Polynômes, sous-apprentissage, surapprentissage |
@@ -32,7 +43,5 @@ Les chapitres seront ajoutés après validation du plan, un document Markdown pa
 | `19-ch15.md` | Chapitre 15. Embeddings et représentations |
 | `20-ch16.md` | Chapitre 16. Réseaux de neurones : de la couche au Transformer |
 | `21-conclusion.md` | Conclusion |
-| `22-annexe-a-solutions.md` | Annexe A — Solutions des exercices |
-| `23-glossaire.md` | Glossaire français-anglais |
 
 [Retour à la liste des livres](../README.md)
