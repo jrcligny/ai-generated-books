@@ -1,10 +1,10 @@
-# Fondamentaux du Machine Learning (Priorité 1)
+# Fondamentaux du Machine Learning
 
 Statut : plan proposé pour validation. Le manuscrit n'est pas rédigé : aucun chapitre, aucune préface, aucune annexe n'a encore de fichier.
 
-Livre autonome, en français, pour un ingénieur logiciel expérimenté qui a déjà mis des modèles de langage en production et veut comprendre l'apprentissage automatique classique assez bien pour diagnostiquer un échec et choisir un levier. Le volume visé est de 80 à 150 pages, avec une cible d'environ 123 pages au format O'Reilly (7 × 9,19 in).
+Livre autonome, en français, pour un ingénieur logiciel expérimenté qui conçoit et met en production des modèles de langage et des agents, et veut comprendre l'apprentissage automatique classique assez bien pour diagnostiquer un échec et choisir un levier. Les exemples de code sont synthétiques ; chaque chapitre relie la notion à ce travail. Le volume visé est de 80 à 150 pages, avec une cible d'environ 123 pages au format O'Reilly (7 × 9,19 in).
 
-Le découpage, les objectifs, les estimations de pages, le fil rouge et les conventions d'écriture sont dans le [plan](PLAN.md). Ce fichier est un document de travail : il ne fera pas partie du livre publié.
+Le découpage, les objectifs, les estimations de pages et les conventions d'écriture sont dans le [plan](PLAN.md). Ce fichier est un document de travail : il ne fera pas partie du livre publié.
 
 Les chapitres seront ajoutés après validation du plan, un document Markdown par pièce, préfixé dans l'ordre de lecture, comme dans l'autre livre du dépôt. La table ci-dessous fixe les noms prévus. Tant que le plan n'est pas validé, ces fichiers n'existent pas.
 
