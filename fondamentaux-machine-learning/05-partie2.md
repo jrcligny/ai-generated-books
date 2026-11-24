@@ -1,0 +1,7 @@
+# Partie II. Préparer, diagnostiquer, contraindre
+
+La droite de la partie I suppose une table déjà propre, et une forme qui est la bonne. Dès que l'on construit un modèle pour de vrai, la table ne l'est pas, et la forme peut être trop pauvre ou trop riche. Un entraînement qui réussit sur le fichier et échoue à l'appel se joue souvent ici, avant le choix d'une famille plus savante.
+
+Le Chapitre 4 rend les colonnes utilisables : une valeur absente, une catégorie, une unité qui écrase les autres. Les transformations apprises sur l'entraînement doivent être celles de l'appel, sinon le modèle servi n'est plus celui que l'on a mesuré. Le Chapitre 5 construit des colonnes polynomiales et nomme les deux échecs, trop rigide ou trop libre, que l'on retrouvera en approfondissant un arbre ou en allongeant un entraînement. Le Chapitre 6 borne la somme du Chapitre 2 pour répondre à une classe, jusqu'à la répartition d'un vecteur de scores. Le Chapitre 7 sépare ce qui sert à ajuster, ce qui sert à choisir, et le chiffre que l'on a le droit d'annoncer. Le Chapitre 8 freine un modèle qui colle au bruit, une fois que ce chiffre a un sens.
+
+À la fin de la partie, vous savez préparer une petite table, voir qu'une forme se trompe sur des cas nouveaux, classer, mesurer sans vous mentir, et limiter les coefficients. Vous ne savez pas encore entraîner un arbre ni chercher ses réglages. C'est la partie III.
