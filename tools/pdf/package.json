@@ -1,0 +1,9 @@
+{
+  "name": "pdf-du-livre",
+  "private": true,
+  "description": "Génération du PDF du livre « De l'assistant à l'agent »",
+  "dependencies": {
+    "mermaid": "^12.3.0",
+    "puppeteer-core": "^25.18.0"
+  }
+}
