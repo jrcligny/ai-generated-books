@@ -1,6 +1,6 @@
 # ai-generated-books
 
-Livres rédigés avec l'aide d'outils d'IA générative.
+Livres rédigés avec l'aide d'outils d'IA générative, partagés comme supports de formation.
 
 ## Livres
 
