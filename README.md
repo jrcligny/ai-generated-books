@@ -1,6 +1,6 @@
 # ai-generated-books
 
-AI-generated books shared as training materials. The books are written in French.
+Books generated entirely by AI, with a human-designed learning path, used as training materials. Written in French.
 
 ## Livres
 
