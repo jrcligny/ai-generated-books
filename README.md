@@ -1,6 +1,6 @@
 # ai-generated-books
 
-Livres rédigés avec l'aide d'outils d'IA générative, partagés comme supports de formation.
+AI-generated books shared as training materials. The books are written in French.
 
 ## Livres
 
