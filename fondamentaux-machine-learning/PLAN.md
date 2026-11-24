@@ -53,10 +53,7 @@ Pile prévue, versions épinglées dans la préface au moment de la rédaction, 
 
 ## 4. Exemples, et le lien avec votre travail
 
-Le livre ne suit pas de produit fictif. Le mécanisme s'apprend sur un exemple numérique petit, que l'on peut refaire. Le lien avec le travail du lecteur — construire un modèle, pas seulement appeler un LLM — est dit à part, dans chaque chapitre, sous deux formes :
-
-- la ligne de plan **Pourquoi c'est utile pour vous**, qui nomme le geste de construction correspondant ;
-- la section `## Ce que ça change en pratique`, qui donne le levier (quelle transformation, quel réglage, quel jeu de validation, quel signal) et le cas où ce levier ne s'applique pas.
+Le livre ne suit pas de produit fictif. Le mécanisme s'apprend sur un exemple numérique petit, que l'on peut refaire. La finalité de chaque partie et de chaque chapitre apparaît de façon implicite dans son introduction, sans rubrique dédiée : ni titre, ni encadré, ni liste d'usages. L'ouverture de partie relie le mécanisme aux chapitres qui suivent. Les paragraphes d'ouverture du chapitre, avant « Objectifs », font sentir à quoi les notions serviront quand on construit un modèle. La section `## Ce que ça change en pratique`, en fin de chapitre, donne ensuite le levier (quelle transformation, quel réglage, quel jeu de validation, quel signal) et le cas où ce levier ne s'applique pas.
 
 Un lien avec un LLM ou un agent n'apparaît que lorsqu'il éclaire le même mécanisme (un logit, un learning rate, une fuite de benchmark, un embedding). Il ne remplace pas l'exemple numérique, et il n'est pas l'unique angle du chapitre.
 
@@ -155,8 +152,8 @@ Il n'y a pas de cible ni de plafond de pages. Les nombres ci-dessous sont un ord
 L'ordre est fixe.
 
 1. Titre de niveau 1 : `Chapitre N. Titre en casse de phrase`, suivi d'un paragraphe.
-2. Ouverture : `Dans ce chapitre, vous…`, deux à quatre phrases. Elles disent le mécanisme, puis pourquoi il compte pour qui construit un modèle.
-3. `## Objectifs`, précédé de ce paragraphe d'ouverture. Quatre objectifs observables, à l'infinitif.
+2. Ouverture, avant tout titre de section : un ou deux paragraphes. La finalité y apparaît de façon implicite, sans rubrique dédiée. Le lecteur comprend à quoi les notions serviront quand on construit un modèle, avant qu'elles ne soient définies. Pas de liste d'usages.
+3. `## Objectifs`, précédé de cette ouverture. Quatre objectifs observables, à l'infinitif.
 4. Corps : intuition, formule commentée, exemple numérique sur un jeu synthétique ou classique, code. Le terme nouveau est en italique à la première occurrence. Figure, tableau et exemple numérotés sont annoncés avant (`la Figure 2-1`, légende `Figure 2-1. …`). Pas de scénario métier suivi d'un chapitre à l'autre.
 5. `## Ce que ça change en pratique` : le levier quand vous construisez ou servez un modèle (transformation, hyperparamètre, protocole de validation, seuil, signal de surveillance), la décision qu'il permet, et le cas où il ne s'applique pas. Un lien avec un LLM ou un agent n'y figure que s'il éclaire le même levier.
 6. `## Exercices` : trois exercices. L'énoncé tient dans le chapitre ; la solution développée est à l'annexe A. Un exercice peut demander de reporter la notion sur un modèle que le lecteur entraîne déjà.
@@ -168,7 +165,7 @@ L'ordre est fixe.
 
 **Préface.** À qui s'adresse le livre, ce qu'il suppose (Python, un appel d'API déjà écrit, aucune analyse), l'organisation en quatre parties, la façon dont les exemples numériques et les sections pratiques se répondent, la pile et la graine, un renvoi à [STYLE.md](STYLE.md), la façon dont le livre a été écrit. L'aide d'outils d'IA générative est dite.
 
-**Ouvertures de partie.** La question de la partie, ce que chaque chapitre consomme du précédent, ce que le lecteur sait construire en sortant.
+**Ouvertures de partie.** La question de la partie, ce que chaque chapitre consomme du précédent, ce que le lecteur sait construire en sortant. La finalité de la partie y est implicite, reliée aux chapitres, sans rubrique dédiée.
 
 - Partie I — Ajuster un modèle. Quelle décision, puis la somme pondérée et la descente qui trouve ses paramètres, sur une table encore propre.
 - Partie II — Préparer, diagnostiquer, contraindre. Rendre une table utilisable, voir le modèle échouer quand on lui donne trop ou trop peu, passer à une classe, mesurer, limiter.
@@ -187,7 +184,7 @@ L'ordre est fixe.
 
 **Indicatif : environ 8 pages.** Vocabulaire minimum et décision d'avant l'algorithme : quelle cible, quelles informations existeront au moment de la prédiction, à quoi on verra que le modèle est utile. Le supervisé est situé par rapport au non supervisé et au renforcement, sans les développer. L'exemple est un tableau de quelques lignes.
 
-**Pourquoi c'est utile pour vous.** Construire un modèle commence par nommer la décision et ce qui sera connu à l'appel : prévoir une grandeur, classer un événement, grouper des objets, repérer un cas aberrant. La même discipline dit quand une colonne est une fuite, qu'il s'agisse d'un score métier ou d'un label d'évaluation écrit après coup.
+**Dans l'ouverture, sans titre.** Construire un modèle commence par nommer la décision et ce qui sera connu à l'appel : prévoir une grandeur, classer un événement, grouper des objets, repérer un cas aberrant. La même discipline dit quand une colonne est une fuite, qu'il s'agisse d'un score métier ou d'un label d'évaluation écrit après coup.
 
 **Objectifs.**
 
@@ -204,7 +201,7 @@ L'ordre est fixe.
 
 **Indicatif : environ 8 pages.** Prédiction égale à un décalage plus une somme pondérée. Forme close sur cinq points, puis scikit-learn sur `make_regression`. Une variable est à une échelle cent fois plus grande : les coefficients deviennent illisibles. La réparation attend le chapitre 4, pour que le lecteur voie le dégât avant la recette. La forme matricielle reste un aparté : elle n'est pas nécessaire pour construire le modèle.
 
-**Pourquoi c'est utile pour vous.** Une ligne de base, une tête linéaire sur des variables déjà prêtes, et la dernière couche d'un réseau calculent cette somme. Lire un coefficient, c'est voir quelle variable tire la prédiction, à condition que les échelles soient comparables. Un logit, avant un softmax, est la même somme : le chapitre 6 y revient.
+**Dans l'ouverture, sans titre.** Une ligne de base, une tête linéaire sur des variables déjà prêtes, et la dernière couche d'un réseau calculent cette somme. Lire un coefficient, c'est voir quelle variable tire la prédiction, à condition que les échelles soient comparables. Un logit, avant un softmax, est la même somme : le chapitre 6 y revient.
 
 **Objectifs.**
 
@@ -221,7 +218,7 @@ L'ordre est fixe.
 
 **Indicatif : environ 8 pages.** L'erreur quadratique moyenne comme paysage, un pas dans le sens qui le diminue, batch, stochastique et mini-batch, sur le jeu du chapitre 2. Une variable mal échelonnée fait exploser le pas : le lien avec le chapitre 4 est explicite.
 
-**Pourquoi c'est utile pour vous.** Tout modèle que vous entraînez vraiment — régression, boosting, embedding, réseau — déplace ses paramètres en descendant un coût. Le learning rate est la longueur du pas. Le mini-batch explique le bruit d'une courbe d'entraînement, y compris celle d'un fine-tuning.
+**Dans l'ouverture, sans titre.** Tout modèle que vous entraînez vraiment — régression, boosting, embedding, réseau — déplace ses paramètres en descendant un coût. Le learning rate est la longueur du pas. Le mini-batch explique le bruit d'une courbe d'entraînement, y compris celle d'un fine-tuning.
 
 **Objectifs.**
 
@@ -238,7 +235,7 @@ L'ordre est fixe.
 
 **Indicatif : environ 9 pages.** Nettoyage, valeurs manquantes, encodage des catégories, normalisation. Le chapitre reprend le modèle du chapitre 2 après mise à l'échelle et montre les coefficients redevenus lisibles. L'encodage one-hot est la représentation creuse qu'un embedding (chapitre 15) densifiera. L'encodage par la cible est signalé comme une fuite, mesurée au chapitre 7, pas enseigné comme une technique.
 
-**Pourquoi c'est utile pour vous.** Le temps de construction d'un modèle passe d'abord dans la table : une valeur absente, une catégorie nouvelle le jour de l'appel, une colonne dont l'unité écrase les autres. Un pipeline qui réestime la moyenne à l'appel n'est plus le modèle que vous avez mesuré. Ce chapitre est celui que tous les suivants supposent.
+**Dans l'ouverture, sans titre.** Le temps de construction d'un modèle passe d'abord dans la table : une valeur absente, une catégorie nouvelle le jour de l'appel, une colonne dont l'unité écrase les autres. Un pipeline qui réestime la moyenne à l'appel n'est plus le modèle que vous avez mesuré. Ce chapitre est celui que tous les suivants supposent.
 
 **Objectifs.**
 
@@ -255,7 +252,7 @@ L'ordre est fixe.
 
 **Indicatif : environ 8 pages.** Une régression polynomiale est une régression linéaire sur des colonnes construites, donc un cas du chapitre 4 qui change la capacité. Sous-apprentissage, surapprentissage, biais, variance, courbes d'apprentissage, sur une courbe synthétique bruitée. La contrainte elle-même attend le chapitre 8.
 
-**Pourquoi c'est utile pour vous.** Ajouter des variables, approfondir un arbre ou allonger un entraînement peut faire baisser l'erreur d'entraînement et dégrader les exemples tenus à l'écart. La courbe d'apprentissage dit si le levier est plus de données, une forme plus riche, ou une contrainte. Un fine-tuning qui dégrade un modèle sur des prompts nouveaux est ce phénomène ; un benchmark déjà vu est une fuite, traitée au chapitre 7.
+**Dans l'ouverture, sans titre.** Ajouter des variables, approfondir un arbre ou allonger un entraînement peut faire baisser l'erreur d'entraînement et dégrader les exemples tenus à l'écart. La courbe d'apprentissage dit si le levier est plus de données, une forme plus riche, ou une contrainte. Un fine-tuning qui dégrade un modèle sur des prompts nouveaux est ce phénomène ; un benchmark déjà vu est une fuite, traitée au chapitre 7.
 
 **Objectifs.**
 
@@ -272,7 +269,7 @@ L'ordre est fixe.
 
 **Indicatif : environ 8 pages.** La sigmoïde borne la somme du chapitre 2. La frontière est le lieu du seuil. La log loss est montrée sur deux scores avant la formule. Entraînement sur `make_classification` à deux variables. Un listing applique un softmax à quatre logits et une température : le cas à plusieurs classes, sans entraîner de modèle de langage.
 
-**Pourquoi c'est utile pour vous.** Dès que la cible est une classe, la sortie utile est un score borné, pas une grandeur. Vous vous en servez pour classer un événement, un ticket, un défaut. Le même softmax, appliqué à des logits, est la sortie d'un modèle à plusieurs classes, et aussi celle d'un LLM sur son vocabulaire : la température se règle au moment de tirer un token, elle ne change pas l'entraînement.
+**Dans l'ouverture, sans titre.** Dès que la cible est une classe, la sortie utile est un score borné, pas une grandeur. Vous vous en servez pour classer un événement, un ticket, un défaut. Le même softmax, appliqué à des logits, est la sortie d'un modèle à plusieurs classes, et aussi celle d'un LLM sur son vocabulaire : la température se règle au moment de tirer un token, elle ne change pas l'entraînement.
 
 **Objectifs.**
 
@@ -289,7 +286,7 @@ L'ordre est fixe.
 
 **Indicatif : environ 9 pages.** L'entraînement ajuste, la validation choisit, le test mesure une fois. Fuites sur un jeu synthétique : cible recopiée, prétraitement ajusté sur tout le jeu, doublons, ordre temporel cassé. Métriques de régression et de classification, matrice de confusion, précision, rappel, F1, ROC, précision-rappel sur une classe rare. Le biais-variance n'est pas réenseigné. La validation croisée est annoncée comme la réponse du chapitre 10 quand un seul découpage est trop bruité pour comparer des réglages ; elle n'est pas développée ici.
 
-**Pourquoi c'est utile pour vous.** Le chiffre que vous annoncez pour un modèle construit de vos mains n'a de sens que si le test n'a servi ni à l'ajuster ni à le choisir. Précision et rappel traduisent le coût d'une alerte à tort et celui d'un cas manqué, pour un classifieur comme pour un agent qui agit ou s'abstient. Un item d'évaluation déjà présent dans l'entraînement, ou dans les exemples d'un prompt, est une fuite.
+**Dans l'ouverture, sans titre.** Le chiffre que vous annoncez pour un modèle construit de vos mains n'a de sens que si le test n'a servi ni à l'ajuster ni à le choisir. Précision et rappel traduisent le coût d'une alerte à tort et celui d'un cas manqué, pour un classifieur comme pour un agent qui agit ou s'abstient. Un item d'évaluation déjà présent dans l'entraînement, ou dans les exemples d'un prompt, est une fuite.
 
 **Objectifs.**
 
@@ -306,7 +303,7 @@ L'ordre est fixe.
 
 **Indicatif : environ 6 pages.** L2 rapetisse les coefficients, L1 peut les annuler, l'*early stopping* arrête dès que l'erreur de validation cesse de baisser. La force se choisit sur la validation. Le chapitre dit ce que cela laisse intact : mauvaise cible, fuite, variable absente le jour de la prédiction.
 
-**Pourquoi c'est utile pour vous.** Avant d'empiler des arbres ou des couches, vous disposez de trois freins sur le modèle simple. Le weight decay d'un réseau joue le rôle de L2 ; avec AdamW il est découplé du gradient, ce que dit un aparté. L'*early stopping* est le même geste sur un fine-tuning ou sur un boosting. LoRA limite la capacité, comme un degré tenu bas : ce n'est pas une pénalité ajoutée au coût. Aucun de ces freins ne répare une fuite du chapitre 7.
+**Dans l'ouverture, sans titre.** Avant d'empiler des arbres ou des couches, vous disposez de trois freins sur le modèle simple. Le weight decay d'un réseau joue le rôle de L2 ; avec AdamW il est découplé du gradient, ce que dit un aparté. L'*early stopping* est le même geste sur un fine-tuning ou sur un boosting. LoRA limite la capacité, comme un degré tenu bas : ce n'est pas une pénalité ajoutée au coût. Aucun de ces freins ne répare une fuite du chapitre 7.
 
 **Objectifs.**
 
@@ -323,7 +320,7 @@ L'ordre est fixe.
 
 **Indicatif : environ 14 pages.** Un arbre coupe l'espace en seuils, sans exiger l'échelle du chapitre 4. La profondeur rejoue le surapprentissage du chapitre 5. Une section enseigne la forêt : des arbres sur des échantillons, une moyenne, et pourquoi la variance baisse. Ce n'est pas un contraste d'une phrase, et ce n'est pas un chapitre : le critère de coupe est le même. Le gradient boosting ajoute des arbres le long du gradient du chapitre 3 ; le learning rate et le nombre d'arbres reprennent le pas et l'*early stopping* du chapitre 8. Le mécanisme est montré avec scikit-learn sur quelques résidus, puis un listing XGBoost reprend le même jeu. LightGBM est comparé par ce qui change le mécanisme (coupes par histogramme, croissance feuille à feuille, catégories natives), sans second tutoriel d'API.
 
-**Pourquoi c'est utile pour vous.** Sur une table que vous avez préparée, l'arbre puis le boosting sont souvent le modèle que vous entraînez, pas la régression. Vous y retrouvez des boutons déjà nommés : profondeur, pas, arrêt. XGBoost et LightGBM sont les bibliothèques de ce geste. Une forêt qui moyenne et un boosting qui corrige le résidu ne se règlent pas de la même façon.
+**Dans l'ouverture, sans titre.** Sur une table que vous avez préparée, l'arbre puis le boosting sont souvent le modèle que vous entraînez, pas la régression. Vous y retrouvez des boutons déjà nommés : profondeur, pas, arrêt. XGBoost et LightGBM sont les bibliothèques de ce geste. Une forêt qui moyenne et un boosting qui corrige le résidu ne se règlent pas de la même façon.
 
 **Objectifs.**
 
@@ -340,7 +337,7 @@ L'ordre est fixe.
 
 **Indicatif : environ 10 pages.** Un seul découpage de validation, défini au chapitre 7, devient bruité dès qu'on compare des dizaines de réglages : force de L2, profondeur, nombre d'arbres, learning rate. La validation croisée estime l'erreur de choix sur plusieurs plis. Grille et recherche aléatoire. Une section sur la validation emboîtée montre comment le chiffre publié reste honnête après la recherche. Une section sur la recherche bayésienne montre un modèle de substitution qui propose l'essai suivant, quand chaque entraînement coûte cher. Le test reste hors de la boucle. Chercher le nombre d'arbres à la grille et, en plus, couper par *early stopping* sur les mêmes plis est un double usage des données.
 
-**Pourquoi c'est utile pour vous.** Construire un modèle, c'est comparer des réglages. Le chapitre vous donne une boucle qui choisit sans ouvrir le test : les plis servent au choix, un ensemble tenu à l'écart sert à la calibration du chapitre 11, le test ne sert qu'à la fin. La même boucle vaut pour la profondeur d'un arbre, le pas d'un boosting, ou le learning rate d'un réseau.
+**Dans l'ouverture, sans titre.** Construire un modèle, c'est comparer des réglages. Le chapitre vous donne une boucle qui choisit sans ouvrir le test : les plis servent au choix, un ensemble tenu à l'écart sert à la calibration du chapitre 11, le test ne sert qu'à la fin. La même boucle vaut pour la profondeur d'un arbre, le pas d'un boosting, ou le learning rate d'un réseau.
 
 **Objectifs.**
 
@@ -357,7 +354,7 @@ L'ordre est fixe.
 
 **Indicatif : environ 7 pages.** Un score qui classe bien peut mentir comme probabilité. Diagramme de fiabilité et score de Brier, sur les sorties de la logistique et du boosting. La mise à l'échelle de Platt est une régression logistique sur le score, donc une reprise du chapitre 6. L'isotonique a sa section : elle suit les fréquences observées sans forme imposée, et elle surapprend sur un petit échantillon. La température reprend celle du softmax, appliquée aux logits. On calibre après le choix du chapitre 10, sur des données qui n'ont pas servi à ce choix.
 
-**Pourquoi c'est utile pour vous.** Un seuil de production, un coût d'erreur, une abstention : tout cela suppose qu'un score de 0,8 arrive environ huit fois sur dix. Les scores d'un boosting sont souvent mal calibrés ; ceux d'une logistique le sont moins. Vous calibrez le modèle retenu, vous ne choisissez pas le modèle d'après la calibration calculée sur les mêmes lignes. La température d'échantillonnage d'un LLM est le même levier sur d'autres logits ; elle ne remplace pas une calibration de classifieur.
+**Dans l'ouverture, sans titre.** Un seuil de production, un coût d'erreur, une abstention : tout cela suppose qu'un score de 0,8 arrive environ huit fois sur dix. Les scores d'un boosting sont souvent mal calibrés ; ceux d'une logistique le sont moins. Vous calibrez le modèle retenu, vous ne choisissez pas le modèle d'après la calibration calculée sur les mêmes lignes. La température d'échantillonnage d'un LLM est le même levier sur d'autres logits ; elle ne remplace pas une calibration de classifieur.
 
 **Objectifs.**
 
@@ -374,7 +371,7 @@ L'ordre est fixe.
 
 **Indicatif : environ 7 pages.** Le prétraitement du chapitre 4 fait partie du modèle servi. Un contre-exemple recalcule la mise à l'échelle à l'appel. Versions, graine, identifiant du modèle. Écart entre entraînement et service, dérive du mélange des exemples. Le seuil s'appuie sur le coût et sur la probabilité calibrée du chapitre 11, pas sur 0,5.
 
-**Pourquoi c'est utile pour vous.** Le modèle que vous mettez derrière une API est le pipeline entier : transformations figées, poids, version. Un changement de schéma, de codage ou de version entre la mesure et l'appel est un écart d'entraînement et de service. La dérive, c'est le mélange des requêtes qui bouge, ou un modèle remplacé sous le même nom. Vous surveillez un taux choisi d'avance — alertes, abstentions, erreurs — pas le score d'entraînement. Les mêmes écarts existent quand le modèle servi est un LLM : template, corpus retrouvé, identifiant du modèle.
+**Dans l'ouverture, sans titre.** Le modèle que vous mettez derrière une API est le pipeline entier : transformations figées, poids, version. Un changement de schéma, de codage ou de version entre la mesure et l'appel est un écart d'entraînement et de service. La dérive, c'est le mélange des requêtes qui bouge, ou un modèle remplacé sous le même nom. Vous surveillez un taux choisi d'avance — alertes, abstentions, erreurs — pas le score d'entraînement. Les mêmes écarts existent quand le modèle servi est un LLM : template, corpus retrouvé, identifiant du modèle.
 
 **Objectifs.**
 
@@ -391,7 +388,7 @@ L'ordre est fixe.
 
 **Indicatif : environ 6 pages.** Trois sources : les variables, la cible historique, l'écart de performance entre groupes. Calcul d'un écart de faux négatifs sur une matrice à deux groupes A et B. Retirer la colonne du groupe laisse les variables qui la reconstruisent. Une contrainte d'équité est un choix, pas un réglage automatique. Le règlement européen, s'il est cité, reste un aparté de contexte, pas un mode d'emploi juridique.
 
-**Pourquoi c'est utile pour vous.** Un modèle que vous entraînez peut désavantager un groupe parce que la table, ou l'étiquette historique, concentre déjà une décision humaine. Vous mesurez l'écart avec les métriques du chapitre 7, sur le modèle que vous vous apprêtez à servir. Le même calcul vaut pour un LLM qui répond moins bien ou refuse davantage selon la langue ou la mention d'un groupe : retirer un mot du prompt ne retire pas les proxies du contexte. Le chiffre ne choisit pas la politique du produit.
+**Dans l'ouverture, sans titre.** Un modèle que vous entraînez peut désavantager un groupe parce que la table, ou l'étiquette historique, concentre déjà une décision humaine. Vous mesurez l'écart avec les métriques du chapitre 7, sur le modèle que vous vous apprêtez à servir. Le même calcul vaut pour un LLM qui répond moins bien ou refuse davantage selon la langue ou la mention d'un groupe : retirer un mot du prompt ne retire pas les proxies du contexte. Le chiffre ne choisit pas la politique du produit.
 
 **Objectifs.**
 
@@ -408,7 +405,7 @@ L'ordre est fixe.
 
 **Indicatif : environ 11 pages.** Sans cible, contrairement à tout l'arc précédent. K-means sur `make_blobs`, après un rappel : sans l'échelle du chapitre 4, une variable domine la distance. PCA comme directions de variance maximale, sur `digits` ou un nuage synthétique, avec l'erreur de reconstruction. Les anomalies sont d'abord les points loin de leur centre ou mal reconstruits. Une section apprend ensuite l'*isolation forest* : des coupes au hasard, comme les arbres du chapitre 9, isolent un point rare en peu d'étapes. Ce que la distance ne voit pas, cette forêt le voit. L'auto-encodeur, version par réseau de l'erreur de reconstruction, est annoncé pour le chapitre 16.
 
-**Pourquoi c'est utile pour vous.** Vous construisez aussi des modèles sans étiquette : segmenter des objets, compresser des descripteurs avant un modèle supervisé, faire remonter des cas éloignés de la masse. K-means et PCA sont ces deux outils, et l'anomalie en est une lecture, pas un produit séparé. L'échelle du chapitre 4 décide du résultat. Un embedding du chapitre 15 est une autre façon d'obtenir des coordonnées ; la PCA en est le cas linéaire, sans entraînement par étiquette.
+**Dans l'ouverture, sans titre.** Vous construisez aussi des modèles sans étiquette : segmenter des objets, compresser des descripteurs avant un modèle supervisé, faire remonter des cas éloignés de la masse. K-means et PCA sont ces deux outils, et l'anomalie en est une lecture, pas un produit séparé. L'échelle du chapitre 4 décide du résultat. Un embedding du chapitre 15 est une autre façon d'obtenir des coordonnées ; la PCA en est le cas linéaire, sans entraînement par étiquette.
 
 **Objectifs.**
 
@@ -425,7 +422,7 @@ L'ordre est fixe.
 
 **Indicatif : environ 8 pages.** Le one-hot du chapitre 4 est le vecteur creux. Un embedding est un vecteur dense associé à un objet, entraîné par la descente du chapitre 3 pour une tâche du chapitre 6, puis réutilisé comme variables du chapitre 2. La similarité cosinus compare deux vecteurs. La PCA du chapitre 14 est le cas linéaire obtenu sans étiquette. Un listing apprend un embedding de dimension 2 sur quelques catégories synthétiques, pour qu'on puisse le dessiner. Utiliser un vecteur déjà calculé — y compris un embedding de texte — comme colonnes d'un modèle linéaire est le second geste, distinct de l'entraînement.
 
-**Pourquoi c'est utile pour vous.** Vous construisez des représentations pour réutiliser un objet (un identifiant, un document, un produit) dans un autre modèle, au lieu de réencoder toute la table. Vous les entraînez quand vous avez une tâche, ou vous en consommez qui ont été entraînées ailleurs. Un embedding de LLM est une source de vecteurs parmi d'autres ; le mécanisme est le même que pour un vecteur appris sur vos identifiants. La qualité se mesure avec les outils du chapitre 7, sur la tâche d'aval, pas sur le vecteur seul.
+**Dans l'ouverture, sans titre.** Vous construisez des représentations pour réutiliser un objet (un identifiant, un document, un produit) dans un autre modèle, au lieu de réencoder toute la table. Vous les entraînez quand vous avez une tâche, ou vous en consommez qui ont été entraînées ailleurs. Un embedding de LLM est une source de vecteurs parmi d'autres ; le mécanisme est le même que pour un vecteur appris sur vos identifiants. La qualité se mesure avec les outils du chapitre 7, sur la tâche d'aval, pas sur le vecteur seul.
 
 **Objectifs.**
 
@@ -442,7 +439,7 @@ L'ordre est fixe.
 
 **Indicatif : environ 10 pages.** Un neurone est la somme du chapitre 2 passée dans la fonction du chapitre 6. Une couche en empile. La rétropropagation est la descente du chapitre 3 appliquée couche par couche, sans dérivation complète. La profondeur construit des représentations, là où le chapitre 5 les fabriquait à la main et où le chapitre 15 les stockait dans une table. Un petit réseau est comparé à la logistique sur le même jeu synthétique. Une section reprend l'erreur de reconstruction du chapitre 14 avec un auto-encodeur : le réseau apprend à refaire son entrée, et un point mal refait est une anomalie. La dernière section pose un bloc Transformer : l'embedding du chapitre 15 en entrée, des couches déjà vues, et l'attention nommée comme la pièce que le livre ne développe pas.
 
-**Pourquoi c'est utile pour vous.** Quand la table et les arbres ne suffisent plus, ou quand l'entrée est déjà un vecteur du chapitre 15, vous empilez des couches au lieu d'ajouter des colonnes à la main. Vous y reconnaissez le coût, le pas, l'*early stopping*, l'évaluation. Un Transformer, et donc un LLM, commence par l'embedding que vous venez de construire et empile ces couches ; l'attention reste à étudier ailleurs. Les questions des chapitres 7, 12 et 13 — mesure, dérive, écart entre groupes — portent encore sur le système une fois le réseau entraîné.
+**Dans l'ouverture, sans titre.** Quand la table et les arbres ne suffisent plus, ou quand l'entrée est déjà un vecteur du chapitre 15, vous empilez des couches au lieu d'ajouter des colonnes à la main. Vous y reconnaissez le coût, le pas, l'*early stopping*, l'évaluation. Un Transformer, et donc un LLM, commence par l'embedding que vous venez de construire et empile ces couches ; l'attention reste à étudier ailleurs. Les questions des chapitres 7, 12 et 13 — mesure, dérive, écart entre groupes — portent encore sur le système une fois le réseau entraîné.
 
 **Objectifs.**
 
@@ -458,7 +455,7 @@ L'ordre est fixe.
 ## 11. Décisions arrêtées
 
 1. **Titre.** Fondamentaux du Machine Learning.
-2. **Pas de fil rouge fictif.** Exemples synthétiques ou jeux classiques de scikit-learn. La rubrique « Pourquoi c'est utile pour vous » parle de construire un modèle ; les LLM et les agents n'y figurent que lorsque le mécanisme est le même.
+2. **Pas de fil rouge fictif.** Exemples synthétiques ou jeux classiques de scikit-learn. La finalité, construire un modèle, apparaît dans l'introduction de la partie et du chapitre, sans rubrique dédiée. Les LLM et les agents n'y figurent que lorsque le mécanisme est le même.
 3. **Solutions.** Annexe A.
 4. **Arbres, forêt et boosting.** Un seul chapitre, le 9. La forêt y est une section complète, pas un contraste expédié.
 5. **Code.** Extraits dans le livre. Pas de dépôt compagnon. XGBoost pour un listing du chapitre 9 ; LightGBM comparé sans second tutoriel d'API.

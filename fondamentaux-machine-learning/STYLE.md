@@ -12,6 +12,8 @@ Ton d'un collègue expérimenté qui s'adresse à quelqu'un d'intelligent et neu
 
 Le livre a été écrit avec l'aide d'outils d'IA générative : la préface le dit. Un échange avec un assistant, s'il apparaît, va dans une citation, invite et réponse séparées, le texte du modèle repris tel quel. Un fragment de code produit par un modèle va dans un bloc de code, lui aussi repris tel quel.
 
+La finalité de chaque partie et de chaque chapitre apparaît de façon implicite dans son introduction, sans rubrique dédiée. L'ouverture de partie dit à quoi servira le mécanisme, en le reliant aux chapitres qui suivent. Les paragraphes qui ouvrent un chapitre, avant « Objectifs », font de même pour les notions du chapitre. Pas de titre, pas d'encadré, pas de liste d'usages. La section « Ce que ça change en pratique », en fin de chapitre, reste le lieu du levier concret.
+
 ## Titres
 
 Un titre ne contient ni gras, ni italique, ni chasse fixe. Un sigle très courant pour le lecteur (API) peut rester en sigle ; les autres s'écrivent en toutes lettres.
