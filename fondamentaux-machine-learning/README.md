@@ -2,7 +2,7 @@
 
 Livre autonome, en français, pour un ingénieur logiciel expérimenté qui veut construire des modèles : préparer des données, entraîner, mesurer, régler et mettre en service. Les exemples de code sont synthétiques ou tirés des jeux classiques de scikit-learn. Chaque chapitre dit en quoi la notion sert à cette construction.
 
-La partie I est rédigée. Le découpage de la suite, l'ordre retenu et les objectifs sont dans le [plan](PLAN.md). Les conventions de style, tirées du guide O'Reilly et adaptées au français, sont dans [STYLE.md](STYLE.md). Ces deux fichiers sont des documents de travail : ils ne font pas partie du livre publié.
+Les parties I et II sont rédigées. Le découpage de la suite, l'ordre retenu et les objectifs sont dans le [plan](PLAN.md). Les conventions de style, tirées du guide O'Reilly et adaptées au français, sont dans [STYLE.md](STYLE.md). Ces deux fichiers sont des documents de travail : ils ne font pas partie du livre publié.
 
 - [Préface](00-preface.md)
 
@@ -13,9 +13,18 @@ La partie I est rédigée. Le découpage de la suite, l'ordre retenu et les obje
 - [Chapitre 2. La régression linéaire : une somme pondérée](03-ch02.md)
 - [Chapitre 3. La fonction de coût et la descente de gradient](04-ch03.md)
 
+## Partie II. Préparer, diagnostiquer, contraindre
+
+- [Ouverture de la partie II](05-partie2.md)
+- [Chapitre 4. Préparer les données et construire les variables](06-ch04.md)
+- [Chapitre 5. Polynômes, sous-apprentissage, surapprentissage](07-ch05.md)
+- [Chapitre 6. La régression logistique et la frontière de décision](08-ch06.md)
+- [Chapitre 7. Évaluer sans se tromper soi-même](09-ch07.md)
+- [Chapitre 8. Régulariser : L2, L1 et early stopping](10-ch08.md)
+
 ## Annexe et glossaire
 
-Les solutions couvrent les exercices de la partie I. Le glossaire aussi. Les chapitres suivants y seront ajoutés.
+Les solutions et le glossaire couvrent les parties I et II. Les chapitres suivants y seront ajoutés.
 
 - [Annexe A. Solutions des exercices](22-annexe-a-solutions.md)
 - [Glossaire français-anglais](23-glossaire.md)
@@ -26,12 +35,6 @@ Les fichiers ci-dessous ne sont pas encore rédigés. Les noms suivent l'ordre d
 
 | Fichier prévu | Pièce |
 |---|---|
-| `05-partie2.md` | Partie II. Préparer, diagnostiquer, contraindre |
-| `06-ch04.md` | Chapitre 4. Préparer les données et construire les variables |
-| `07-ch05.md` | Chapitre 5. Polynômes, sous-apprentissage, surapprentissage |
-| `08-ch06.md` | Chapitre 6. La régression logistique et la frontière de décision |
-| `09-ch07.md` | Chapitre 7. Évaluer sans se tromper soi-même |
-| `10-ch08.md` | Chapitre 8. Régulariser : L2, L1 et early stopping |
 | `11-partie3.md` | Partie III. Choisir un modèle et s'y fier |
 | `12-ch09.md` | Chapitre 9. Arbres de décision et gradient boosting |
 | `13-ch10.md` | Chapitre 10. Validation croisée et hyperparamètres |

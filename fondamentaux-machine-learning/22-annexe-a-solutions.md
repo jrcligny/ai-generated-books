@@ -79,3 +79,84 @@ Un coût qui passe de 55,89 à 53,28 est le pas 0,001 du même tableau. La direc
 Un coût qui descend vers 45, remonte vers 59 et redescend vers 45 est la descente stochastique de l'Exemple 3-4, qui oscille autour du plancher de 44,59. Le régime est bruité parce que chaque pas ne voit qu'un exemple. Passez à un mini-lot plus grand si le tremblement vous empêche de lire la courbe. Raccourcir un peu le pas calme aussi l'oscillation. Ce n'est pas une explosion : le coût ne part pas vers l'infini.
 
 Ces trois formes se lisent de la même façon sur le journal d'un ajustement fin. Le nom du modèle change. La pente, le pas et le bruit du lot, non.
+
+## Chapitre 4
+
+### Exercice 1
+
+Les quatre valeurs d'entraînement sont 2, 4, 6 et 8. Leur moyenne est 5. C'est elle qui impute la case vide. La cinquième valeur, 80, est tenue à l'écart : la mêler donne (2 + 4 + 6 + 8 + 80) / 5 = 20. Le trou est alors bouché par 20, dans une colonne dont les cas d'apprentissage vivent entre 2 et 8. Le modèle apprend un centre qui n'existera pas à l'appel, quand ce 80 sera absent. L'Exemple 4-1 montre le même écart, 3,0 contre 22,4.
+
+### Exercice 2
+
+« Milieu » devient la ligne (0, 1, 0) si l'ordre des colonnes est bas, milieu, haut. « Bas » devient (1, 0, 0). Aucune colonne n'est plus grande qu'une autre. Remplacer les modalités par 0, 1 et 2 invente un ordre et des écarts égaux : le coefficient unique traiterait « haut » comme deux fois « milieu ». L'Exemple 4-2 montre le même principe sur « a », « b » et « c ».
+
+### Exercice 3
+
+Après standardisation, 1,875 et 1,898 sont du même ordre : un écart-type de chaque variable déplace la prédiction d'environ 1,9. On peut conclure que les deux effets, mesurés dans leur propre dispersion, se valent. Avant, 1,945 contre 0,020 comparait des unités. Le second coefficient était petit parce que la variable était dispersée sur une échelle d'environ 100, pas parce que son effet était négligeable.
+
+## Chapitre 5
+
+### Exercice 1
+
+0,40 et 0,42 : les deux erreurs sont hautes et proches. C'est un sous-apprentissage, forme trop pauvre, comme le degré 1 de l'Exemple 5-1.
+
+0,05 et 0,40 : l'entraînement est bas, les cas nouveaux sont hauts. C'est un surapprentissage.
+
+0,35 et 0,33 : les deux erreurs se tiennent. Le modèle ne fait pas mieux sur les cas vus que sur les autres. Si ce niveau est trop haut pour la tâche, la forme est trop pauvre.
+
+0,02 et 1,20 : surapprentissage net, comme le degré 12 dont l'erreur tenue à l'écart valait 1,480 pour une erreur d'entraînement de 0,086.
+
+### Exercice 2
+
+L'erreur vue passe de 0,30 à 0,04 et l'erreur tenue à l'écart de 0,32 à 0,55. Le modèle colle aux exemples et se dégrade ailleurs. Le levier est une contrainte, ou des exemples nouveaux si la forme est déjà la bonne et que la variance domine. Une forme plus riche aggraverait l'écart : c'est le degré 12 ajouté au degré 3.
+
+### Exercice 3
+
+Pour un degré très haut, l'erreur d'entraînement part de presque 0 quand il y a à peine plus de points que de coefficients, et reste basse. L'erreur tenue à l'écart part de très haut, comme les 30 730 de l'Exemple 5-2 à 12 points, puis redescend quand les points deviennent nombreux, sans forcément rattraper une forme juste. Le degré 1, sur le même dessin, garde les deux erreurs hautes : les points supplémentaires ne créent pas le coude qui manque.
+
+## Chapitre 6
+
+### Exercice 1
+
+−0,55 et 1,03 ne sont pas des fréquences. Un seuil à 0,5 reste un nombre que l'on peut comparer, mais le score n'a pas le sens d'une part des cas, et rien n'empêche la droite d'annoncer « moins que impossible » ou « plus que certain ». La sigmoïde ramène toute somme dans l'intervalle ouvert entre 0 et 1. L'Exemple 6-1 est cette droite. L'Exemple 6-2 est la somme bornée.
+
+### Exercice 2
+
+En (1, 0), la somme vaut 2,684 × 1 + 1,269 × 0 − 2,151 = 0,533. Elle est positive, donc du côté où la sigmoïde dépasse 0,5. Au seuil 0,5, la classe estimée est 1.
+
+### Exercice 3
+
+Pour une vraie classe 0, la perte vaut −log(1 − p). À 0,99 elle vaut 4,605. À 0,6 elle vaut 0,916. Le tort presque sûr coûte environ cinq fois plus. L'Exemple 6-4 montre qu'à température 0,5 le premier logit pèse 0,831, et qu'à température 2 il ne pèse plus que 0,409. C'est 0,5 qui concentre la masse.
+
+## Chapitre 7
+
+### Exercice 1
+
+Le découpage aléatoire met des instants postérieurs dans l'entraînement et des instants antérieurs dans le test : 198 d'un côté, 4 de l'autre, et 97,3 % des lignes d'entraînement après le début du test. Un découpage par ordre du temps interdit ce mélange : tout l'entraînement est avant tout le test. Le modèle n'a pas pour autant une colonne qui contient la cible. Il a seulement appris sur des moments qui ne seraient pas encore observés. C'est une fuite de protocole, pas une copie de la réponse.
+
+### Exercice 2
+
+Il faut retirer la copie, pas seulement la colonne qui porte le nom de la cible. L'Exemple 7-2 passe de 0,600 à 1,000 dès qu'une colonne vaut exactement la classe. Une colonne calculée à partir d'elle, comme la colonne « Fuite » du Chapitre 1, laisse le même 1. On retire toute colonne qui ne serait pas connue le jour de la prédiction.
+
+### Exercice 3
+
+Le Tableau 7-1 a une précision de 1 et un rappel de 0,250. Si l'alerte à tort coûte dix fois plus cher, on regarde d'abord la précision : elle est déjà maximale, le seuil 0,5 est prudent. Si le cas manqué coûte dix fois plus cher, on regarde le rappel : 0,250 veut dire que neuf positifs sur douze sont manqués. On baisse le seuil sur la validation, pour annoncer « positif » plus souvent, et l'on accepte des faux positifs. On ne règle pas ce seuil sur le test.
+
+### Exercice 4
+
+On retire le texte qui figurait déjà dans les cinq consignes. Le garder dans l'évaluation finale, c'est l'Exemple 7-2 : le chiffre mesure une reconnaissance, pas une généralisation. Les trois textes nouveaux restent le test. Les cinq du réglage restent la validation.
+
+## Chapitre 8
+
+### Exercice 1
+
+L1 a le plus de chances de poser des zéros exacts sur les cinq positions nulles : la pénalité est linéaire, et la descente peut abandonner une variable. L2 va surtout rapetisser les trois coefficients non nuls, 3, −2 et 1,5, et laisser des miettes là où la vérité est 0. L'Exemple 8-1, sur un jeu de cette forme, montre L2 encore à −0,14 et 0,14 sur des positions nulles, et L1 à zéro sur ces positions, au signe d'arrondi près.
+
+### Exercice 2
+
+On garde l'époque 15 : la validation y vaut 3,295, contre 4,696 au début, 3,498 à l'époque 5, et 3,510 à l'époque 59. L'époque 59 est un surapprentissage parce que l'entraînement a continué de baisser, jusqu'à 0,023, pendant que la validation remontait. C'est le degré 12 du Chapitre 5, lu sur le nombre de pas.
+
+### Exercice 3
+
+La copie de la cible de l'Exemple 7-2 porte la justesse à 1. Rapetisser son coefficient, ou s'arrêter plus tôt, ne la rend pas inconnue le jour de l'appel. Il faut retirer la colonne. La régularisation freine une forme trop libre. Elle ne répare pas une fuite.
+
