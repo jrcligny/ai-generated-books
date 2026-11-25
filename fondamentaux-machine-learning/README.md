@@ -31,20 +31,33 @@ Les solutions et le glossaire couvrent les parties I et II. Les chapitres suivan
 
 ## À venir
 
-Les fichiers ci-dessous ne sont pas encore rédigés. Les noms suivent l'ordre de lecture.
+Ces fichiers ne sont pas rédigés. Le plan v5 les décrit. Les préfixes 22 et 23 restent l'annexe et le glossaire, déjà écrits : la numérotation saute donc de 21 à 24. L'ordre de lecture est celui du tableau, pas le tri des noms.
 
 | Fichier prévu | Pièce |
 |---|---|
-| `11-partie3.md` | Partie III. Choisir un modèle et s'y fier |
+| `11-partie3.md` | Partie III. Choisir et régler |
 | `12-ch09.md` | Chapitre 9. Arbres de décision et gradient boosting |
 | `13-ch10.md` | Chapitre 10. Validation croisée et hyperparamètres |
 | `14-ch11.md` | Chapitre 11. Calibrer une probabilité |
-| `15-ch12.md` | Chapitre 12. Production : pipeline, dérive et pièges |
-| `16-ch13.md` | Chapitre 13. Fairness : ce que les données transmettent |
-| `17-partie4.md` | Partie IV. Structure et représentations |
-| `18-ch14.md` | Chapitre 14. Apprentissage non supervisé : groupes, axes, anomalies |
+| `15-partie4.md` | Partie IV. Sans étiquette |
+| `16-ch12.md` | Chapitre 12. Grouper sans cible : k-means, hiérarchie, DBSCAN |
+| `17-ch13.md` | Chapitre 13. Réduire la dimension : PCA, t-SNE, UMAP |
+| `18-ch14.md` | Chapitre 14. Détecter une anomalie |
 | `19-ch15.md` | Chapitre 15. Embeddings et représentations |
-| `20-ch16.md` | Chapitre 16. Réseaux de neurones : de la couche au Transformer |
-| `21-conclusion.md` | Conclusion |
+| `20-ch16.md` | Chapitre 16. Apprendre sans cible explicite |
+| `21-partie5.md` | Partie V. Réseaux, jusqu'au Transformer |
+| `24-ch17.md` | Chapitre 17. Du neurone au réseau |
+| `25-ch18.md` | Chapitre 18. Autoencodeurs |
+| `26-ch19.md` | Chapitre 19. Le Transformer |
+| `27-partie6.md` | Partie VI. Renforcement |
+| `28-ch20.md` | Chapitre 20. Un agent, une récompense, une politique |
+| `29-ch21.md` | Chapitre 21. Explorer et exploiter : les bandits |
+| `30-ch22.md` | Chapitre 22. Q-learning |
+| `31-ch23.md` | Chapitre 23. Gradients de politique |
+| `32-ch24.md` | Chapitre 24. RLHF et DPO |
+| `33-partie7.md` | Partie VII. Mettre en service |
+| `34-ch25.md` | Chapitre 25. Production : pipeline, dérive et pièges |
+| `35-ch26.md` | Chapitre 26. Fairness : ce que les données transmettent |
+| `36-conclusion.md` | Conclusion |
 
 [Retour à la liste des livres](../README.md)
