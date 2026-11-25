@@ -7,8 +7,9 @@ Le Tableau G-1 rassemble les termes introduits en italique dans les parties I et
 | Terme français | Terme anglais | Définition | Chapitre |
 |---|---|---|---|
 | apprentissage automatique | *machine learning* | Ajustement des paramètres d'un modèle à partir d'exemples | 1 |
+| apprentissage auto-supervisé | *self-supervised learning* | Cible fabriquée à partir de l'entrée, sans annotation | 1 |
 | apprentissage non supervisé | *unsupervised learning* | Recherche d'une structure sans cible | 1 |
-| apprentissage par renforcement | *reinforcement learning* | Ajustement d'une politique à partir d'une récompense, non enseigné dans ce livre | 1 |
+| apprentissage par renforcement | *reinforcement learning* | Ajustement d'une politique à partir d'une récompense. Développé aux chapitres 20 à 24 | 1 |
 | apprentissage supervisé | *supervised learning* | Apprentissage d'une fonction des variables vers une cible | 1 |
 | arrêt anticipé | *early stopping* | Arrêt de la descente à l'époque où la validation est la meilleure | 8 |
 | biais | *bias* | Erreur due à une forme trop pauvre pour la relation. Distinct du biais entre groupes | 5 |

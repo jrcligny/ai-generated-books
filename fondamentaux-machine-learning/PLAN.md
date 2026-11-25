@@ -1,6 +1,6 @@
-# Plan — Fondamentaux du Machine Learning
+# Plan v5 — Fondamentaux du Machine Learning
 
-Document de travail, hors manuscrit. Il sert à valider le découpage avant la rédaction du chapitre 1. Les chapitres ne sont pas écrits.
+Document de travail. Les parties I et II sont rédigées (chapitres 1 à 8). Le plan v5 est validé. La préface, les renvois et le glossaire ont été alignés sur les sept parties. Les chapitres 9 à 26 ne sont pas rédigés.
 
 ## 1. Titre, public, promesse
 
@@ -8,7 +8,7 @@ Document de travail, hors manuscrit. Il sert à valider le découpage avant la r
 
 **Public.** Ingénieur logiciel senior, à l'aise en Python, en systèmes et en API, sans cursus de mathématiques avancées ni de *machine learning*. Il veut **construire** des modèles : choisir une cible, préparer une table, entraîner, mesurer, régler, et mettre en service. Les LLM et les agents qu'il utilise déjà sont un cas de cette construction, pas le sujet du livre. Quand un lien avec eux est juste, le chapitre le dit ; il ne réécrit pas chaque notion comme un problème de prompt.
 
-**Promesse.** À la fin du livre, le lecteur sait cadrer un problème, préparer des variables, ajuster une régression et une régression logistique, lire une descente de gradient, reconnaître un surapprentissage, mesurer sans fuite, régulariser, entraîner un arbre et un gradient boosting, chercher des hyperparamètres par validation croisée, calibrer une probabilité, détecter une dérive, voir un écart entre groupes, grouper ou compresser des données sans étiquette, et situer un embedding puis un réseau de neurones dans cette lignée.
+**Promesse.** À la fin du livre, le lecteur sait construire un modèle dans les trois paradigmes. En supervisé : cadrer, préparer, ajuster une régression et une logistique, lire une descente, reconnaître un surapprentissage, mesurer sans fuite, régulariser, entraîner un arbre et un boosting, chercher des hyperparamètres, calibrer une probabilité. Sans étiquette : grouper, compresser, détecter une anomalie, apprendre ou réutiliser un embedding, poser une tâche auto-supervisée. En profond : empiler un réseau, un autoencodeur, un Transformer. En renforcement : poser un agent, un bandit, un Q-learning, un gradient de politique, puis un RLHF ou un DPO. En transverse : servir le système et mesurer un écart entre groupes, quel que soit le paradigme.
 
 **Autonomie.** Le livre se lit seul. Les lecteurs qui arrivent de *De l'assistant à l'agent* y trouvent le développement de ce que le chapitre 1 de ce livre-là esquisse. Aucun chapitre de celui-ci ne suppose l'autre.
 
@@ -43,7 +43,7 @@ Le manuscrit suit [STYLE.md](STYLE.md). En bref, pour la rédaction :
 
 **Formules.** Une phrase d'intuition, puis la formule, puis ce que chaque symbole désigne sur les nombres de l'exemple. Pas de démonstration au fil du texte. La forme matricielle de la régression reste un aparté : le lecteur construit le modèle sans elle, et l'algèbre linéaire n'est pas un prérequis. Ce n'est pas un raccourci de longueur. Une dérivée est une pente : ce qui arrive au coût si l'on bouge un seul paramètre.
 
-**Code.** Un extrait écrit à la main n'apparaît que lorsqu'il montre un mécanisme que la bibliothèque cache : la forme close sur un exemple minuscule (chapitre 2), un pas de descente (chapitre 3), une frontière sur deux variables (chapitre 6), les résidus d'un boosting sur quelques points (chapitre 9), une passe avant d'un petit réseau (chapitre 16). Partout ailleurs, scikit-learn, avec le paramètre qui compte nommé et justifié.
+**Code.** Un extrait écrit à la main n'apparaît que lorsqu'il montre un mécanisme que la bibliothèque cache : la forme close sur un exemple minuscule (chapitre 2), un pas de descente (chapitre 3), une frontière sur deux variables (chapitre 6), les résidus d'un boosting sur quelques points (chapitre 9), une passe avant d'un petit réseau (chapitre 17). Partout ailleurs, scikit-learn, avec le paramètre qui compte nommé et justifié.
 
 Les listings portent sur un jeu synthétique (`make_regression`, `make_classification`, `make_blobs`, quelques points à la main) ou, quand la géométrie est le sujet, sur un jeu classique livré avec scikit-learn (`iris` pour un arbre, `digits` pour une PCA). Pas de téléchargement. Aucune application métier fictive ne revient de chapitre en chapitre.
 
@@ -61,7 +61,11 @@ Un exercice peut demander de reporter la notion sur un modèle que le lecteur en
 
 ## 5. Ordre retenu
 
-Seize chapitres, quatre parties. Chaque chapitre consomme une notion déjà vue et en fournit une à la suite. Rien de ce qui suit n'est renvoyé en annexe : l'annexe ne contient que les solutions.
+Vingt-six chapitres, sept parties. Les parties I et II (chapitres 1 à 8) sont déjà écrites : leur ordre ne bouge pas. Chaque chapitre consomme une notion déjà vue. L'annexe ne contient que les solutions.
+
+Le supervisé occupe onze chapitres, le non supervisé et l'auto-supervisé cinq, les réseaux trois, le renforcement cinq, la mise en service deux. Le supervisé reste le plus long, et c'est voulu. C'est le terrain où s'apprennent, une seule fois, les notions que les autres paradigmes réutilisent : la cible et la fuite, le coût, la descente, le biais et la variance, le découpage train / validation / test, la régularisation, la calibration. Les ajouter une seconde fois dans chaque paradigme allongerait le livre sans rien apprendre. Le non supervisé et le renforcement deviennent des parties, parce qu'un chapitre unique ne peut pas porter un paradigme.
+
+**Pourquoi la production et la fairness quittent la partie III.** Elles valent pour un classifieur, un regroupement servi, un index d'embeddings, un Transformer et une politique apprise par renforcement. Les laisser après le boosting les aurait figées dans le seul cas supervisé. Le chapitre 26 peut alors parler d'un écart de rappel, d'un embedding qui reconcentre un stéréotype, et d'un jugement de préférence qui désavantage un groupe. La calibration, elle, reste au chapitre 11 : c'est une propriété des scores de classifieur, et Platt est une régression logistique. Le chapitre 25 dira d'utiliser ce score calibré quand le modèle en émet un. Un cluster ou une politique n'en a pas.
 
 1. **Cadrer avant d'ajuster.** La cible et les informations présentes au moment de la prédiction décident de tout le reste, y compris de savoir si le problème est supervisé.
 2. **La somme pondérée avant la descente.** La forme close rend le modèle visible. La descente vient aussitôt après : c'est l'outil que réutiliseront la logistique, le boosting, les embeddings et les réseaux.
@@ -73,48 +77,41 @@ Seize chapitres, quatre parties. Chaque chapitre consomme une notion déjà vue 
 8. **L'arbre, la forêt et le boosting dans le même chapitre.** Le boosting n'a pas de sens sans l'arbre qui sert de base. Le gradient du chapitre 3 dit ce que chaque arbre ajouté apprend. Le bagging (forêt) est une section à part entière du même chapitre : moyenner des arbres tirés au hasard baisse la variance, et ce n'est pas ajuster un résidu. Un chapitre séparé répéterait le critère de coupe. La section n'est plus un contraste d'une phrase : le lecteur doit pouvoir choisir entre les deux.
 9. **La validation croisée et les hyperparamètres seulement une fois que les boutons existent** (force de L2, profondeur, nombre d'arbres, learning rate). Plus tôt, la recherche n'aurait qu'un modèle à régler et cacherait le propos. Le test du chapitre 7 reste scellé. La validation emboîtée et la recherche bayésienne sont des sections de ce chapitre, pas des apartés : la première dit comment publier un chiffre après une recherche, la seconde dit quoi faire quand chaque entraînement coûte cher. Aucune des deux n'est un nouveau protocole assez distinct pour un chapitre.
 10. **Calibrer après avoir choisi le modèle.** La mise à l'échelle de Platt est une régression logistique sur les scores, donc le chapitre 6. Les scores d'un boosting en ont plus besoin que ceux d'une logistique. Calibrer chaque candidat puis garder le meilleur sur les mêmes données fuirait : on sélectionne par validation croisée, on calibre sur des données non utilisées pour ce choix, on touche le test une fois.
-11. **La production puis la fairness, sur un modèle qu'on enverrait vraiment.** Le pipeline fige la préparation du chapitre 4. Le seuil s'appuie sur une probabilité calibrée. L'écart entre groupes reprend les métriques du chapitre 7. La fairness reste un chapitre : un encadré de production l'aurait réduite à une checklist.
-12. **Le non supervisé après l'arc supervisé.** Il contraste avec une cible que le lecteur connaît maintenant. K-means exige l'échelle du chapitre 4, la PCA s'appuie sur la variance et les directions linéaires. Les anomalies commencent par la distance et l'erreur de reconstruction, puis l'*isolation forest*, qui a besoin des arbres du chapitre 9 : un point rare est isolé par moins de coupes. Plus tôt, ce chapitre couperait le chemin qui va du premier modèle à un modèle qu'on peut régler et servir. L'auto-encodeur, qui reprend l'erreur de reconstruction avec un réseau, attend le chapitre 16.
-13. **Les embeddings après la PCA, avant le réseau.** La PCA est une représentation linéaire non supervisée. Un embedding est un vecteur qu'on associe à un objet, qu'on entraîne par la descente du chapitre 3, et qu'on réutilise comme variables du chapitre 2. Le réseau, en dernier, calcule ce vecteur au lieu de le chercher dans une table, et empile les pièces du livre. Un Transformer commence par l'embedding qu'on vient de voir ; l'attention est nommée et laissée de côté.
+11. **Grouper, compresser, puis représenter, une fois le supervisé en place.** Le clustering a besoin de l'échelle du chapitre 4 et d'une distance. La PCA a besoin de la variance du chapitre 5. L'*isolation forest* a besoin des arbres du chapitre 9. Les embeddings réutilisent la descente du chapitre 3 et le one-hot du chapitre 4. Les placer avant les arbres obligerait à enseigner l'isolation forest sans arbre.
+12. **L'auto-supervisé ferme la partie sans étiquette et ouvre la suivante.** Il nomme la tâche prétexte, la reconstruction et le pré-entraînement, sans encore construire le réseau. L'autoencodeur concret attend le chapitre 18, quand la couche et la rétropropagation existent.
+13. **Les réseaux après les embeddings, le Transformer en dernier de cette partie.** Un neurone est la somme du chapitre 2 et la sigmoïde du chapitre 6. La rétropropagation est la descente du chapitre 3. L'autoencodeur réalise l'objectif du chapitre 16. Le Transformer empile l'embedding du chapitre 15 et l'attention, enseignée ici juste assez pour lire un bloc, parce que le chapitre suivant s'en sert.
+14. **Tout le renforcement après le Transformer.** Le cadre, les bandits, le Q-learning et le gradient de politique n'exigent pas un Transformer. Les grouper avant les réseaux couperait la partie en deux, et le gradient de politique est plus clair une fois qu'une politique peut être un réseau. Le RLHF et le DPO ferment la partie : ils ajustent un modèle de langage, donc un Transformer déjà construit. Les introduire avant serait utiliser un objet qui n'existe pas encore.
+15. **Produire et mesurer l'écart tout à la fin.** Le pipeline fige la préparation du chapitre 4. Le seuil, quand il y a une probabilité, s'appuie sur le chapitre 11. L'écart entre groupes reprend les métriques du chapitre 7 et peut citer un embedding ou un jugement de préférence, parce que ces chapitres sont derrière. La fairness reste un chapitre : un encadré de production l'aurait réduite à une checklist.
 
 ```mermaid
 flowchart TD
-  c1["1. Cadrer"] --> c2["2. Régression linéaire"]
-  c2 --> c3["3. Coût et descente"]
-  c3 --> c4["4. Préparation des données"]
-  c4 --> c5["5. Capacité, biais, variance"]
-  c5 --> c6["6. Régression logistique"]
-  c6 --> c7["7. Évaluation"]
-  c7 --> c8["8. Régularisation"]
-  c8 --> c9["9. Arbres et boosting"]
-  c9 --> c10["10. Validation croisée"]
-  c10 --> c11["11. Calibration"]
-  c11 --> c12["12. Production"]
-  c12 --> c13["13. Fairness"]
-  c4 --> c14["14. Non supervisé"]
-  c13 --> c14
-  c14 --> c15["15. Embeddings"]
-  c3 --> c15
-  c15 --> c16["16. Réseaux de neurones"]
+  subgraph sup [Supervisé, chapitres 1 à 11]
+    c1["1 à 8. Écrit"] --> c9["9 à 11. Arbres, validation, calibration"]
+  end
+  c9 --> c12["12 à 16. Non supervisé et auto-supervisé"]
+  c12 --> c17["17 à 19. Réseaux, jusqu'au Transformer"]
+  c17 --> c20["20 à 24. Renforcement, jusqu'au RLHF"]
+  c20 --> c25["25 et 26. Production et fairness"]
 ```
 
-La lecture reste linéaire. Les flèches de côté rappellent deux dépendances qui ne sont pas le chapitre d'à côté : le non supervisé réutilise l'échelle du chapitre 4, les embeddings réutilisent la descente du chapitre 3.
+La lecture est linéaire. Le supervisé vient en premier parce qu'il enseigne les outils transverses. Le non supervisé s'en sert sans cible. Les réseaux réalisent l'auto-supervisé et construisent le Transformer. Le renforcement s'achève par le RLHF, qui a besoin de ce Transformer. La production et la fairness ferment le livre, sur tous les paradigmes.
 
 Les thèmes 5 et 7 du brief initial restent répartis comme avant : le phénomène biais-variance est au chapitre 5, les métriques et les découpages au chapitre 7. La régularisation (chapitre 8) vient après la mesure.
 
 ## 6. Hors périmètre
 
-Couvert désormais, et donc retiré de cette liste : arbres de décision, gradient boosting, XGBoost et LightGBM, préparation des données et feature engineering, k-means, PCA, détection d'anomalies, recherche d'hyperparamètres, validation croisée, calibration, embeddings.
+Couvert par le plan v5 : le supervisé des chapitres 1 à 11, le clustering, la PCA, t-SNE et UMAP, l'*isolation forest*, les embeddings, l'auto-supervisé, les réseaux jusqu'au Transformer, le renforcement jusqu'au RLHF et au DPO, la production et la fairness.
 
 Encore hors manuscrit, avec un renvoi en conclusion et pas de chapitre :
 
 - machines à vecteurs de support ;
-- encodage par la cible (*target encoding*) comme technique à appliquer : le chapitre 4 le montre comme fuite, le chapitre 7 mesure le chiffre gonflé. L'enseigner comme méthode demanderait un protocole anti-fuite qui n'est pas le sujet ;
-- réseaux convolutionnels, le détail de l'attention, l'entraînement des grands modèles à l'échelle ;
-- apprentissage par renforcement, au-delà de la carte du chapitre 1 ;
+- encodage par la cible (*target encoding*) comme technique à appliquer : le chapitre 4 le montre comme fuite, le chapitre 7 mesure le chiffre gonflé ;
+- réseaux convolutionnels ;
+- l'ingénierie du pré-entraînement à l'échelle (le principe est au chapitre 16, le bloc au chapitre 19, pas le calcul distribué) ;
+- le détail des variantes de Q-learning profond au-delà d'un pont depuis le tabulaire ;
 - théorie de la généralisation.
 
-Réintégrés dans le corps, après réexamen sans contrainte de longueur : la forêt (section du chapitre 9), la validation emboîtée et la recherche bayésienne (sections du chapitre 10), l'*isolation forest* (section du chapitre 14), l'auto-encodeur (section du chapitre 16, parce qu'il dépend du réseau). La forme matricielle reste un aparté du chapitre 2 : elle ne change pas la construction du modèle, et l'algèbre linéaire n'est pas un prérequis. Ce n'était pas un coup de ciseaux pour tenir un nombre de pages.
+La forme matricielle reste un aparté du chapitre 2. La forêt reste une section du chapitre 9. La validation emboîtée et la recherche bayésienne restent des sections du chapitre 10. L'attention n'est plus hors manuscrit : le chapitre 19 l'enseigne assez pour lire un bloc Transformer, pas comme un survey.
 
 ## 7. Étendue indicative
 
@@ -134,18 +131,17 @@ Il n'y a pas de cible ni de plafond de pages. Les nombres ci-dessous sont un ord
 | Chapitre 7. Évaluation | 9 |
 | Chapitre 8. Régularisation | 6 |
 | Partie III, ouverture | 1 |
-| Chapitre 9. Arbres, forêt et boosting | 14 |
-| Chapitre 10. Validation croisée et hyperparamètres | 10 |
-| Chapitre 11. Calibration | 7 |
-| Chapitre 12. Production | 7 |
-| Chapitre 13. Fairness | 6 |
+| Chapitres 9 à 11. Arbres, validation, calibration | 10 à 14 chacun |
 | Partie IV, ouverture | 1 |
-| Chapitre 14. Non supervisé | 11 |
-| Chapitre 15. Embeddings | 8 |
-| Chapitre 16. Réseaux de neurones | 10 |
-| Conclusion | 2 |
-| Annexe A. Solutions | 11 |
-| Glossaire | 3 |
+| Chapitres 12 à 16. Non supervisé et auto-supervisé | 8 à 12 chacun |
+| Partie V, ouverture | 1 |
+| Chapitres 17 à 19. Réseaux jusqu'au Transformer | 10 à 14 chacun |
+| Partie VI, ouverture | 1 |
+| Chapitres 20 à 24. Renforcement jusqu'au RLHF | 8 à 12 chacun |
+| Partie VII, ouverture | 1 |
+| Chapitres 25 et 26. Production et fairness | 8 à 12 chacun |
+| Conclusion | 3 |
+| Annexe A et glossaire | s'allongent avec les chapitres |
 
 ## 8. Gabarit de chaque chapitre
 
@@ -163,18 +159,23 @@ L'ordre est fixe.
 
 ## 9. Préface, parties, conclusion, annexe, glossaire
 
-**Préface.** À qui s'adresse le livre, ce qu'il suppose (Python, un appel d'API déjà écrit, aucune analyse), l'organisation en quatre parties, la façon dont les exemples numériques et les sections pratiques se répondent, la pile et la graine, un renvoi à [STYLE.md](STYLE.md), la façon dont le livre a été écrit. L'aide d'outils d'IA générative est dite.
+**Préface.** Déjà écrite, et mise à jour pour les sept parties. Elle présente les trois régimes et dit pourquoi le supervisé vient en premier.
 
 **Ouvertures de partie.** La question de la partie, ce que chaque chapitre consomme du précédent, ce que le lecteur sait construire en sortant. La finalité de la partie y est implicite, reliée aux chapitres, sans rubrique dédiée.
 
-- Partie I — Ajuster un modèle. Quelle décision, puis la somme pondérée et la descente qui trouve ses paramètres, sur une table encore propre.
-- Partie II — Préparer, diagnostiquer, contraindre. Rendre une table utilisable, voir le modèle échouer quand on lui donne trop ou trop peu, passer à une classe, mesurer, limiter.
-- Partie III — Choisir un modèle et s'y fier. Un modèle qui découpe au lieu de pondérer, la recherche des réglages, une probabilité qui veut dire ce qu'elle dit, la mise en service, l'écart entre groupes.
-- Partie IV — Structure et représentations. Grouper et compresser sans étiquette, associer un vecteur à un objet, calculer ce vecteur par un réseau.
+- Partie I — Ajuster un modèle. Rédigée. Quelle décision, puis la somme pondérée et la descente, sur une table encore propre.
+- Partie II — Préparer, diagnostiquer, contraindre. Rédigée. Rendre une table utilisable, voir le modèle échouer, passer à une classe, mesurer, limiter.
+- Partie III — Choisir et régler. Un modèle qui découpe, la recherche des réglages, une probabilité qui veut dire ce qu'elle dit. La production et la fairness n'y sont plus.
+- Partie IV — Sans étiquette. Grouper, compresser, isoler un point rare, associer un vecteur, apprendre sans cible explicite.
+- Partie V — Réseaux, jusqu'au Transformer. Empiler les sommes déjà vues, réaliser l'autoencodeur, lire un bloc.
+- Partie VI — Renforcement. Agent, bandit, valeur, politique, puis ajuster un Transformer par des préférences.
+- Partie VII — Mettre en service. Le pipeline et l'écart entre groupes, pour tous les paradigmes.
 
-**Conclusion.** Les leviers dans l'ordre d'un diagnostic (cadrage, fuite dans les variables, capacité, métrique, réglage, calibration, données servies, écart entre groupes), puis ce que le livre laisse ouvert. Pas de nouveau mécanisme.
+**Conclusion.** Les leviers dans l'ordre d'un diagnostic, puis ce que le livre laisse ouvert. Pas de nouveau mécanisme. Fichier prévu : `36-conclusion.md`. Il n'existe pas encore. L'ancien nom `21-conclusion.md` n'a jamais été créé.
 
-**Annexe A. Solutions.** Les quarante-huit exercices, par chapitre, avec le raisonnement. Les questions de compréhension n'y figurent pas. Ce choix reste arrêté : pas de solutions répétées en fin de chapitre.
+**Fichiers déjà écrits, non renommés.** `00-preface.md` à `10-ch08.md`, `22-annexe-a-solutions.md`, `23-glossaire.md`. Les préfixes 22 et 23 ne suivent plus l'ordre de lecture : l'annexe et le glossaire restent en fin d'ouvrage, leurs noms ne changent pas. Les fichiers prévus sautent donc de `21-partie5.md` à `24-ch17.md`.
+
+**Annexe A. Solutions.** Les exercices des chapitres rédigés, avec le raisonnement. Les questions de compréhension n'y figurent pas. Les chapitres 9 à 26 s'y ajouteront. Pas de solutions répétées en fin de chapitre.
 
 **Glossaire.** Tableau français / anglais / définition courte / chapitre. Entrées nées des termes mis en italique à leur définition.
 
@@ -367,62 +368,70 @@ L'ordre est fixe.
 
 **Exercices.** Lire un diagramme où les scores à 0,9 n'arrivent que six fois sur dix. Dire pourquoi calibrer tous les candidats puis garder le meilleur sur les mêmes lignes fausse le choix. Appliquer deux températures à quatre logits et dire laquelle concentre la masse.
 
-### Chapitre 12. Production : pipeline, dérive et pièges
+### Chapitre 12. Grouper sans cible : k-means, hiérarchie, DBSCAN
 
-**Indicatif : environ 7 pages.** Le prétraitement du chapitre 4 fait partie du modèle servi. Un contre-exemple recalcule la mise à l'échelle à l'appel. Versions, graine, identifiant du modèle. Écart entre entraînement et service, dérive du mélange des exemples. Le seuil s'appuie sur le coût et sur la probabilité calibrée du chapitre 11, pas sur 0,5.
+**Partie IV — Sans étiquette.** Fichier d'ouverture prévu : `15-partie4.md`. Chapitre : `16-ch12.md`.
 
-**Dans l'ouverture, sans titre.** Le modèle que vous mettez derrière une API est le pipeline entier : transformations figées, poids, version. Un changement de schéma, de codage ou de version entre la mesure et l'appel est un écart d'entraînement et de service. La dérive, c'est le mélange des requêtes qui bouge, ou un modèle remplacé sous le même nom. Vous surveillez un taux choisi d'avance — alertes, abstentions, erreurs — pas le score d'entraînement. Les mêmes écarts existent quand le modèle servi est un LLM : template, corpus retrouvé, identifiant du modèle.
+Sans cible, le modèle ne prédit plus une case : il propose une structure. Le chapitre groupe des points après la standardisation du chapitre 4, parce qu'une distance est dominée par la colonne la plus dispersée. K-means fixe le nombre de groupes et un centre. La classification hiérarchique montre l'emboîtement sans choisir ce nombre tout de suite. DBSCAN groupe par densité et laisse des points sans groupe : ce ne sont pas des erreurs, ce sont des points que la densité ne réclame pas.
 
-**Objectifs.**
-
-- Décrire un chemin où le prétraitement de l'appel est celui de l'entraînement.
-- Distinguer un écart train/service et une dérive, avec un signal pour chacun.
-- Fixer un seuil à partir d'un coût et d'une probabilité calibrée.
-- Rattacher fuite temporelle, entrée absente, métrique unique et modèle non versionné au contrôle qui les révèle.
-
-**Sections.** Le pipeline est le modèle. Versions. Écart et dérive. Le seuil. Pièges. Ce que ça change en pratique.
-
-**Exercices.** Repérer une statistique recalculée à l'appel. Proposer un signal quand la part d'un type de requête double, et un autre quand l'identifiant servi change. Choisir un seuil pour un coût du chapitre 7.
-
-### Chapitre 13. Fairness : ce que les données transmettent
-
-**Indicatif : environ 6 pages.** Trois sources : les variables, la cible historique, l'écart de performance entre groupes. Calcul d'un écart de faux négatifs sur une matrice à deux groupes A et B. Retirer la colonne du groupe laisse les variables qui la reconstruisent. Une contrainte d'équité est un choix, pas un réglage automatique. Le règlement européen, s'il est cité, reste un aparté de contexte, pas un mode d'emploi juridique.
-
-**Dans l'ouverture, sans titre.** Un modèle que vous entraînez peut désavantager un groupe parce que la table, ou l'étiquette historique, concentre déjà une décision humaine. Vous mesurez l'écart avec les métriques du chapitre 7, sur le modèle que vous vous apprêtez à servir. Le même calcul vaut pour un LLM qui répond moins bien ou refuse davantage selon la langue ou la mention d'un groupe : retirer un mot du prompt ne retire pas les proxies du contexte. Le chiffre ne choisit pas la politique du produit.
-
-**Objectifs.**
-
-- Distinguer biais des variables, biais de la cible, écart de performance.
-- Calculer un écart de taux de faux négatifs entre deux groupes.
-- Expliquer la reconstruction d'une colonne retirée par d'autres variables.
-- Formuler la limite d'une métrique d'équité.
-
-**Sections.** D'où vient l'écart. Le mesurer. La colonne retirée. Ce qu'une métrique ne décide pas. Ce que ça change en pratique.
-
-**Exercices.** Classer quatre situations selon les trois sources. Calculer l'écart de rappel entre A et B. Proposer une variable qui sert de proxy à une colonne retirée.
-
-### Chapitre 14. Apprentissage non supervisé : groupes, axes, anomalies
-
-**Indicatif : environ 11 pages.** Sans cible, contrairement à tout l'arc précédent. K-means sur `make_blobs`, après un rappel : sans l'échelle du chapitre 4, une variable domine la distance. PCA comme directions de variance maximale, sur `digits` ou un nuage synthétique, avec l'erreur de reconstruction. Les anomalies sont d'abord les points loin de leur centre ou mal reconstruits. Une section apprend ensuite l'*isolation forest* : des coupes au hasard, comme les arbres du chapitre 9, isolent un point rare en peu d'étapes. Ce que la distance ne voit pas, cette forêt le voit. L'auto-encodeur, version par réseau de l'erreur de reconstruction, est annoncé pour le chapitre 16.
-
-**Dans l'ouverture, sans titre.** Vous construisez aussi des modèles sans étiquette : segmenter des objets, compresser des descripteurs avant un modèle supervisé, faire remonter des cas éloignés de la masse. K-means et PCA sont ces deux outils, et l'anomalie en est une lecture, pas un produit séparé. L'échelle du chapitre 4 décide du résultat. Un embedding du chapitre 15 est une autre façon d'obtenir des coordonnées ; la PCA en est le cas linéaire, sans entraînement par étiquette.
+**Dans l'ouverture, sans titre.** Segmenter des objets, des sessions ou des vecteurs est déjà une décision de conception. Le nombre de groupes n'est pas un fait du monde. Il se justifie par l'usage qu'on fera du groupe.
 
 **Objectifs.**
 
 - Grouper avec k-means et dire ce que l'échelle des variables change aux distances.
+- Lire un dendrogramme assez bien pour choisir où couper.
+- Dire ce que DBSCAN laisse hors groupe, et pourquoi ce n'est pas un k-means raté.
+- Choisir le non supervisé quand il n'y a pas de cible à prédire.
+
+**Sections.** Pas de cible. K-means et l'échelle. Hiérarchie. Densité. Ce que ça change en pratique.
+
+**Exercices.** Prédire le changement des groupes si une variable passe de \[0, 1\] à \[0, 10 000\] sans standardisation. Couper un petit dendrogramme à deux hauteurs et dire ce qui change. Citer un nuage où imposer k groupes force un rapprochement que la densité refuse.
+
+### Chapitre 13. Réduire la dimension : PCA, t-SNE, UMAP
+
+Fichier prévu : `17-ch13.md`.
+
+La PCA cherche des directions de variance maximale, les mêmes variances que le chapitre 5 a appris à nommer. Elle est linéaire, et l'erreur de reconstruction dit ce qui a été jeté. t-SNE et UMAP ne servent pas à construire une variable pour un modèle servi : ils placent les points dans un plan pour qu'un humain voie des groupes. Deux réglages différents dessinent deux cartes. Le chapitre le dit avant que le dessin passe pour une preuve.
+
+**Dans l'ouverture, sans titre.** Compresser des descripteurs avant un modèle, ou les regarder, ne sont pas le même geste. Le premier se mesure. Le second se regarde, et se méfie.
+
+**Objectifs.**
+
 - Décrire une composante principale comme une direction de variance, et l'erreur de reconstruction comme ce qu'on a perdu.
-- Marquer une anomalie par la distance, par l'erreur de reconstruction, ou par une forêt d'isolation, et dire ce que chaque critère ne voit pas.
-- Choisir le non supervisé quand il n'y a pas de cible, et le supervisé quand il y en a une.
+- Choisir un petit nombre de composantes pour une tâche aval, et dire comment le chapitre 7 en jugera l'effet.
+- Expliquer pourquoi t-SNE et UMAP sont des outils de visualisation, pas des features à mettre en production sans autre contrôle.
+- Relier la PCA à l'embedding du chapitre 15 : les deux donnent des coordonnées, l'une sans étiquette et linéaire.
 
-**Sections.** Pas de cible. K-means et l'échelle. Axes et variance. Anomalies par distance et par reconstruction. Forêt d'isolation. Ce que ça change en pratique.
+**Sections.** Axes et variance. Ce que la reconstruction jette. Regarder n'est pas servir. Ce que ça change en pratique.
 
-**Exercices.** Prédire le changement des groupes si une variable passe de \[0, 1\] à \[0, 10 000\] sans normalisation. Dire ce qu'une PCA à deux axes garde et jette sur un nuage allongé. Donner un nuage où la distance au centre ne signale rien et où une forêt d'isolation isole un point.
+**Exercices.** Dire ce qu'une PCA à deux axes garde et jette sur un nuage allongé. Proposer une vérification, au sens du chapitre 7, avant d'utiliser des composantes comme variables d'une logistique. Expliquer pourquoi deux images t-SNE du même jeu peuvent raconter deux histoires.
+
+### Chapitre 14. Détecter une anomalie
+
+Fichier prévu : `18-ch14.md`.
+
+Un point loin de son centre, un point mal reconstruit par la PCA, un point qu'une forêt d'isolation sépare en peu de coupes : trois lectures, pas trois produits. L'*isolation forest* reprend les coupes du chapitre 9. Un point rare est isolé plus vite qu'un point banal. La reconstruction par autoencodeur, qui généralise la PCA, est annoncée pour le chapitre 18 : ce chapitre-ci ne construit pas le réseau.
+
+**Dans l'ouverture, sans titre.** Faire remonter un cas éloigné de la masse est souvent le modèle que l'on met en service quand on n'a pas d'étiquette fiable. Le critère choisi décide quels cas resteront invisibles.
+
+**Objectifs.**
+
+- Marquer une anomalie par la distance à un centre, par une erreur de reconstruction linéaire, ou par une forêt d'isolation.
+- Dire ce que chaque critère ne voit pas.
+- Relier l'isolation forest aux arbres du chapitre 9, sans en refaire le cours.
+- Distinguer un point hors groupe au sens de DBSCAN et une anomalie que l'on veut signaler.
+
+**Sections.** Loin du centre. Mal reconstruit. Isolé vite. Ce que ça change en pratique.
+
+**Exercices.** Donner un nuage où la distance au centre ne signale rien et où une forêt d'isolation isole un point. Dire ce qu'une PCA qui garde presque toute la variance rate comme détecteur. Choisir un critère pour des événements rares déjà étiquetés, et dire pourquoi le chapitre 7 reprend alors la main.
 
 ### Chapitre 15. Embeddings et représentations
 
-**Indicatif : environ 8 pages.** Le one-hot du chapitre 4 est le vecteur creux. Un embedding est un vecteur dense associé à un objet, entraîné par la descente du chapitre 3 pour une tâche du chapitre 6, puis réutilisé comme variables du chapitre 2. La similarité cosinus compare deux vecteurs. La PCA du chapitre 14 est le cas linéaire obtenu sans étiquette. Un listing apprend un embedding de dimension 2 sur quelques catégories synthétiques, pour qu'on puisse le dessiner. Utiliser un vecteur déjà calculé — y compris un embedding de texte — comme colonnes d'un modèle linéaire est le second geste, distinct de l'entraînement.
+Fichier prévu : `19-ch15.md`.
 
-**Dans l'ouverture, sans titre.** Vous construisez des représentations pour réutiliser un objet (un identifiant, un document, un produit) dans un autre modèle, au lieu de réencoder toute la table. Vous les entraînez quand vous avez une tâche, ou vous en consommez qui ont été entraînées ailleurs. Un embedding de LLM est une source de vecteurs parmi d'autres ; le mécanisme est le même que pour un vecteur appris sur vos identifiants. La qualité se mesure avec les outils du chapitre 7, sur la tâche d'aval, pas sur le vecteur seul.
+Le one-hot du chapitre 4 est le vecteur creux. Un embedding est un vecteur dense associé à un objet, entraîné par la descente du chapitre 3, puis réutilisé comme variables du chapitre 2. La similarité cosinus compare deux vecteurs. La PCA du chapitre 13 est le cas linéaire obtenu sans étiquette. Utiliser un vecteur déjà calculé et en entraîner un sont deux gestes. La qualité se juge sur la tâche d'aval, avec les outils du chapitre 7, pas sur la norme du vecteur.
+
+**Dans l'ouverture, sans titre.** Réutiliser un objet, un identifiant, un document ou un produit, dans un autre modèle évite de réencoder toute la table. Un embedding de texte est une source de vecteurs parmi d'autres. Le mécanisme est le même.
 
 **Objectifs.**
 
@@ -431,33 +440,228 @@ L'ordre est fixe.
 - Comparer deux vecteurs par similarité cosinus, et situer la PCA comme embedding linéaire non supervisé.
 - Séparer le fait d'entraîner une représentation et celui de réutiliser une représentation déjà calculée.
 
-**Sections.** Du vecteur creux au vecteur court. L'entraîner. Le comparer. S'en servir comme variables. Ce que ça change en pratique.
+**Sections.** Du vecteur creux au vecteur court. L'entraîner. Le comparer. S'en servir. Ce que ça change en pratique.
 
-**Exercices.** Dire ce qu'un one-hot de mille catégories coûte face à un embedding de taille 8. Esquisser la perte qui déplace deux vecteurs dont la tâche est « ces deux objets vont ensemble ». Nommer une mesure du chapitre 7 pour juger un embedding utilisé comme variables, et dire pourquoi la norme des vecteurs seule ne juge pas la tâche.
+**Exercices.** Dire ce qu'un one-hot de mille modalités coûte face à un embedding de taille 8. Esquisser la perte qui rapproche deux vecteurs dont la tâche est « ces deux objets vont ensemble ». Nommer une mesure du chapitre 7 pour juger un embedding utilisé comme variables.
 
-### Chapitre 16. Réseaux de neurones : de la couche au Transformer
+### Chapitre 16. Apprendre sans cible explicite
 
-**Indicatif : environ 10 pages.** Un neurone est la somme du chapitre 2 passée dans la fonction du chapitre 6. Une couche en empile. La rétropropagation est la descente du chapitre 3 appliquée couche par couche, sans dérivation complète. La profondeur construit des représentations, là où le chapitre 5 les fabriquait à la main et où le chapitre 15 les stockait dans une table. Un petit réseau est comparé à la logistique sur le même jeu synthétique. Une section reprend l'erreur de reconstruction du chapitre 14 avec un auto-encodeur : le réseau apprend à refaire son entrée, et un point mal refait est une anomalie. La dernière section pose un bloc Transformer : l'embedding du chapitre 15 en entrée, des couches déjà vues, et l'attention nommée comme la pièce que le livre ne développe pas.
+Fichier prévu : `20-ch16.md`.
 
-**Dans l'ouverture, sans titre.** Quand la table et les arbres ne suffisent plus, ou quand l'entrée est déjà un vecteur du chapitre 15, vous empilez des couches au lieu d'ajouter des colonnes à la main. Vous y reconnaissez le coût, le pas, l'*early stopping*, l'évaluation. Un Transformer, et donc un LLM, commence par l'embedding que vous venez de construire et empile ces couches ; l'attention reste à étudier ailleurs. Les questions des chapitres 7, 12 et 13 — mesure, dérive, écart entre groupes — portent encore sur le système une fois le réseau entraîné.
+L'auto-supervisé fabrique sa cible à partir de l'entrée. Reconstruire ce qu'on a masqué, rapprocher deux vues du même objet, prédire la suite : la perte est celle des chapitres 3 et 6, la réponse n'a pas été annotée. Le chapitre nomme l'autoencodeur comme la reconstruction du chapitre 14 faite par un réseau, et le pré-entraînement comme la même idée à l'échelle d'un texte. Il ne construit ni le réseau ni le Transformer. Il pose le signal d'apprentissage que les chapitres 18 et 19 réaliseront.
+
+**Dans l'ouverture, sans titre.** Beaucoup de modèles que l'on met en service ont d'abord appris sur des données sans étiquette humaine. Comprendre ce signal évite de prendre un modèle pré-entraîné pour une mémoire neutre, ou pour un modèle supervisé déguisé.
+
+**Objectifs.**
+
+- Expliquer une tâche prétexte : la cible est fabriquée à partir de l'entrée.
+- Relier la reconstruction auto-supervisée à l'erreur de reconstruction de la PCA.
+- Situer le pré-entraînement d'un modèle de langage comme une prédiction de la suite, sans annotation.
+- Dire ce que ce chapitre ne construit pas encore : le réseau, le bloc, l'ajustement par préférences.
+
+**Sections.** Une cible fabriquée. Reconstruire. Contraster. Prédire la suite. Ce que ça change en pratique.
+
+**Exercices.** Pour trois situations (image masquée, deux vues d'un même exemple, mot suivant), nommer l'entrée, la cible fabriquée, et la perte parmi celles des chapitres 3 et 6. Dire pourquoi un autoencodeur n'est pas encore entraînable avec les seuls outils de ce chapitre. Expliquer en quoi un modèle pré-entraîné peut porter les régularités du corpus, que le chapitre 26 mesurera comme un écart.
+
+### Chapitre 17. Du neurone au réseau
+
+**Partie V — Réseaux, jusqu'au Transformer.** Fichier d'ouverture prévu : `21-partie5.md`. Chapitre : `24-ch17.md`. Les préfixes 22 et 23 restent l'annexe et le glossaire, déjà écrits.
+
+Un neurone est la somme du chapitre 2 passée dans la sigmoïde du chapitre 6. Une couche en empile. La rétropropagation est la descente du chapitre 3, couche par couche, sans dérivation complète dans le texte. La profondeur construit des représentations, là où le chapitre 5 les fabriquait à la main et où le chapitre 15 les stockait dans une table. Un petit réseau est comparé à la logistique sur le même jeu synthétique. L'arrêt anticipé du chapitre 8 surveille la validation. L'attention n'est pas encore là.
+
+**Dans l'ouverture, sans titre.** Quand la table et les arbres ne portent plus la décision, on empile des couches au lieu d'ajouter des colonnes à la main. Le coût, le pas et l'arrêt sont déjà connus. Ce qui change, c'est que la représentation est calculée.
 
 **Objectifs.**
 
 - Relier un neurone aux chapitres 2 et 6, et une première couche à l'embedding du chapitre 15.
 - Décrire la rétropropagation comme le gradient calculé couche par couche.
 - Dire ce que la profondeur ajoute par rapport aux colonnes construites du chapitre 5.
-- Sur un schéma de bloc, marquer ce que le livre a déjà vu et ce qu'il laisse ouvert.
+- Indiquer quelle courbe l'arrêt anticipé du chapitre 8 surveille.
 
-**Sections.** Un neurone, déjà vu. Empiler. La rétropropagation, sans dérivée complète. Représentations calculées. Le même jeu, en réseau et en logistique. Auto-encodeur et erreur de reconstruction. Où commence un Transformer. Ce que ça change en pratique.
+**Sections.** Un neurone, déjà vu. Empiler. La rétropropagation, sans dérivée complète. Représentations calculées. Le même jeu, en réseau et en logistique. Ce que ça change en pratique.
 
-**Exercices.** Réécrire un neurone à deux entrées avec les symboles du chapitre 6. Indiquer quelle courbe l'*early stopping* du chapitre 8 surveille sur trois couches. Sur un schéma de bloc, marquer l'embedding et la couche linéaire comme déjà lus, et l'attention comme hors du livre.
+**Exercices.** Réécrire un neurone à deux entrées avec les symboles du chapitre 6. Sur un schéma de trois couches, dire où passe le gradient. Comparer, sur un jeu synthétique, l'erreur tenue à l'écart d'une logistique et d'un petit réseau, et dire quand le réseau ne gagne rien.
+
+### Chapitre 18. Autoencodeurs
+
+Fichier prévu : `25-ch18.md`.
+
+L'autoencodeur réalise l'objectif du chapitre 16 : le réseau refait son entrée, et le goulet au milieu est une représentation apprise. L'erreur de reconstruction prolonge celle de la PCA, sans rester linéaire. Un point mal refait est une anomalie, au sens du chapitre 14, avec un détecteur plus souple. Le chapitre n'ouvre pas le calcul distribué des grands modèles. Il montre le mécanisme sur un jeu petit.
+
+**Dans l'ouverture, sans titre.** Avoir nommé la reconstruction ne la rend pas entraînable. Ici le réseau du chapitre 17 a une tâche sans étiquette humaine, et un échec qui se mesure.
+
+**Objectifs.**
+
+- Décrire l'encodeur, le goulet et le décodeur comme un seul réseau entraîné par la descente.
+- Relier l'erreur de reconstruction à la PCA du chapitre 13 et aux anomalies du chapitre 14.
+- Dire ce qu'un goulet trop large apprend : l'identité, donc rien.
+- Situer ce mécanisme comme la version petite du pré-entraînement nommé au chapitre 16.
+
+**Sections.** Refaire l'entrée. Le goulet. Ce que la reconstruction rate. Ce que ça change en pratique.
+
+**Exercices.** Prédire l'erreur d'un autoencodeur dont le goulet a la taille de l'entrée. Comparer, sur un nuage allongé, ce qu'une PCA et un autoencodeur peuvent rater. Proposer un signal d'anomalie fondé sur l'erreur de reconstruction, et dire comment le chapitre 25 le surveillerait.
+
+### Chapitre 19. Le Transformer
+
+Fichier prévu : `26-ch19.md`.
+
+Un bloc commence par l'embedding du chapitre 15. L'attention mélange les positions : chaque élément interroge les autres, pondère leurs valeurs, et produit une nouvelle représentation. Le livre s'arrête à cette lecture : requêtes, clés, valeurs, plusieurs têtes comme plusieurs façons de pondérer, puis le bloc empilé. Pas de tour d'horizon des variantes, pas d'entraînement à l'échelle. Le pré-entraînement est celui du chapitre 16 : prédire la suite, ou une partie masquée, avec la perte du chapitre 6. Le chapitre 24 s'en servira tel quel.
+
+**Dans l'ouverture, sans titre.** Un modèle de langage que l'on appelle est ce bloc, déjà entraîné. Le lire permet de savoir ce que l'on ajuste ensuite, et ce que l'on ne fait que solliciter.
+
+**Objectifs.**
+
+- Situer l'embedding de tokens comme le chapitre 15 appliqué à un vocabulaire.
+- Décrire l'attention comme une somme pondérée des valeurs, les poids venant de la comparaison entre requêtes et clés.
+- Relier le pré-entraînement du bloc à la tâche prétexte du chapitre 16.
+- Nommer ce que le chapitre ne couvre pas : le calcul distribué, les variantes d'architecture, l'ajustement par préférences.
+
+**Sections.** Des tokens aux vecteurs. L'attention, assez pour lire un bloc. Empiler. Pré-entraîner, au sens du chapitre 16. Ce que ça change en pratique.
+
+**Exercices.** Sur un schéma de bloc, marquer l'embedding, l'attention et la couche linéaire déjà lue au chapitre 17. Expliquer pourquoi un token peut peser plus qu'un autre dans la somme. Dire quelle perte du chapitre 6 sert à prédire le token suivant.
+
+### Chapitre 20. Un agent, une récompense, une politique
+
+**Partie VI — Renforcement.** Fichier d'ouverture prévu : `27-partie6.md`. Chapitre : `28-ch20.md`.
+
+Le chapitre 1 a nommé le renforcement sans l'enseigner. Ici l'agent agit dans un environnement, reçoit une récompense, et suit une politique : une façon de choisir l'action selon ce qu'il perçoit. Le processus de décision markovien range cela en états, actions, transitions et récompenses. L'état résume le passé utile. Si ce résumé est faux, la politique optimise autre chose que la décision que l'on croit poser. Le Transformer du chapitre 19 n'intervient qu'au chapitre 24.
+
+**Dans l'ouverture, sans titre.** Construire un système qui agit, pas seulement qui prédit, demande de dire ce qui est récompensé. Une récompense mal posée est une cible mal posée, au sens du chapitre 1.
+
+**Objectifs.**
+
+- Distinguer agent, environnement, action, récompense et politique.
+- Écrire un petit processus de décision markovien : états, actions, ce qui fait passer d'un état à l'autre.
+- Dire ce que l'hypothèse de Markov oublie si l'état est incomplet.
+- Relier la récompense à la cible du supervisé : les deux disent ce que l'on veut, pas comment l'obtenir.
+
+**Sections.** Agir, pas seulement prédire. La politique. Les états et les transitions. Un état qui oublie. Ce que ça change en pratique.
+
+**Exercices.** Pour une tâche d'appel d'outil, proposer une récompense et dire quel comportement elle encouragerait à tort. Donner deux états dont l'un oublie une information nécessaire. Écrire trois transitions d'un processus à deux états.
+
+### Chapitre 21. Explorer et exploiter : les bandits
+
+Fichier prévu : `29-ch21.md`.
+
+Un bandit a plusieurs bras et une récompense incertaine. L'état ne change pas. Chaque essai choisit entre jouer le bras qui a le mieux payé et en essayer un autre. L'exploration coûte des récompenses immédiates. L'exploitation fige un jugement trop tôt. Le chapitre montre la règle epsilon-gloutonne et l'idée de regret, sans théorie lourde. Le même compromis reviendra dans le Q-learning et dans le réglage d'une politique.
+
+**Dans l'ouverture, sans titre.** Tout système qui apprend en agissant dépense une partie de ses essais à ne pas savoir. Décider combien, c'est déjà un choix de conception.
+
+**Objectifs.**
+
+- Formuler un bandit à plusieurs bras et la récompense moyenne d'un bras.
+- Expliquer le compromis entre exploration et exploitation sur une suite d'essais.
+- Décrire la règle epsilon-gloutonne et dire ce que epsilon règle.
+- Reconnaître le même compromis quand une politique cesse d'essayer des actions rares.
+
+**Sections.** Plusieurs bras. Le regret. La règle epsilon-gloutonne. Ce que ça change en pratique.
+
+**Exercices.** Sur trois bras de moyennes connues de vous seul, simuler dix essais gloutons et dire quel bras est ignoré. Proposer un epsilon pour un système qui ne peut pas se tromper souvent, et un autre pour un système encore en exploration. Relier un bras jamais tiré à une classe rare que le chapitre 7 n'a pas vue.
+
+### Chapitre 22. Q-learning
+
+Fichier prévu : `30-ch22.md`.
+
+La valeur d'une action dans un état est la récompense que l'on en attend, suites comprises. Q-learning met à jour cette table : la cible de la mise à jour est la récompense immédiate, plus la valeur escomptée de la meilleure action suivante. C'est encore une erreur, au sens du chapitre 3, entre la valeur annoncée et cette cible. Le chapitre reste tabulaire. Remplacer la table par un réseau est le Q-learning profond : il réutilise le chapitre 17, et on ne l'entraîne pas ici.
+
+**Dans l'ouverture, sans titre.** Quand les conséquences d'une action arrivent plus tard, la récompense du moment ne juge pas l'action. Il faut une valeur.
+
+**Objectifs.**
+
+- Lire la valeur d'un couple état-action comme une prédiction de récompense cumulée.
+- Écrire la mise à jour tabulaire comme une correction vers une cible calculée.
+- Dire le rôle du taux d'escompte : jusqu'où l'avenir compte.
+- Situer le Q-learning profond comme la même mise à jour, la table devenant un réseau.
+
+**Sections.** Une valeur, pas seulement une récompense. La cible de la mise à jour. L'escompte. De la table au réseau, sans l'entraîner. Ce que ça change en pratique.
+
+**Exercices.** Sur un processus à deux états, calculer à la main une mise à jour à partir d'une table initiale nulle. Dire ce qu'un escompte nul optimise. Expliquer pourquoi une table devient impossible quand les états sont des phrases.
+
+### Chapitre 23. Gradients de politique
+
+Fichier prévu : `31-ch23.md`.
+
+Au lieu d'apprendre une valeur puis d'en déduire l'action, on ajuste directement les paramètres d'une politique. Le gradient monte la probabilité des actions qui ont précédé une récompense haute, et la baisse pour les autres. C'est la descente du chapitre 3, dans le sens de la récompense. La politique peut être le réseau du chapitre 17. La variance des retours est le problème pratique : une récompense bruitée donne un gradient bruité, et une ligne de base le centre. Le chapitre le montre sur une politique petite, pas sur un modèle de langage.
+
+**Dans l'ouverture, sans titre.** Certaines actions ne se laissent pas lire dans une table. On peut quand même pousser la politique vers ce qui a été récompensé, si l'on accepte un gradient bruité.
+
+**Objectifs.**
+
+- Distinguer apprendre une valeur et apprendre directement une politique.
+- Relier le gradient de politique à la descente du chapitre 3.
+- Expliquer pourquoi la variance des retours rend le pas instable, et ce qu'une ligne de base change.
+- Dire qu'une politique neuronale réutilise le chapitre 17, sans en refaire l'architecture.
+
+**Sections.** Ajuster la politique. Le sens du gradient. Une ligne de base. Ce que ça change en pratique.
+
+**Exercices.** Sur trois actions dont une seule a été récompensée, dire lesquelles le gradient rend plus probables. Expliquer un cas où une récompense bruitée renforce une mauvaise action. Proposer ce qui, dans la politique, jouerait le rôle du pas d'apprentissage.
+
+### Chapitre 24. RLHF et DPO
+
+Fichier prévu : `32-ch24.md`.
+
+On ajuste le Transformer du chapitre 19 avec des préférences humaines, pas avec une cible mot à mot. Un modèle de récompense est une régression, au sens du chapitre 2, entraînée à noter des réponses. La politique est ensuite poussée vers les réponses mieux notées, avec le gradient du chapitre 23, et freinée pour ne pas s'éloigner du modèle de départ : c'est le cousin de la régularisation du chapitre 8. DPO retire le modèle de récompense explicite et apprend la politique directement sur les paires préférées. Le chapitre dit ce que les deux partagent, et ce que DPO n'entraîne plus. Il ne tranche pas la variante à retenir.
+
+**Dans l'ouverture, sans titre.** Rendre un modèle de langage utile passe souvent par des jugements humains sur des paires de réponses. Ce jugement est une cible, avec les fuites et les écarts qu'une cible a toujours eus.
+
+**Objectifs.**
+
+- Décrire une paire préférée comme une cible construite, pas comme une vérité.
+- Situer le modèle de récompense comme une régression sur des réponses.
+- Relier l'ajustement de la politique au gradient du chapitre 23 et à un frein du chapitre 8.
+- Expliquer ce que DPO n'entraîne plus, et ce qu'il suppose encore.
+
+**Sections.** Des paires, pas des notes absolues. Le modèle de récompense. Pousser la politique, sans la perdre. DPO. Ce que ça change en pratique.
+
+**Exercices.** Donner une paire de réponses et une récompense qui encouragerait la plus longue plutôt que la plus juste. Dire quelle fuite du chapitre 7 apparaîtrait si les paires d'évaluation avaient servi à l'ajustement. Comparer ce que RLHF et DPO entraînent.
+
+### Chapitre 25. Production : pipeline, dérive et pièges
+
+**Partie VII — Mettre en service.** Fichier d'ouverture prévu : `33-partie7.md`. Chapitre : `34-ch25.md`.
+
+Le prétraitement du chapitre 4, l'embedding du chapitre 15, les poids d'un Transformer ou les paramètres d'une politique font partie de ce qui est servi. Un contre-exemple recalcule une statistique à l'appel. Versions, graine, identifiant du modèle. L'écart entre entraînement et service, puis la dérive du mélange des requêtes, ont chacun un signal. Quand le modèle émet une probabilité, le seuil s'appuie sur le chapitre 11 et sur un coût, pas sur 0,5. Un cluster ou une politique n'ont pas ce seuil : on surveille la taille des groupes, le taux d'actions rares, le refus.
+
+**Dans l'ouverture, sans titre.** Ce que l'on met derrière une API n'est pas le poids seul. Le pipeline, la version et le mélange des appels décident du comportement, que le modèle classe, groupe, complète un texte ou agisse.
+
+**Objectifs.**
+
+- Décrire un chemin où la transformation de l'appel est celle de l'entraînement, pour un classifieur et pour un embedding.
+- Distinguer un écart entre entraînement et service, et une dérive, avec un signal pour chacun.
+- Fixer un seuil à partir d'un coût et d'une probabilité calibrée, et dire ce que l'on surveille à la place quand il n'y a pas de probabilité.
+- Rattacher fuite temporelle, entrée absente, métrique unique et modèle non versionné au contrôle qui les révèle.
+
+**Sections.** Le pipeline est le modèle. Versions. Écart et dérive. Le seuil, quand il existe. Ce que ça change en pratique.
+
+**Exercices.** Repérer une statistique recalculée à l'appel. Proposer un signal quand la part d'un type de requête double, et un autre quand l'identifiant servi change. Choisir un seuil pour un coût du chapitre 7, puis un signal de remplacement pour une politique qui n'émet pas de probabilité.
+
+### Chapitre 26. Fairness : ce que les données transmettent
+
+Fichier prévu : `35-ch26.md`.
+
+Trois sources : les variables, la cible ou le jugement historique, l'écart de performance entre groupes. Le calcul d'un écart de faux négatifs reprend la matrice du chapitre 7. Retirer la colonne du groupe laisse les variables, ou les embeddings, qui la reconstruisent. Un jugement de préférence du chapitre 24 est une cible historique : il peut concentrer un désavantage sans qu'on l'ait écrit. Une contrainte d'équité est un choix, pas un réglage automatique. Le règlement européen, s'il est cité, reste un aparté de contexte.
+
+**Dans l'ouverture, sans titre.** Un modèle que l'on entraîne, un vecteur que l'on réutilise, une préférence que l'on collecte peuvent désavantager un groupe parce que les données concentraient déjà une décision humaine. Le chiffre mesure. Il ne choisit pas la politique du produit.
+
+**Objectifs.**
+
+- Distinguer un biais dans les variables, un biais dans la cible ou le jugement, et un écart de performance.
+- Calculer un écart de taux de faux négatifs entre deux groupes.
+- Expliquer comment des variables ou un embedding reconstruisent une colonne retirée.
+- Dire ce qu'un jeu de préférences peut transmettre, au sens du chapitre 24.
+
+**Sections.** D'où vient l'écart. Le mesurer. La colonne retirée, et le vecteur qui la reconstruit. Le jugement de préférence. Ce que ça change en pratique.
+
+**Exercices.** Classer quatre situations selon les trois sources, dont une paire de préférences et un embedding. Calculer l'écart de rappel entre deux groupes sur une matrice fournie. Proposer une information de contexte qui sert de proxy à une mention retirée.
 
 ## 11. Décisions arrêtées
 
 1. **Titre.** Fondamentaux du Machine Learning.
-2. **Pas de fil rouge fictif.** Exemples synthétiques ou jeux classiques de scikit-learn. La finalité, construire un modèle, apparaît dans l'introduction de la partie et du chapitre, sans rubrique dédiée. Les LLM et les agents n'y figurent que lorsque le mécanisme est le même.
-3. **Solutions.** Annexe A.
-4. **Arbres, forêt et boosting.** Un seul chapitre, le 9. La forêt y est une section complète, pas un contraste expédié.
-5. **Code.** Extraits dans le livre. Pas de dépôt compagnon. XGBoost pour un listing du chapitre 9 ; LightGBM comparé sans second tutoriel d'API.
+2. **Pas de fil rouge fictif.** Exemples synthétiques ou jeux classiques. La finalité apparaît dans l'introduction de la partie et du chapitre, sans rubrique dédiée. Les LLM et les agents n'y figurent que lorsque le mécanisme est le même.
+3. **Solutions.** Annexe A. Fichier inchangé : `22-annexe-a-solutions.md`.
+4. **Arbres, forêt et boosting.** Un seul chapitre, le 9. La forêt y est une section complète.
+5. **Code.** Extraits dans le livre. Pas de dépôt compagnon. XGBoost pour un listing du chapitre 9. LightGBM comparé sans second tutoriel d'API.
 6. **Style.** [STYLE.md](STYLE.md), d'après le guide O'Reilly. Il ne s'applique pas à l'autre livre du dépôt.
 7. **Longueur.** Aucun plafond. Les ordres de grandeur du § 7 ne sont pas des budgets.
+8. **Paradigmes.** Le supervisé (chapitres 1 à 11) reste le terrain des notions transverses. Le non supervisé et l'auto-supervisé ont la partie IV (chapitres 12 à 16). Les réseaux ont la partie V (chapitres 17 à 19). Le renforcement a la partie VI (chapitres 20 à 24). RLHF et DPO ferment cette partie, après le Transformer. Production et fairness ont la partie VII (chapitres 25 et 26), parce qu'elles valent pour tous les paradigmes.
+9. **Fichiers écrits.** `00-preface.md` à `10-ch08.md`, `22-annexe-a-solutions.md` et `23-glossaire.md` ne sont pas renommés. Les préfixes 22 et 23 ne suivent plus l'ordre de lecture. Les nouveaux fichiers sautent de 21 à 24.
+10. **Textes alignés.** La préface annonce sept parties et vingt-six chapitres. Le chapitre 1, l'annexe A et le glossaire renvoient le renforcement aux chapitres 20 à 24, le non supervisé aux chapitres 12 à 14, la production au chapitre 25 et la fairness au chapitre 26.

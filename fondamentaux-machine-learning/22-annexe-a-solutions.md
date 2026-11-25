@@ -1,6 +1,6 @@
 # Annexe A. Solutions des exercices
 
-Cette annexe reprend les exercices dans l'ordre des chapitres. Les questions de compréhension n'y figurent pas : leur réponse est dans le chapitre. Les chapitres 4 à 16 seront ajoutés ici quand ils seront rédigés.
+Cette annexe reprend les exercices dans l'ordre des chapitres. Les questions de compréhension n'y figurent pas : leur réponse est dans le chapitre. Les exercices des chapitres 1 à 8 figurent ici. Ceux des chapitres 9 à 26 seront ajoutés quand ces chapitres seront rédigés.
 
 ## Chapitre 1
 
@@ -10,7 +10,7 @@ Prédire une durée. La cible est la durée, une grandeur. Trois variables possi
 
 Dire si un événement aura lieu. La cible est une classe à deux valeurs. Trois variables possibles : des mesures antérieures à l'événement, un compteur déjà incrémenté, une catégorie déjà enregistrée. Le régime est la classification. Une variable qui ne s'écrit qu'une fois l'événement constaté est une fuite, pas une variable.
 
-Grouper des objets qui se ressemblent. Il n'y a pas de cible. Les variables sont les mesures qui décrivent chaque objet au moment où l'on groupe. Le régime est non supervisé. Le Chapitre 14 construit ce type de modèle. Le cadrage reste : grouper pour quelle décision, et avec quelles mesures vraiment disponibles.
+Grouper des objets qui se ressemblent. Il n'y a pas de cible. Les variables sont les mesures qui décrivent chaque objet au moment où l'on groupe. Le régime est non supervisé. Le Chapitre 12 construit ce type de modèle. Le cadrage reste : grouper pour quelle décision, et avec quelles mesures vraiment disponibles.
 
 ### Exercice 2
 

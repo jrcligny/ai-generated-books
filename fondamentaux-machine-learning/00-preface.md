@@ -2,7 +2,7 @@
 
 Ce livre apprend à construire un modèle. Pas à en appeler un déjà entraîné : à décider ce qu'il doit prédire, à écrire la forme de cette prédiction, à trouver ses paramètres, et à reconnaître quand le calcul a échoué.
 
-La partie I le fait sur une table numérique propre. La suite élargit le geste : préparer des données réelles, mesurer sans se tromper, contraindre, choisir entre plusieurs familles de modèles, calibrer une probabilité, mettre en service, puis représenter.
+La partie I le fait sur une table numérique propre. Trois régimes structurent ensuite le livre. Le *supervisé* fournit une cible. Le *non supervisé* cherche une structure sans cible, et l'*auto-supervisé* fabrique cette cible à partir de l'entrée. Le *renforcement* ajuste une politique à partir d'une récompense. Le supervisé occupe les onze premiers chapitres, parce que le coût, la descente, l'écart entre une forme trop pauvre et une forme trop libre, la mesure et la régularisation s'y apprennent une fois. Les autres régimes les réutilisent.
 
 ## À qui s'adresse ce livre
 
@@ -14,12 +14,15 @@ Il vous faut savoir lire un court programme Python et manipuler un tableau de no
 
 ## Organisation
 
-Quatre parties, seize chapitres. Chacun consomme le précédent.
+Sept parties, vingt-six chapitres. Chacun consomme le précédent.
 
 - La partie I, « Ajuster un modèle » (Chapitres 1 à 3), pose la décision, la somme pondérée, et la descente qui trouve les paramètres, sur une table encore propre.
 - La partie II, « Préparer, diagnostiquer, contraindre » (Chapitres 4 à 8), rend une table utilisable, montre l'échec d'un modèle trop pauvre ou trop riche, passe à une classe, mesure, puis limite.
-- La partie III, « Choisir un modèle et s'y fier » (Chapitres 9 à 13), entraîne des arbres et un boosting, cherche les réglages, calibre une probabilité, met en service, et mesure un écart entre groupes.
-- La partie IV, « Structure et représentations » (Chapitres 14 à 16), groupe et compresse sans étiquette, associe un vecteur à un objet, et calcule ce vecteur par un réseau.
+- La partie III, « Choisir et régler » (Chapitres 9 à 11), entraîne des arbres et un boosting, cherche les réglages, et calibre une probabilité.
+- La partie IV, « Sans étiquette » (Chapitres 12 à 16), groupe, compresse, isole un point rare, associe un vecteur à un objet, puis apprend sans annotation.
+- La partie V, « Réseaux, jusqu'au Transformer » (Chapitres 17 à 19), empile des sommes, réalise un autoencodeur, et lit un bloc.
+- La partie VI, « Renforcement » (Chapitres 20 à 24), pose un agent, un bandit, une valeur et une politique, puis ajuste le Transformer par des préférences.
+- La partie VII, « Mettre en service » (Chapitres 25 et 26), fige le pipeline et mesure un écart entre groupes, quel que soit le régime.
 
 La lecture est linéaire. L'annexe A donne les solutions des exercices. Le glossaire donne l'anglais des termes introduits en italique.
 
