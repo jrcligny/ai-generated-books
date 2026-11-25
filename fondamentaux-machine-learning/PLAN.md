@@ -1,6 +1,6 @@
 # Plan v5 — Fondamentaux du Machine Learning
 
-Document de travail. Les parties I et II sont rédigées (chapitres 1 à 8) et cette version ne les remanie pas. Elle décrit les parties III à VII, à valider avant toute rédaction.
+Document de travail. Les parties I et II sont rédigées (chapitres 1 à 8). Le plan v5 est validé. La préface, les renvois et le glossaire ont été alignés sur les sept parties. Les chapitres 9 à 26 ne sont pas rédigés.
 
 ## 1. Titre, public, promesse
 
@@ -159,7 +159,7 @@ L'ordre est fixe.
 
 ## 9. Préface, parties, conclusion, annexe, glossaire
 
-**Préface.** Déjà écrite. Elle annonce encore quatre parties. Ce plan en compte sept. Elle n'est pas réécrite ici : une mise à jour du paragraphe d'organisation suivra la validation du plan v5, sans toucher au reste.
+**Préface.** Déjà écrite, et mise à jour pour les sept parties. Elle présente les trois régimes et dit pourquoi le supervisé vient en premier.
 
 **Ouvertures de partie.** La question de la partie, ce que chaque chapitre consomme du précédent, ce que le lecteur sait construire en sortant. La finalité de la partie y est implicite, reliée aux chapitres, sans rubrique dédiée.
 
@@ -664,4 +664,4 @@ Trois sources : les variables, la cible ou le jugement historique, l'écart de p
 7. **Longueur.** Aucun plafond. Les ordres de grandeur du § 7 ne sont pas des budgets.
 8. **Paradigmes.** Le supervisé (chapitres 1 à 11) reste le terrain des notions transverses. Le non supervisé et l'auto-supervisé ont la partie IV (chapitres 12 à 16). Les réseaux ont la partie V (chapitres 17 à 19). Le renforcement a la partie VI (chapitres 20 à 24). RLHF et DPO ferment cette partie, après le Transformer. Production et fairness ont la partie VII (chapitres 25 et 26), parce qu'elles valent pour tous les paradigmes.
 9. **Fichiers écrits.** `00-preface.md` à `10-ch08.md`, `22-annexe-a-solutions.md` et `23-glossaire.md` ne sont pas renommés. Les préfixes 22 et 23 ne suivent plus l'ordre de lecture. Les nouveaux fichiers sautent de 21 à 24.
-10. **Textes déjà en écart avec ce plan, non corrigés ici.** La préface annonce quatre parties. Le chapitre 1 et le glossaire disent que le renforcement n'est pas enseigné. Une révision courte de ces passages suivra la validation, hors de cette PR.
+10. **Textes alignés.** La préface annonce sept parties et vingt-six chapitres. Le chapitre 1, l'annexe A et le glossaire renvoient le renforcement aux chapitres 20 à 24, le non supervisé aux chapitres 12 à 14, la production au chapitre 25 et la fairness au chapitre 26.

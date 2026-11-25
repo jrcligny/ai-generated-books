@@ -2,7 +2,7 @@
 
 Livre autonome, en français, pour un ingénieur logiciel expérimenté qui veut construire des modèles : préparer des données, entraîner, mesurer, régler et mettre en service. Les exemples de code sont synthétiques ou tirés des jeux classiques de scikit-learn. Chaque chapitre dit en quoi la notion sert à cette construction.
 
-Les parties I et II sont rédigées. Le découpage de la suite, l'ordre retenu et les objectifs sont dans le [plan](PLAN.md). Les conventions de style, tirées du guide O'Reilly et adaptées au français, sont dans [STYLE.md](STYLE.md). Ces deux fichiers sont des documents de travail : ils ne font pas partie du livre publié.
+Sept parties, vingt-six chapitres. Les parties I et II sont rédigées. Le découpage de la suite, l'ordre retenu et les objectifs sont dans le [plan](PLAN.md). Les conventions de style, tirées du guide O'Reilly et adaptées au français, sont dans [STYLE.md](STYLE.md). Ces deux fichiers sont des documents de travail : ils ne font pas partie du livre publié.
 
 - [Préface](00-preface.md)
 
